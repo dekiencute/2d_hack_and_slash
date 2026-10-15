@@ -1,10 +1,18 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource path="res://actors/enemies/dummy_enemy.gd" type="Script" id="1"]
+
+[ext_resource type="Texture2D" path="res://resources/original/enemy.svg" id="2_art"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleEnemy"]
 radius = 18.0
 height = 68.0
+
+[sub_resource type="StyleBoxFlat" id="HPBackground"]
+bg_color = Color(0.08, 0.13, 0.19, 1)
+
+[sub_resource type="StyleBoxFlat" id="HPFill"]
+bg_color = Color(0.93, 0.46, 0.53, 1)
 
 [node name="DummyEnemy" type="CharacterBody2D"]
 collision_layer = 4
@@ -15,26 +23,28 @@ script = ExtResource("1")
 position = Vector2(0, -34)
 shape = SubResource("CapsuleEnemy")
 
-[node name="BodyVisual" type="Polygon2D" parent="."]
+[node name="BodyVisual" type="Sprite2D" parent="."]
 position = Vector2(0, -34)
-polygon = PackedVector2Array(-19, -31, 19, -31, 22, 24, 12, 33, -12, 33, -22, 24)
-color = Color(0.92, 0.31, 0.34, 1)
+scale = Vector2(0.8, 0.85)
+texture = ExtResource("2_art")
 
 [node name="HPLabel" type="Label" parent="."]
 offset_left = -70.0
-offset_top = -94.0
+offset_top = -101.0
 offset_right = 70.0
-offset_bottom = -68.0
+offset_bottom = -80.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 14
-text = "DUMMY"
+text = "SENTINEL"
 horizontal_alignment = 1
 
 [node name="HPBar" type="ProgressBar" parent="."]
 offset_left = -38.0
-offset_top = -68.0
+offset_top = -80.0
 offset_right = 38.0
-offset_bottom = -58.0
+offset_bottom = -75.0
+theme_override_styles/background = SubResource("HPBackground")
+theme_override_styles/fill = SubResource("HPFill")
 max_value = 72.0
 value = 72.0
 show_percentage = false

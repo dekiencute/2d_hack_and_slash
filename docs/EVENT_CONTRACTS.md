@@ -1,13 +1,18 @@
-# Event Contracts v0.1
+# Event contracts — pre-alpha 0.1.0
 
-Planned stable gameplay events:
+Implemented signals:
 
-- `attack_started(actor, attack_data)`
-- `damage_dealt(attacker, victim, attack_data)`
-- `enemy_launched(enemy, velocity)`
-- `enemy_killed(enemy)`
-- `style_changed(rank, score)`
-- `combat_started(arena)`
-- `combat_finished(arena)`
+| Source | Signal | Consumer |
+|---|---|---|
+| Player | `health_changed(current, maximum)` | Arena forwards HP to HUD. |
+| Player | `died` | Arena ends the run. |
+| Player | `attack_started(data)` | CombatFeedback plays swing VFX/SFX. |
+| Player | `dash_started`, `damaged` | CombatFeedback plays dash/hurt feedback. |
+| AttackHitbox | `hit_confirmed(target, data, direction)` | CombatFeedback plays impact VFX/SFX after `receive_hit`. |
+| Enemy | `died(enemy)` | Arena releases attack token and advances waves. |
+| StyleSystem | `style_changed(rank, score)` | HUD displays live Style. |
+| HUD | `start_requested`, `restart_requested`, `pause_requested` | Arena owns run/menu state. |
 
-Only `style_changed(rank, score)` exists in the current slice. Other events are reserved for the next refactor so agents can integrate VFX, audio, telemetry and encounters without cross-module dependencies.
+A confirmed hit still follows `AttackData → AttackHitbox → target.receive_hit(AttackData, facing, attacker)`. Style and hitstop remain downstream of the confirmed hit. Presentation consumes signals without calculating damage or changing move timing. `attack_started` has no actor argument because each feedback service belongs to this single-player arena.
+
+Future shared actor events (`damage_dealt`, `enemy_launched`, `combat_started`, `combat_finished`) remain unimplemented and must not be assumed to exist. New weapons and combat graph changes are outside this release.
