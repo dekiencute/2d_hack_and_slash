@@ -1,0 +1,335 @@
+[
+  {
+    "label": "version",
+    "command": [
+      "godot",
+      "--version"
+    ],
+    "cwd": "/workspace/2d_hack_and_slash",
+    "exit_code": 0,
+    "environment": {
+      "XDG_DATA_HOME": "/tmp/stylebreaker-rc/data",
+      "XDG_CONFIG_HOME": "/tmp/stylebreaker-rc/config",
+      "XDG_CACHE_HOME": "/tmp/stylebreaker-rc/cache"
+    }
+  },
+  {
+    "label": "import",
+    "command": [
+      "godot",
+      "--headless",
+      "--editor",
+      "--path",
+      "/workspace/2d_hack_and_slash",
+      "--import",
+      "--quit"
+    ],
+    "cwd": "/workspace/2d_hack_and_slash",
+    "exit_code": 0,
+    "environment": {
+      "XDG_DATA_HOME": "/tmp/stylebreaker-rc/data",
+      "XDG_CONFIG_HOME": "/tmp/stylebreaker-rc/config",
+      "XDG_CACHE_HOME": "/tmp/stylebreaker-rc/cache"
+    }
+  },
+  {
+    "label": "pixel-source-regression",
+    "command": [
+      "godot",
+      "--headless",
+      "--path",
+      "/workspace/2d_hack_and_slash",
+      "--script",
+      "tests/regression.gd"
+    ],
+    "cwd": "/workspace/2d_hack_and_slash",
+    "exit_code": 0,
+    "environment": {
+      "XDG_DATA_HOME": "/tmp/stylebreaker-rc/data",
+      "XDG_CONFIG_HOME": "/tmp/stylebreaker-rc/config",
+      "XDG_CACHE_HOME": "/tmp/stylebreaker-rc/cache"
+    }
+  },
+  {
+    "label": "fallback-source-regression",
+    "command": [
+      "godot",
+      "--headless",
+      "--path",
+      "/workspace/2d_hack_and_slash",
+      "--script",
+      "tests/regression.gd",
+      "--",
+      "--scene",
+      "res://levels/main.tscn"
+    ],
+    "cwd": "/workspace/2d_hack_and_slash",
+    "exit_code": 0,
+    "environment": {
+      "XDG_DATA_HOME": "/tmp/stylebreaker-rc/data",
+      "XDG_CONFIG_HOME": "/tmp/stylebreaker-rc/config",
+      "XDG_CACHE_HOME": "/tmp/stylebreaker-rc/cache"
+    }
+  },
+  {
+    "label": "pixel-presentation",
+    "command": [
+      "godot",
+      "--headless",
+      "--path",
+      "/workspace/2d_hack_and_slash",
+      "--script",
+      "tests/pixel_art_validation.gd"
+    ],
+    "cwd": "/workspace/2d_hack_and_slash",
+    "exit_code": 0,
+    "environment": {
+      "XDG_DATA_HOME": "/tmp/stylebreaker-rc/data",
+      "XDG_CONFIG_HOME": "/tmp/stylebreaker-rc/config",
+      "XDG_CACHE_HOME": "/tmp/stylebreaker-rc/cache"
+    }
+  },
+  {
+    "label": "controller-death",
+    "command": [
+      "godot",
+      "--headless",
+      "--path",
+      "/workspace/2d_hack_and_slash",
+      "--script",
+      "tests/release_controls_validation.gd"
+    ],
+    "cwd": "/workspace/2d_hack_and_slash",
+    "exit_code": 0,
+    "environment": {
+      "XDG_DATA_HOME": "/tmp/stylebreaker-rc/data",
+      "XDG_CONFIG_HOME": "/tmp/stylebreaker-rc/config",
+      "XDG_CACHE_HOME": "/tmp/stylebreaker-rc/cache"
+    }
+  },
+  {
+    "label": "background-preview",
+    "command": [
+      "godot",
+      "--headless",
+      "--path",
+      "/workspace/2d_hack_and_slash",
+      "--script",
+      "tests/background_preview_validation.gd"
+    ],
+    "cwd": "/workspace/2d_hack_and_slash",
+    "exit_code": 0,
+    "environment": {
+      "XDG_DATA_HOME": "/tmp/stylebreaker-rc/data",
+      "XDG_CONFIG_HOME": "/tmp/stylebreaker-rc/config",
+      "XDG_CACHE_HOME": "/tmp/stylebreaker-rc/cache"
+    }
+  },
+  {
+    "label": "asset-preview",
+    "command": [
+      "godot",
+      "--headless",
+      "--path",
+      "/workspace/2d_hack_and_slash",
+      "--script",
+      "tests/asset_preview_validation.gd"
+    ],
+    "cwd": "/workspace/2d_hack_and_slash",
+    "exit_code": 0,
+    "environment": {
+      "XDG_DATA_HOME": "/tmp/stylebreaker-rc/data",
+      "XDG_CONFIG_HOME": "/tmp/stylebreaker-rc/config",
+      "XDG_CACHE_HOME": "/tmp/stylebreaker-rc/cache"
+    }
+  },
+  {
+    "label": "qa-import",
+    "command": [
+      "godot",
+      "--headless",
+      "--editor",
+      "--path",
+      "/tmp/stylebreaker-rc-dspkii0x/project",
+      "--import",
+      "--quit"
+    ],
+    "cwd": "/workspace/2d_hack_and_slash",
+    "exit_code": 0,
+    "environment": {
+      "XDG_DATA_HOME": "/tmp/stylebreaker-rc/data",
+      "XDG_CONFIG_HOME": "/tmp/stylebreaker-rc/config",
+      "XDG_CACHE_HOME": "/tmp/stylebreaker-rc/cache"
+    }
+  },
+  {
+    "label": "windows-export",
+    "command": [
+      "godot",
+      "--headless",
+      "--editor",
+      "--path",
+      "/tmp/stylebreaker-rc-dspkii0x/project",
+      "--export-release",
+      "Windows Desktop",
+      "/workspace/2d_hack_and_slash/builds/rc-private-qa/windows/Stylebreaker.exe"
+    ],
+    "cwd": "/workspace/2d_hack_and_slash",
+    "exit_code": 0,
+    "environment": {
+      "XDG_DATA_HOME": "/tmp/stylebreaker-rc/data",
+      "XDG_CONFIG_HOME": "/tmp/stylebreaker-rc/config",
+      "XDG_CACHE_HOME": "/tmp/stylebreaker-rc/cache"
+    }
+  },
+  {
+    "label": "linux-export",
+    "command": [
+      "godot",
+      "--headless",
+      "--editor",
+      "--path",
+      "/tmp/stylebreaker-rc-dspkii0x/project",
+      "--export-release",
+      "Linux Validation",
+      "/workspace/2d_hack_and_slash/builds/rc-private-qa/linux/Stylebreaker.x86_64"
+    ],
+    "cwd": "/workspace/2d_hack_and_slash",
+    "exit_code": 0,
+    "environment": {
+      "XDG_DATA_HOME": "/tmp/stylebreaker-rc/data",
+      "XDG_CONFIG_HOME": "/tmp/stylebreaker-rc/config",
+      "XDG_CACHE_HOME": "/tmp/stylebreaker-rc/cache"
+    }
+  },
+  {
+    "label": "linux-startup",
+    "command": [
+      "/workspace/2d_hack_and_slash/builds/rc-private-qa/linux/Stylebreaker.x86_64",
+      "--headless",
+      "--quit-after",
+      "120"
+    ],
+    "cwd": "/tmp/stylebreaker-rc-dspkii0x",
+    "exit_code": 0,
+    "environment": {
+      "XDG_DATA_HOME": "/tmp/stylebreaker-rc/data",
+      "XDG_CONFIG_HOME": "/tmp/stylebreaker-rc/config",
+      "XDG_CACHE_HOME": "/tmp/stylebreaker-rc/cache"
+    }
+  },
+  {
+    "label": "extracted-windows-pack-validation",
+    "command": [
+      "godot",
+      "--headless",
+      "--main-pack",
+      "/tmp/stylebreaker-rc-dspkii0x/fresh-extract/Stylebreaker-PreAlpha-v0.1.0-windows-x86_64-PRIVATE-QA-NOT-FOR-DISTRIBUTION/Stylebreaker.exe",
+      "--script",
+      "/workspace/2d_hack_and_slash/tests/release_candidate_validation.gd",
+      "--",
+      "/workspace/2d_hack_and_slash/builds/rc-private-qa/PACK_EXPECTATIONS.json",
+      "/workspace/2d_hack_and_slash/builds/rc-private-qa/PACK_CONTENTS.json"
+    ],
+    "cwd": "/tmp/stylebreaker-rc-dspkii0x/fresh-extract",
+    "exit_code": 0,
+    "environment": {
+      "XDG_DATA_HOME": "/tmp/stylebreaker-rc/data",
+      "XDG_CONFIG_HOME": "/tmp/stylebreaker-rc/config",
+      "XDG_CACHE_HOME": "/tmp/stylebreaker-rc/cache"
+    }
+  },
+  {
+    "label": "extracted-windows-pack-regression",
+    "command": [
+      "godot",
+      "--headless",
+      "--main-pack",
+      "/tmp/stylebreaker-rc-dspkii0x/fresh-extract/Stylebreaker-PreAlpha-v0.1.0-windows-x86_64-PRIVATE-QA-NOT-FOR-DISTRIBUTION/Stylebreaker.exe",
+      "--script",
+      "/workspace/2d_hack_and_slash/tests/regression.gd"
+    ],
+    "cwd": "/tmp/stylebreaker-rc-dspkii0x/fresh-extract",
+    "exit_code": 0,
+    "environment": {
+      "XDG_DATA_HOME": "/tmp/stylebreaker-rc/data",
+      "XDG_CONFIG_HOME": "/tmp/stylebreaker-rc/config",
+      "XDG_CACHE_HOME": "/tmp/stylebreaker-rc/cache"
+    }
+  },
+  {
+    "label": "extracted-windows-controller-death",
+    "command": [
+      "godot",
+      "--headless",
+      "--main-pack",
+      "/tmp/stylebreaker-rc-dspkii0x/fresh-extract/Stylebreaker-PreAlpha-v0.1.0-windows-x86_64-PRIVATE-QA-NOT-FOR-DISTRIBUTION/Stylebreaker.exe",
+      "--script",
+      "/workspace/2d_hack_and_slash/tests/release_controls_validation.gd"
+    ],
+    "cwd": "/tmp/stylebreaker-rc-dspkii0x/fresh-extract",
+    "exit_code": 0,
+    "environment": {
+      "XDG_DATA_HOME": "/tmp/stylebreaker-rc/data",
+      "XDG_CONFIG_HOME": "/tmp/stylebreaker-rc/config",
+      "XDG_CACHE_HOME": "/tmp/stylebreaker-rc/cache"
+    }
+  },
+  {
+    "label": "public-license-gate",
+    "command": [
+      "python3",
+      "tools/release.py"
+    ],
+    "cwd": "/workspace/2d_hack_and_slash",
+    "exit_code": 1,
+    "expected": "PUBLIC PACKAGING BLOCKED; no new public ZIP"
+  },
+  {
+    "label": "rendered-regression",
+    "command": [
+      "godot",
+      "--path",
+      ".",
+      "--audio-driver",
+      "Dummy",
+      "--max-fps",
+      "60",
+      "--script",
+      "res://tests/regression.gd",
+      "--",
+      "--screenshots",
+      "/tmp/stylebreaker-rc/screenshots"
+    ],
+    "cwd": "/workspace/2d_hack_and_slash",
+    "exit_code": 0,
+    "environment": {
+      "XDG_DATA_HOME": "/tmp/stylebreaker-rc/data",
+      "XDG_CONFIG_HOME": "/tmp/stylebreaker-rc/config",
+      "XDG_CACHE_HOME": "/tmp/stylebreaker-rc/cache",
+      "DISPLAY": ":99",
+      "LP_NUM_THREADS": "4"
+    }
+  },
+  {
+    "label": "pixel-presentation-rendered",
+    "command": [
+      "godot",
+      "--path",
+      ".",
+      "--audio-driver",
+      "Dummy",
+      "--script",
+      "res://tests/pixel_art_validation.gd"
+    ],
+    "cwd": "/workspace/2d_hack_and_slash",
+    "exit_code": 0,
+    "environment": {
+      "XDG_DATA_HOME": "/tmp/stylebreaker-rc/data",
+      "XDG_CONFIG_HOME": "/tmp/stylebreaker-rc/config",
+      "XDG_CACHE_HOME": "/tmp/stylebreaker-rc/cache",
+      "DISPLAY": ":99",
+      "LP_NUM_THREADS": "4"
+    }
+  }
+]
