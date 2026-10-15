@@ -1,3 +1,5 @@
+Historical cleanup PR description; current export policy and commands: [Windows workflow](WINDOWS_EXPORT.md).
+
 The approved pixel arena previously depended on the legacy scene, generated SVG atlases and presentation adapters. It now owns its gameplay nodes directly and uses uploaded pixel sprites and health bars natively. F5 starts `res://pixel_art/arena.tscn`; the five-wave combat director, player controller, hitboxes, AttackData, animation timings and AI behavior are preserved.
 
 Removed the generated artwork, old scene/preview adapters, illustrative geometric VFX, generation tools and historical build/cover artifacts as explicitly requested. No artwork was generated or backed up; Git history remains intact. Seven audio samples were moved unchanged to an audio-only directory. Functional warning text/tint and existing sound/hitstop remain; there is no new particle art or app icon.
@@ -21,7 +23,7 @@ Private QA ZIP stays local and ignored by Git; source commit `049a2e48a7e69b3e80
 
 Open `project.godot` in Godot 4.6.3 and press F5. Controls: A/D, Space, Shift, J/K, Esc, R; Xbox-style pad mappings remain. Rebuild owner QA using `python3 tools/release.py --private-qa` with matching templates.
 
-**NOT READY FOR PUBLIC RELEASE.** Native Windows execution, physical controller and audible output are NOT TESTED. Character/enemy/UI creator terms remain independently pending; forest compiled-game permission and credit are documented. Owner confirmation does not clear the mandatory license gate: public packaging's negative test correctly rejects these three groups. Credits, engine/font notices and private QA workflow remain. No merge, publication or itch.io upload.
+**NOT READY FOR PUBLIC RELEASE.** Native Windows execution, physical controller and audible output are NOT TESTED. Character/enemy/UI creator terms remain independently pending; forest compiled-game permission and credit are documented. Owner confirmation does not verify these terms. The subsequent Windows export workflow reports these three groups as nonblocking warnings; the historical cleanup build used an earlier policy. Credits, engine/font notices and private QA workflow remain. No merge, publication or itch.io upload.
 
 Actual rendered combat capture (review evidence, not cleared public marketing):
 

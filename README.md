@@ -10,9 +10,11 @@ godot --headless --path . --script tests/regression.gd
 godot --headless --path . --script tests/pixel_art_validation.gd
 godot --headless --path . --script tests/release_controls_validation.gd
 python3 tools/check_pixel_only.py
-python3 tools/release.py --private-qa
+python tools/release.py
 ```
 
-Matching official Windows/Linux 4.6.3 Release templates are required for packaging. The public packaging command (`python3 tools/release.py`) remains license-gated: forest compiled-game use is documented with credit; character/enemy/UI terms still need independent verification. Owner confirmation is recorded separately. Native Windows playtesting remains pending. No automatic merge, upload or publication.
+The normal Windows Desktop preset exports the approved pixel runtime. Build a validated Windows ZIP with `python tools/release.py`; on Windows PowerShell use `py -3 .\tools\release.py`. Godot 4.6.3 and matching official templates are required. Godot can be on PATH, selected with `GODOT_BIN`, or passed via `--godot`. See [Windows export instructions](docs/WINDOWS_EXPORT.md) for installation, executable/template paths, outputs and technical checks.
+
+Incomplete character/enemy/UI license evidence produces warnings and is included in the package reports; it does **not** stop exports. Forest compiled-game permission and required credit are documented. Verification statuses and creator credits remain unchanged; a successful build does not certify redistribution rights. Native Windows playtesting remains pending. No automatic merge, upload or publication.
 
 [Cleanup inventory and validation](docs/CLEANUP_REPORT.md) · [Asset rights](docs/RC_ASSET_LICENSE_REPORT.md) · [Credits](docs/RC_CREDITS.txt) · [Player instructions](docs/PLAYER_README.txt)

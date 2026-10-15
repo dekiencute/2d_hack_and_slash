@@ -23,13 +23,14 @@ https://adwitr.itch.io/pixel-health-bar-asset-pack
 These three source accounts/URLs were supplied by the owner. The owner
 confirms commercial game-use permission; actual creator terms and required
 credit wording remain independently unverified. Provisional credit does
-not establish source-file sharing rights. Public packaging remains gated.
+not establish source-file sharing rights. Unresolved terms are reported in
+each build; they do not stop exports or become verified by export success.
 
 AUDIO
 Seven retained original synthesized sound effects: project contributors,
 CC0 1.0. See LICENSES/AUDIO_CC0.txt. This audio grant does not license
 third-party pixel artwork or change pre-existing code rights.
 
-The approved uploaded pixel art is the only game presentation. Private QA
-is owner-only. No raw PSD/Aseprite/GIF sources are packaged. Native Windows
+The approved uploaded pixel art is the only game presentation. Optional
+private QA builds retain their owner-only label. No raw PSD/Aseprite/GIF sources are packaged. Native Windows
 playtesting and documented rights remain prerequisites for public release.

@@ -1,0 +1,157 @@
+{
+  "date": "2026-10-15",
+  "host": "Linux",
+  "source_commit": "65e6d6e43974bff51399cc7961fb3313136797d2",
+  "clean_worktree_at_export": true,
+  "private_qa": false,
+  "normal_invocation_completed": true,
+  "asset_rights_cleared": false,
+  "unresolved_permissions": [
+    "character: unverified commercial compiled-game permission",
+    "enemy: unverified commercial compiled-game permission",
+    "ui: unverified commercial compiled-game permission"
+  ],
+  "license_verification_blocks_export": false,
+  "godot": "4.6.3.stable.official.7d41c59c4",
+  "template_sha256": {
+    "version.txt": "4855bd38072b77c73c45739cf6a6787d7df790a368b0a437102f352650e6186b",
+    "windows_release_x86_64.exe": "91724f15024a3a545e28ccd83134403d31ce2323a38e51c95e4dfa282f732ab6",
+    "linux_release.x86_64": "2c78919325d7f29fa7607287c7c1eeac367ea4c94e7b8b6f5f4c6b20492f73d0"
+  },
+  "tests": {
+    "controller-death": {
+      "checks": 13,
+      "failures": 0
+    },
+    "derived-media-audit": {
+      "exit_code": 0,
+      "warnings": 0
+    },
+    "export-copy-import": {
+      "exit_code": 0,
+      "warnings": 0
+    },
+    "extracted-pack-cleanup-audit": {
+      "exit_code": 0,
+      "warnings": 0
+    },
+    "extracted-windows-controller-death": {
+      "checks": 13,
+      "failures": 0
+    },
+    "extracted-windows-pack-regression": {
+      "checks": 47,
+      "failures": 0
+    },
+    "extracted-windows-pack-validation": {
+      "checks": 67,
+      "failures": 0
+    },
+    "import": {
+      "exit_code": 0,
+      "warnings": 0
+    },
+    "linux-export": {
+      "exit_code": 0,
+      "warnings": 0
+    },
+    "linux-startup": {
+      "exit_code": 0,
+      "warnings": 0
+    },
+    "pixel-presentation": {
+      "checks": 62,
+      "failures": 0
+    },
+    "pixel-source-regression": {
+      "checks": 47,
+      "failures": 0
+    },
+    "release-workflow-tests": {
+      "exit_code": 0,
+      "warnings": 0
+    },
+    "source-cleanup-audit": {
+      "exit_code": 0,
+      "warnings": 0
+    },
+    "version": {
+      "exit_code": 0,
+      "warnings": 0
+    },
+    "windows-export": {
+      "exit_code": 0,
+      "warnings": 0
+    }
+  },
+  "normal_preset": {
+    "export_succeeded": true,
+    "isolated_pack_checks": 67,
+    "failures": 0,
+    "pack_file_count": 123,
+    "media_file_count": 33
+  },
+  "artifact_sha256": {
+    "builds/rc-release-candidate/windows/Stylebreaker.exe": "58fbfb0f4c3d2c1af8351c63816d367625401fb139eb71c36ddd46a528a27b8a",
+    "builds/rc-release-candidate/linux/Stylebreaker.x86_64": "0eeda3cb66a0496048a16d5b6082343a3a105fac43266d10a954ac93c07ee4ec",
+    "dist/release-candidate/Stylebreaker-PreAlpha-v0.1.0-windows-x86_64-RELEASE-CANDIDATE.zip": "48eeae72463c59c1896421a284811d505a69add629dce0b6f26c65d8665ad708"
+  },
+  "package_files": [
+    "ASSET_LICENSE_REPORT.json",
+    "ASSET_LICENSE_REPORT.md",
+    "BUILD_MANIFEST.json",
+    "BUILD_STATUS.txt",
+    "CREDITS.txt",
+    "LICENSES/AUDIO_CC0.txt",
+    "LICENSES/FOREST_HISTORICAL_README.txt",
+    "LICENSES/FOREST_HISTORICAL_TERMS.txt",
+    "LICENSES/GODOT_COPYRIGHT.txt",
+    "LICENSES/GODOT_LICENSE.txt",
+    "README.txt",
+    "Stylebreaker.exe"
+  ],
+  "zip_crc_and_extracted_file_hashes_verified": true,
+  "derived_media_audit": {
+    "all_derived_media_declared": true,
+    "count": 33,
+    "paths": [
+      "res://.godot/imported/AirCombo1.png-86fd6d09641dd02d5df0c1abee5d5f76.ctex",
+      "res://.godot/imported/AirCombo2.png-ac4be21b6b3fd8edc2323c255f56a85c.ctex",
+      "res://.godot/imported/AirCombo3.png-4122c41907115d2f5032696f96af8aa5.ctex",
+      "res://.godot/imported/Dash.png-1f9bff90e25f421e3f51913a1471cbe3.ctex",
+      "res://.godot/imported/Die.png-cf6a261866430de4cad6a10f693045a7.ctex",
+      "res://.godot/imported/GroundCombo1.png-473122ca8f4cf4c3a208801608ce837c.ctex",
+      "res://.godot/imported/GroundCombo2.png-1b0bbcdec18cee7cbc493c4716fffbab.ctex",
+      "res://.godot/imported/GroundCombo3.png-941594d3ec313715789250c42eda3b49.ctex",
+      "res://.godot/imported/Idle.png-25777d45aff13cb14f911e9db784479e.ctex",
+      "res://.godot/imported/JumpAndFall.png-1d4de5d3834ee3b7f61565487f0ed566.ctex",
+      "res://.godot/imported/Layer_0000_9.png-7cab5dae818611c9cf8a8449592c0ad0.ctex",
+      "res://.godot/imported/Layer_0001_8.png-b4e32f29edc51d7859346d5f45e74cea.ctex",
+      "res://.godot/imported/Layer_0002_7.png-1ade2919d23b9e1b33cb6bea0854ffdb.ctex",
+      "res://.godot/imported/Layer_0003_6.png-fe72605a3d5664bb84ef6d5a30d6a70f.ctex",
+      "res://.godot/imported/Layer_0004_Lights.png-bbced838b9dbf2a64bdf864d65972907.ctex",
+      "res://.godot/imported/Layer_0005_5.png-3edf82199abbd9580ca8ea30e773eaf8.ctex",
+      "res://.godot/imported/Layer_0006_4.png-72af35ff969e128b652d3fb38839c3b5.ctex",
+      "res://.godot/imported/Layer_0007_Lights.png-a127327dbe6eaca77a7a561cf08611d7.ctex",
+      "res://.godot/imported/Layer_0008_3.png-9bf6a0ec9390b2b4db67c787e442bc45.ctex",
+      "res://.godot/imported/Layer_0009_2.png-16d8e6a0334215ae987e7e3888901654.ctex",
+      "res://.godot/imported/Layer_0010_1.png-7e551564d1a293f64f3e4c5d6eb0dbec.ctex",
+      "res://.godot/imported/Layer_0011_0.png-97f0ce05c2ff739e00147fa45be5d476.ctex",
+      "res://.godot/imported/Pixel1_Healthbar_0001_pixel1_healthbar.png-4abb6670d1ab244159312a4f598aa495.ctex",
+      "res://.godot/imported/Pixel1_Healthbar_0002_pixel1_border.png-309aabe68f0cf1ab7ed46783ce279517.ctex",
+      "res://.godot/imported/Run.png-0775030876cd2cbddaa376edeb6cf454.ctex",
+      "res://.godot/imported/Sword.png-32a692af3afcebb1b47ad1d6d55e113a.ctex",
+      "res://.godot/imported/dash.wav-45cc260b4ac725a3d0bc1a91d62c68eb.sample",
+      "res://.godot/imported/defeat.wav-c0bd173266a17c1a5833c78bb5031d47.sample",
+      "res://.godot/imported/hit.wav-26dcba07e0d24288f9ceb37dfb2540fb.sample",
+      "res://.godot/imported/hurt.wav-9d619f86a1cf77a42ce2de69e33bf910.sample",
+      "res://.godot/imported/slash.wav-17e43216d420fc096a6c21563a4c6ed0.sample",
+      "res://.godot/imported/victory.wav-c38abddcb8fbd50e92610eaf4790e761.sample",
+      "res://.godot/imported/wave.wav-bb71910dda39dc48239dabb848fc2b68.sample"
+    ]
+  },
+  "windows_native_execution": "NOT TESTED",
+  "powershell_and_windows_host_workflow": "NOT TESTED; Windows path/detection/template logic has Python unit coverage only",
+  "private_qa_note": "Feature/preset compatibility covered by unit tests; a new full --private-qa package was not produced in this task.",
+  "manual_check_note": "An initial ad-hoc normal-preset pack check from the project working directory saw source files outside the PCK. Rechecked in an isolated directory: 67/67 pass. Pack file/media audits were identical and clean."
+}

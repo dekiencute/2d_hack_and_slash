@@ -157,5 +157,10 @@
     "evidence_snapshot": "docs/licenses/SELECTED_THIRD_PARTY_EVIDENCE_2026-10-15.json",
     "network_configuration_status": "Minimal four-host draft update attempted, rejected draft_not_editable; reread unchanged. No network configuration save/application confirmed.",
     "owner_follow_up": "Owner reconfirms commercial-use permission for all four packs and directs work to proceed with approved art; continue private QA without more document requests. Independent creator-term verification remains pending for character/enemy/UI."
+  },
+  "export_policy": {
+    "license_evidence_blocks_export": false,
+    "technical_validation_required": true,
+    "owner_instruction": "Allow normal Windows exports with the approved pixel artwork; report unresolved license evidence without changing verification status or publishing automatically."
   }
 }

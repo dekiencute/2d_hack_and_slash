@@ -1,5 +1,5 @@
 STYLEBREAKER — PRE-ALPHA v0.1.0 — WINDOWS x86_64
-PRIVATE OWNER QA — NOT FOR DISTRIBUTION
+See BUILD_STATUS.txt for this candidate's build/test status.
 
 Extract the whole ZIP to a new folder. Run Stylebreaker.exe; Godot/editor
 and separate PCK are not needed. Requires Windows x86_64, OpenGL 3.3 GPU.
@@ -26,5 +26,6 @@ separate supplied dash/hit-particle art or app-icon artwork is available.
 
 Forest: Eder Muniz; UI: Adwit Rahman; character: Joe Idaho; enemies:
 Immortal Burrito. See CREDITS.txt, ASSET_LICENSE_REPORT.md and LICENSES.
-CC0 applies only to seven retained synthesized sounds. Public release
-requires documented artwork terms and native Windows/hardware testing.
+CC0 applies only to seven retained synthesized sounds. Character/enemy/UI
+creator terms remain independently unverified; export does not establish
+redistribution permission. Native Windows/hardware playtesting is pending.

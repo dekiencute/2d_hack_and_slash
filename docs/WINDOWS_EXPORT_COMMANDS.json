@@ -1,0 +1,263 @@
+{
+  "environment": {
+    "XDG_DATA_HOME": "/tmp/stylebreaker-cleanup/data",
+    "XDG_CONFIG_HOME": "/tmp/stylebreaker-cleanup/config",
+    "XDG_CACHE_HOME": "/tmp/stylebreaker-cleanup/cache",
+    "LP_NUM_THREADS": "4"
+  },
+  "invocation": [
+    "python",
+    "tools/release.py"
+  ],
+  "commands": [
+    {
+      "label": "version",
+      "command": [
+        "/opt/godot/4.6.3/Godot_v4.6.3-stable_linux.x86_64",
+        "--version"
+      ],
+      "cwd": "/workspace/2d_hack_and_slash",
+      "exit_code": 0
+    },
+    {
+      "label": "import",
+      "command": [
+        "/opt/godot/4.6.3/Godot_v4.6.3-stable_linux.x86_64",
+        "--headless",
+        "--editor",
+        "--path",
+        "/workspace/2d_hack_and_slash",
+        "--import",
+        "--quit"
+      ],
+      "cwd": "/workspace/2d_hack_and_slash",
+      "exit_code": 0
+    },
+    {
+      "label": "source-cleanup-audit",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/2d_hack_and_slash/tools/check_pixel_only.py"
+      ],
+      "cwd": "/workspace/2d_hack_and_slash",
+      "exit_code": 0
+    },
+    {
+      "label": "release-workflow-tests",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_release.py"
+      ],
+      "cwd": "/workspace/2d_hack_and_slash",
+      "exit_code": 0
+    },
+    {
+      "label": "pixel-source-regression",
+      "command": [
+        "/opt/godot/4.6.3/Godot_v4.6.3-stable_linux.x86_64",
+        "--headless",
+        "--path",
+        "/workspace/2d_hack_and_slash",
+        "--script",
+        "tests/regression.gd"
+      ],
+      "cwd": "/workspace/2d_hack_and_slash",
+      "exit_code": 0
+    },
+    {
+      "label": "pixel-presentation",
+      "command": [
+        "/opt/godot/4.6.3/Godot_v4.6.3-stable_linux.x86_64",
+        "--headless",
+        "--path",
+        "/workspace/2d_hack_and_slash",
+        "--script",
+        "tests/pixel_art_validation.gd"
+      ],
+      "cwd": "/workspace/2d_hack_and_slash",
+      "exit_code": 0
+    },
+    {
+      "label": "controller-death",
+      "command": [
+        "/opt/godot/4.6.3/Godot_v4.6.3-stable_linux.x86_64",
+        "--headless",
+        "--path",
+        "/workspace/2d_hack_and_slash",
+        "--script",
+        "tests/release_controls_validation.gd"
+      ],
+      "cwd": "/workspace/2d_hack_and_slash",
+      "exit_code": 0
+    },
+    {
+      "label": "export-copy-import",
+      "command": [
+        "/opt/godot/4.6.3/Godot_v4.6.3-stable_linux.x86_64",
+        "--headless",
+        "--editor",
+        "--path",
+        "/tmp/stylebreaker-rc-hy1w4zv7/project",
+        "--import",
+        "--quit"
+      ],
+      "cwd": "/workspace/2d_hack_and_slash",
+      "exit_code": 0
+    },
+    {
+      "label": "windows-export",
+      "command": [
+        "/opt/godot/4.6.3/Godot_v4.6.3-stable_linux.x86_64",
+        "--headless",
+        "--editor",
+        "--path",
+        "/tmp/stylebreaker-rc-hy1w4zv7/project",
+        "--export-release",
+        "Windows Desktop",
+        "/workspace/2d_hack_and_slash/builds/rc-release-candidate/windows/Stylebreaker.exe"
+      ],
+      "cwd": "/workspace/2d_hack_and_slash",
+      "exit_code": 0
+    },
+    {
+      "label": "linux-export",
+      "command": [
+        "/opt/godot/4.6.3/Godot_v4.6.3-stable_linux.x86_64",
+        "--headless",
+        "--editor",
+        "--path",
+        "/tmp/stylebreaker-rc-hy1w4zv7/project",
+        "--export-release",
+        "Linux Validation",
+        "/workspace/2d_hack_and_slash/builds/rc-release-candidate/linux/Stylebreaker.x86_64"
+      ],
+      "cwd": "/workspace/2d_hack_and_slash",
+      "exit_code": 0
+    },
+    {
+      "label": "linux-startup",
+      "command": [
+        "/workspace/2d_hack_and_slash/builds/rc-release-candidate/linux/Stylebreaker.x86_64",
+        "--headless",
+        "--quit-after",
+        "120"
+      ],
+      "cwd": "/tmp/stylebreaker-rc-hy1w4zv7",
+      "exit_code": 0
+    },
+    {
+      "label": "extracted-windows-pack-validation",
+      "command": [
+        "/opt/godot/4.6.3/Godot_v4.6.3-stable_linux.x86_64",
+        "--headless",
+        "--main-pack",
+        "/tmp/stylebreaker-rc-hy1w4zv7/fresh-extract/Stylebreaker-PreAlpha-v0.1.0-windows-x86_64-RELEASE-CANDIDATE/Stylebreaker.exe",
+        "--script",
+        "/workspace/2d_hack_and_slash/tests/release_candidate_validation.gd",
+        "--",
+        "/workspace/2d_hack_and_slash/builds/rc-release-candidate/PACK_EXPECTATIONS.json",
+        "/workspace/2d_hack_and_slash/builds/rc-release-candidate/PACK_CONTENTS.json"
+      ],
+      "cwd": "/tmp/stylebreaker-rc-hy1w4zv7/fresh-extract",
+      "exit_code": 0
+    },
+    {
+      "label": "extracted-windows-pack-regression",
+      "command": [
+        "/opt/godot/4.6.3/Godot_v4.6.3-stable_linux.x86_64",
+        "--headless",
+        "--main-pack",
+        "/tmp/stylebreaker-rc-hy1w4zv7/fresh-extract/Stylebreaker-PreAlpha-v0.1.0-windows-x86_64-RELEASE-CANDIDATE/Stylebreaker.exe",
+        "--script",
+        "/workspace/2d_hack_and_slash/tests/regression.gd"
+      ],
+      "cwd": "/tmp/stylebreaker-rc-hy1w4zv7/fresh-extract",
+      "exit_code": 0
+    },
+    {
+      "label": "extracted-windows-controller-death",
+      "command": [
+        "/opt/godot/4.6.3/Godot_v4.6.3-stable_linux.x86_64",
+        "--headless",
+        "--main-pack",
+        "/tmp/stylebreaker-rc-hy1w4zv7/fresh-extract/Stylebreaker-PreAlpha-v0.1.0-windows-x86_64-RELEASE-CANDIDATE/Stylebreaker.exe",
+        "--script",
+        "/workspace/2d_hack_and_slash/tests/release_controls_validation.gd"
+      ],
+      "cwd": "/tmp/stylebreaker-rc-hy1w4zv7/fresh-extract",
+      "exit_code": 0
+    },
+    {
+      "label": "extracted-pack-cleanup-audit",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/2d_hack_and_slash/tools/check_pixel_only.py",
+        "--pack",
+        "/workspace/2d_hack_and_slash/builds/rc-release-candidate/PACK_CONTENTS.json"
+      ],
+      "cwd": "/workspace/2d_hack_and_slash",
+      "exit_code": 0
+    },
+    {
+      "label": "derived-media-audit",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/2d_hack_and_slash/tools/audit_rc_pack.py",
+        "--build",
+        "/workspace/2d_hack_and_slash/builds/rc-release-candidate"
+      ],
+      "cwd": "/workspace/2d_hack_and_slash",
+      "exit_code": 0
+    }
+  ],
+  "additional_checks": [
+    {
+      "command": [
+        "godot",
+        "--headless",
+        "--editor",
+        "--path",
+        ".",
+        "--import",
+        "--quit"
+      ],
+      "cwd": "/workspace/2d_hack_and_slash",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "godot",
+        "--headless",
+        "--editor",
+        "--path",
+        ".",
+        "--export-release",
+        "Windows Desktop",
+        "/workspace/2d_hack_and_slash/builds/preset-validation/Stylebreaker.exe"
+      ],
+      "cwd": "/workspace/2d_hack_and_slash",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "godot",
+        "--headless",
+        "--main-pack",
+        "/workspace/2d_hack_and_slash/builds/preset-validation/Stylebreaker.exe",
+        "--script",
+        "/workspace/2d_hack_and_slash/tests/release_candidate_validation.gd",
+        "--",
+        "/workspace/2d_hack_and_slash/builds/preset-validation/PACK_EXPECTATIONS.json",
+        "/workspace/2d_hack_and_slash/builds/preset-validation/PACK_CONTENTS.json"
+      ],
+      "cwd": "/tmp/stylebreaker-export/normal-preset-check",
+      "exit_code": 0
+    }
+  ]
+}
