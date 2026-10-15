@@ -1,22 +1,72 @@
-# Release-candidate asset rights — 15 October 2026
+# Selected asset-license verification — 15 October 2026
 
-**Status: NOT READY. No public pixel-art release is approved.** Owner approval of the integrated arena is separate from the third-party right to distribute artwork commercially.
+**Public packaging remains locked: three groups need creator terms.** The owner confirms free acquisition with commercial game-use permission and has now supplied all four original download URLs. [Owner statement and URLs](licenses/OWNER_COMMERCIAL_USE_STATEMENT_2026-10-15.md). **Forest commercial compiled-game use is documented with mandatory Eder Muniz credit; raw source redistribution is prohibited.** Character/enemy/UI license conditions still need evidence.
 
-The selected build media inventory is **47 files**: 11 character PNG sheets, one enemy PNG, two UI PNGs, 12 forest PNGs, and 21 existing original SVG/WAV files. `tools/release_assets.json` is the explicit inventory; generated `ASSET_LICENSE_REPORT.json` gives each path, byte count, SHA-256, evidence, credit and clearance status. The exported pack is separately inventoried in `PACK_CONTENTS.json`, including scripts, imported/remapped resources and metadata. Built-in fonts/libraries reside in the engine and are covered by the bundled Godot notices.
+All approved visuals stay selected. No artwork, gameplay or Windows Private QA build logic is changed. The inventory remains **47 files**: 26 third-party PNGs (11 character, one enemy, two UI, 12 forest) plus 21 original SVG/WAV files. `tools/release_assets.json` records source, compiled-game permission, source sharing and attribution separately. [Evidence snapshot](licenses/SELECTED_THIRD_PARTY_EVIDENCE_2026-10-15.json) binds this review to file/evidence SHA-256 hashes.
 
-| Included assets | Evidence / redistribution status | Required action |
+## Sources and creator identities
+
+| Group | Creator / original source supplied by owner | Verification |
 |---|---|---|
-| Character: Idle, Run, JumpAndFall, Dash, Die, GroundCombo1/2/3, AirCombo1/2/3 (11 PNGs) | All match historical `resources/Characters/Dante` hashes. No creator URL, license, entitlement or underlying character permission supplied. **UNVERIFIED.** | Review original commercial game-use terms, entitlement if required and underlying character rights. Attribution unresolved. |
-| Demon Sword: `Sword.png` (1 PNG) | Source availability is not a license. No commercial terms or creator evidence supplied. **UNVERIFIED.** | Obtain creator/source/license and any required entitlement. |
-| Adwit Rahman Pixel1 health bar fill and border (2 PNGs) | Credit `Adwit Rahman / @adwitr_itch.io` exists; no permission text supplied. **UNVERIFIED.** | Verify commercial compiled-game use and attribution requirements. |
-| Eder Muniz Free Pixel Art Forest (12 PNGs) | Exact hash match to historical pack; recovered custom terms permit personal/commercial games and modification, require credit and forbid source asset redistribution even when modified. **CONDITIONAL: original provenance/current terms and packaging need review.** Not plain CC BY or CC0. | Preserve “Forest art by Eder Muniz,” review evidence and compiled-game packaging. Do not distribute source asset bundles. |
-| Original media (14 SVGs, 7 WAVs) and existing VFX | `resources/original/LICENSE.txt`, CC0 1.0; original synthesized PCM, no external samples. **VERIFIED for original media.** | Preserve notice; do not extend it to uploaded art or pre-existing code. |
-| Godot 4.6.3, bundled Noto Sans and libraries | Existing Godot MIT/OFL and third-party notices. **VERIFIED notice set.** | Bundle full `GODOT_LICENSE.txt` and `GODOT_COPYRIGHT.txt`. |
+| Character — 11 PNGs | **Joe Idaho (`joe-idaho`)**, [Side Scrolling Hack N Slash Character](https://joe-idaho.itch.io/side-scrolling-hack-n-slash-character) | Owner identifies this source account; original webpage not read. Selected files match historical `resources/Characters/Dante` hashes. Actual creator terms and any character/IP restrictions remain pending. |
+| Demon Sword — one PNG | **Immortal Burrito (`immortal-burrito`)**, [Blood Demons](https://immortal-burrito.itch.io/blood-demons) | Owner identifies this source account/pack. Original webpage not read; no license text found in supplied PNG/Aseprite/examples. |
+| Pixel1 health fill/border — two PNGs | **Adwit Rahman (`adwitr`)**, [Pixel Health Bar Asset Pack](https://adwitr.itch.io/pixel-health-bar-asset-pack) | Source supplied by owner; name also supported by uploaded pack/credit filename. Actual page terms not read. |
+| Forest — 12 PNGs | **Eder Muniz (`edermunizz`)**, [Free Pixel Art Forest](https://edermunizz.itch.io/free-pixel-art-forest) | Source confirmed by owner; creator explicitly named in original README. All 12 hashes match the historical pack containing applicable license/FAQ. Live page not read. |
 
-Unused uploaded PNG alternatives, gun strips, LungingStab/TakeHit, extra UI options and all PSD/Aseprite/GIF source/reference files are excluded from the QA export. Source files remain in the repository and receive no redistribution clearance. Editor addons, previews, tests, tooling and docs are excluded from game data. Original fallback resources remain because the inherited arena needs them and the fallback is retained.
+Source URLs are recorded as owner-supplied, not independently retrieved. In JSON, `source_url_verified=false` means **live URL content was not verified**, not that recovered applicable forest terms were ignored. The other three creator-account identities remain owner-attributed until their page/license evidence is available.
 
-No new license evidence was supplied by the owner during this task. Public packaging fails before export when any selected asset group is not verified with evidence. Committed public presets retain their pixel-asset quarantine; **do not bypass the packaging gate with a manual public export**. A direct export with those presets cannot be treated as a validated pixel release while startup dependencies are quarantined. Private QA uses a temporary selected-resource configuration and never modifies that quarantine.
+## Actual permission findings
 
-The private QA archive deliberately includes integrated uploaded art for owner review. **It is NOT a distributable/public release.** Its filename, embedded feature flag, credits, report, manifest and build status retain that restriction. No public pixel ZIP is produced while issues remain unresolved.
+| Group | Commercial compiled-game use | Attribution | Modifications / source-file redistribution | Status |
+|---|---|---|---|---|
+| Joe Idaho character | Owner reports permission; actual creator grant not yet supplied. | Provisional credit: “Character artwork: Joe Idaho — Side Scrolling Hack N Slash Character.” Whether mandatory and exact wording **pending**. | Both **not established**. Include actual pack restrictions concerning the depicted character/IP in review. | **Pending creator terms; unverified.** |
+| Immortal Burrito enemy | Owner reports permission; actual creator grant not yet supplied. | Provisional credit: “Enemy artwork: Immortal Burrito — Blood Demons.” Mandatory wording **pending**. | Both **not established**. Editable Aseprite availability is not source-sharing permission. | **Pending creator terms; unverified.** |
+| Adwit Rahman UI | Owner reports permission; actual creator grant not yet supplied. | Preserve “Pixel Health Bar Asset Pack by Adwit Rahman (@adwitr_itch.io)” provisionally. Whether mandatory **pending**. | Both **not established**. Artist credit alone is not a license. | **Pending creator terms; unverified.** |
+| Eder Muniz forest | **Allowed by matching original bundled terms**, including free/commercial game use. Owner-confirmed source, matching files, creator README and explicit grant provide sufficient compiled-game documentation. | **Required:** “Forest art by Eder Muniz — Free Pixel Art Forest.” | Modification **allowed**. Redistributing/reselling asset files as an asset pack **prohibited**, even modified. | **Verified for compiled-game use only.** No live-page verification claimed. |
 
-Evidence: [historical audit](ASSET_AUDIT_2026-10-15.md), [upload review](ART_ASSET_REVIEW_2026-10-15.md), [integration report](PIXEL_ART_INTEGRATION.md), and recovered `docs/licenses/FOREST_HISTORICAL_TERMS.txt`. Hash identity does not supply missing permission.
+No group is assigned CC0 simply because it is free. For pending groups, no source-sharing permission, credit waiver or modification permission is inferred. Existing CC0 applies only to original project media.
+
+## Forest evidence and scope
+
+Primary evidence recovered from historical commit `f3d6d48`:
+
+- [Original README](licenses/FOREST_HISTORICAL_README.txt): “Artwork created by Eder Muniz” and “Free Pixel Art Forest.”
+- [Bundled license/FAQ](licenses/FOREST_HISTORICAL_TERMS.txt): “You can use any asset personally and commercially”; “You can modify/ adapt the asset”; “You must give appropriate credit.” It prohibits asset-file sharing/resale even after modification. The FAQ explicitly permits free/commercial game use.
+- All 12 selected PNG hashes match the historical pack. Stable historical evidence URLs, the owner-confirmed original creator URL and this verification basis are recorded in `tools/release_assets.json`.
+
+These **custom terms are not plain CC BY or CC0**. They authorize game use; they do not authorize publishing the forest PNG/PSD assets or a source-project/asset bundle. Use as runtime artwork inside the compiled game, include credit and preserve the applicable terms. No additional encryption requirement or new custom permission is invented: the applicable bundled grant is the permission evidence. This clearance does not clear any other pack or permit raw source redistribution.
+
+## Documents still needed for independent public clearance
+
+The original URLs are supplied; there is no need to send them again. The owner has asked work to proceed with the approved art and reconfirmed commercial-use permission. **Development/private QA proceeds without further document requests.** The list below records remaining independent-verification evidence for a later public-clearance review; it does not block the private QA build.
+
+| Group | Remaining evidence |
+|---|---|
+| Joe Idaho character | Saved creator-page license/usage text, screenshot/PDF, original bundled license/README or creator permission explicitly covering commercial compiled-game distribution, credit, modifications and source-file restrictions. Include any character/IP restriction in that pack's terms, given the historical Dante file group. |
+| Immortal Burrito Blood Demons | The creator's applicable license/usage text or bundled license/README covering the same commercial-game, attribution, modification and raw-file conditions. |
+| Adwit Rahman UI | The creator's applicable license/usage text or bundled license/README covering the same conditions. A free download or credit image alone does not establish them. |
+| Forest | **No additional permission document required for this compiled-game clearance.** Preserve the confirmed URL, matching pack identity, bundled terms and mandatory credit. Any contrary/additional terms in the owner's original archive should be included if they exist. |
+
+Archive name/version/date or a file list, if available, helps connect the pending packs' terms to these selected PNGs. No purchase receipt is required for a free pack unless the actual license makes an entitlement necessary. No messages are sent to creators by this task.
+
+## Live verification and network limitation
+
+All four supplied URLs were requested via the configured proxy. **Each failed at CONNECT with HTTP 403, curl exit 56 / origin status 000.** These were environment policy denials, not responses from the creator pages. No HTML/license terms were retrieved. Repository/upload text files, historical README/license, hash inventory and image/authoring metadata were also inspected; character/enemy/UI terms were not found. Adobe/W3C/XML namespace links are metadata schemas, not licenses.
+
+A minimal allow-list draft was attempted using the supported configuration tool for only `joe-idaho.itch.io`, `immortal-burrito.itch.io`, `adwitr.itch.io` and `edermunizz.itch.io`. The tool returned **`draft_not_editable`**; a reread showed no saved rule changes. No network update was confirmed or applied. [Transferable proposal](ASSET_LICENSE_NETWORK_PROPOSAL.json) preserves the exact intended change. If environment access is enabled through the supported settings workflow, live verification can continue; supplying saved license text avoids that dependency. No proxy bypass or alternate-domain workaround is used.
+
+## Gate, existing artifacts and checks
+
+Forest is promoted to `verified` for compiled-game use with primary evidence. Character/enemy/UI stay `unverified`. The owner statement is stored separately and is not substituted for creator terms in gate evidence. Public packaging remains blocked until **all** selected groups have documented applicable permission.
+
+- Inventory audit: **47 selected paths unchanged; 14 third-party PNGs pending; three blocking groups; 33 source assets cleared for compiled-game packaging** (12 forest + 21 original). All 26 third-party files/evidence are hash-bound to this review.
+- `python3 tools/release.py` returned expected **exit 1 / PUBLIC PACKAGING BLOCKED**, before export. Private QA build code and committed public quarantine are unchanged.
+- Existing Windows executable, private QA ZIP and Linux artifact SHA-256 hashes still match `RC_ARTIFACTS.json`. The original archive and its embedded report/manifest were preserved under `dist/private-qa/history/842c15a/`. The owner-directed refreshed QA build now uses the updated credits/report; [refresh results](ASSET_LICENSE_QA_REFRESH.md).
+- `git diff --check` and metadata/evidence checks passed; gameplay, art, scenes, project settings, export presets and `tools/release.py` remain unchanged. The initial review was documentation/metadata-only. After the owner directed work to continue, the full headless/private QA export pipeline was rerun successfully; [actual refreshed results](ASSET_LICENSE_QA_REFRESH.md). Native Windows execution remains untested.
+- `origin/main` was fetched at `d6b9e82` (owner-merged RC PR #6); no newer asset/license changes were present. Follow-up branch: `review/asset-license-verification`.
+
+## Other media and notices
+
+Original project media (14 SVGs, seven synthesized WAVs) remain CC0 under `resources/original/LICENSE.txt`; that grant does not license uploaded art or change pre-existing code rights. Godot MIT, bundled Noto Sans OFL and third-party notices remain in `GODOT_LICENSE.txt` / `GODOT_COPYRIGHT.txt`. Keep all applicable notices/credits in future packages. Unused sprites/UI options and all PSD/Aseprite/GIF source/reference files remain excluded from game export; source redistribution is separate from commercial game use.
+
+Updated credits: [RC_CREDITS.txt](RC_CREDITS.txt). Previous build/test record: [RC_VALIDATION.md](RC_VALIDATION.md). The owner-directed updated private QA build with the new credits/evidence is complete; [its verified results and current download paths](ASSET_LICENSE_QA_REFRESH.md) are recorded separately. No merge or itch.io publication is performed. Native Windows sign-off is still required independently of licensing.

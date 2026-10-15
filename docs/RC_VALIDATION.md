@@ -1,6 +1,6 @@
 # Stylebreaker — Pre-Alpha v0.1.0 release-candidate record
 
-**NOT READY FOR PUBLIC RELEASE.** Character, enemy and UI rights are unverified; forest provenance/current terms and packaging need review. Native Windows playtesting has not happened. No public pixel ZIP, itch.io upload or automatic merge was performed.
+**NOT READY FOR PUBLIC RELEASE.** Current license follow-up: [asset report](RC_ASSET_LICENSE_REPORT.md) documents forest compiled-game permission with credit; character/enemy/UI creator terms remain pending. The owner-directed [QA refresh](ASSET_LICENSE_QA_REFRESH.md) has newer artifacts and fresh headless/export checks. The build evidence below is the retained **842c15a historical record**; its binaries/ZIP are archived as described in the refresh. Native Windows playtesting has not happened. No public pixel ZIP, itch.io upload or automatic merge was performed.
 
 Branch: `release/prealpha-v0.1.0-rc`, based on approved integration merge **d319aae**. Tested build source: **842c15a7d31c5016b938bb8fb23d0244c9df9207**, clean worktree. Later commits record evidence/docs/audit tooling only; no game-code change follows that build.
 
@@ -38,10 +38,10 @@ Initial missing-dependency and controller failures were fixed and retested; diag
 
 ## Private QA artifacts — do not distribute
 
-- Windows executable: `builds/rc-private-qa/windows/Stylebreaker.exe`.
-- ZIP: `dist/private-qa/Stylebreaker-PreAlpha-v0.1.0-windows-x86_64-PRIVATE-QA-NOT-FOR-DISTRIBUTION.zip`.
-- SHA-256 sidecar alongside the ZIP; full artifact record: [RC_ARTIFACTS.json](RC_ARTIFACTS.json).
-- Build logs, exact argv/cwd, license manifest, temporary export configuration, 156-file pack inventory, derived-media audit and SHA-256 map: `builds/rc-private-qa/`.
+- Historical Windows executable: `builds/rc-private-qa-history/842c15a/windows/Stylebreaker.exe`.
+- Historical ZIP: `dist/private-qa/history/842c15a/Stylebreaker-PreAlpha-v0.1.0-windows-x86_64-PRIVATE-QA-NOT-FOR-DISTRIBUTION.zip`.
+- SHA-256 sidecar alongside the ZIP; historical artifact record: [RC_ARTIFACTS_842c15a_ARCHIVED.json](RC_ARTIFACTS_842c15a_ARCHIVED.json); current artifacts: [QA refresh](ASSET_LICENSE_QA_REFRESH.md).
+- Historical logs/reports/executables: `builds/rc-private-qa-history/842c15a/`; current refresh logs/artifacts use `builds/rc-private-qa/`.
 - Older ignored `builds/windows/` and root `dist/` artifacts belong to the previous fallback candidate and were left recoverable. They are not this RC. No binaries/ZIPs are committed or attached to a GitHub release.
 
 ZIP SHA-256:
