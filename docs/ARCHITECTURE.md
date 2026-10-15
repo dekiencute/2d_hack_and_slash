@@ -30,3 +30,7 @@ A hit goes through:
 `AttackData -> AttackHitbox -> target.receive_hit(AttackData, facing, attacker)`
 
 Style scoring is downstream of a confirmed hit.
+
+## Standalone presentation
+
+`pixel_art/arena.tscn` owns gameplay nodes directly. `pixel_art/arena.gd` is the director, player/enemy resources reference uploaded PNGs natively, `pixel_camera.gd` owns integer camera/parallax framing, and HUD/actors own their pixel health bars. `systems/combat_audio.gd` handles retained sounds only. Warnings are functional text/tint; attack artwork comes from the supplied sheets.

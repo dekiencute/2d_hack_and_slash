@@ -1,10 +1,74 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene format=3]
 
-[ext_resource type="PackedScene" path="res://levels/main.tscn" id="1"]
-[ext_resource type="Script" path="res://pixel_art/presentation.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://cga43oetvehm4" path="res://actors/player/player.tscn" id="1"]
+[ext_resource type="Script" uid="uid://b2elnw8r0l8cm" path="res://systems/hitstop.gd" id="3"]
+[ext_resource type="Script" uid="uid://1f4dle8wp5gp" path="res://systems/style/style_system.gd" id="4"]
+[ext_resource type="PackedScene" uid="uid://dbsilj3p4rm5u" path="res://ui/hud.tscn" id="5"]
+[ext_resource type="Script" uid="uid://ubbwwulvu05k" path="res://pixel_art/arena.gd" id="6"]
 
-[node name="PixelArena" instance=ExtResource("1")]
+[ext_resource type="Script" path="res://systems/combat_audio.gd" id="8_feedback"]
+
+[ext_resource type="PackedScene" path="res://pixel_art/forest_layers.tscn" id="9_forest"]
+[ext_resource type="Script" path="res://pixel_art/pixel_camera.gd" id="10_camera"]
+
+[sub_resource type="RectangleShape2D" id="FloorShape"]
+size = Vector2(1700, 60)
+
+[sub_resource type="RectangleShape2D" id="LeftWallShape"]
+size = Vector2(40, 720)
+
+[sub_resource type="RectangleShape2D" id="RightWallShape"]
+size = Vector2(40, 720)
+
+[node name="PixelArena" type="Node2D"]
 texture_filter = 1
+script = ExtResource("6")
 
-[node name="PixelPresentation" type="Node2D" parent="."]
-script = ExtResource("2")
+[node name="HitStop" type="Node" parent="." unique_id=275613206]
+script = ExtResource("3")
+
+[node name="StyleSystem" type="Node" parent="." unique_id=896370091]
+script = ExtResource("4")
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=737903743]
+visible = false
+position = Vector2(640, 646)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=1721583799]
+shape = SubResource("FloorShape")
+
+[node name="LeftWall" type="StaticBody2D" parent="." unique_id=1157327190]
+position = Vector2(-100, 360)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall" unique_id=922894020]
+shape = SubResource("LeftWallShape")
+
+[node name="RightWall" type="StaticBody2D" parent="." unique_id=463015958]
+position = Vector2(1380, 360)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall" unique_id=1595740187]
+shape = SubResource("RightWallShape")
+
+[node name="Player" parent="." unique_id=1631429518 instance=ExtResource("1")]
+position = Vector2(300, 616)
+
+[node name="CombatFeedback" type="Node2D" parent="."]
+script = ExtResource("8_feedback")
+
+[node name="Enemies" type="Node2D" parent="." unique_id=754493217]
+
+[node name="HUD" parent="." unique_id=976301628 instance=ExtResource("5")]
+
+
+[node name="Forest" parent="." instance=ExtResource("9_forest")]
+position = Vector2(688, 350)
+scale = Vector2(2, 2)
+z_index = -100
+
+[node name="PixelCamera" type="Camera2D" parent="."]
+process_mode = 3
+position_smoothing_enabled = false
+script = ExtResource("10_camera")

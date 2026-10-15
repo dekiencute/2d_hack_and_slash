@@ -1,11 +1,5 @@
-# Stylebreaker pre-alpha playtest
+# Stylebreaker pixel-art playtest
 
-Clear five waves. Enemies get tougher each wave, with at most two attack windups at once. Keyboard/controller controls are on the title and pause screens; see [player readme](docs/PLAYER_README.txt).
+Start the standalone arena with F5. Test ground/air chains, launcher/slam, double jump, dash invulnerability/cancel, Style, pause/restart, defeat and all five waves. Enemy warning text is `! STRIKE !`; yellow tint also marks windup. All illustrative attack/slash pixels come from supplied character/enemy sheets. Hit/damage feedback uses health changes, tint, hitstop and existing sounds.
 
-Try `J → J → K → Jump → J → J → K`. Double-jump and dash are preserved. Air light hits suspend both the player and an airborne target. Watch the gold rings and `! STRIKE !` before enemy strikes.
-
-Evaluate responsiveness, launcher follow-up/juggles, visibility of warnings in crowds, defensive dash usefulness, and whether move variety feels worthwhile. There are no new weapons or combat rules in this release.
-
-Before public Windows release, extract the candidate ZIP into a fresh directory, run the executable outside the editor, and play through victory and defeat. Check keyboard/controller input, SFX/mute, pause during a windup, R retry during hitstop, and full-screen/resized UI. Record Windows version, GPU and controller. Automated lethal-hit wave progression tests do not validate difficulty or replace a human playthrough.
-
-AnimationPlayer still keys `Sprite.animation` and `Sprite.frame`, with AnimationTree selecting states. The new original atlases retain those frame regions and timings. Move data and five-wave tuning are unchanged.
+Test the exact extracted Windows executable outside the editor on native Windows before public approval. Controller events and wave progression can be automated; those checks do not replace a physical-device, audible-output or human balance playtest. See `docs/RC_WINDOWS_PLAYTEST.md` and `docs/CLEANUP_REPORT.md`.

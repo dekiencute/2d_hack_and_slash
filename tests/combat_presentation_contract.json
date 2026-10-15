@@ -1,0 +1,1135 @@
+{
+	"animations": {
+		"AirHeavy": {
+			"length": 0.375,
+			"loop": 0,
+			"tracks": [
+				{
+					"keys": [
+						{
+							"time": 0.0,
+							"value": "&\"air_heavy\""
+						}
+					],
+					"path": "Sprite:animation",
+					"type": 0
+				},
+				{
+					"keys": [
+						{
+							"time": 0.0,
+							"value": "0"
+						},
+						{
+							"time": 0.0379999987781048,
+							"value": "1"
+						},
+						{
+							"time": 0.0764999985694885,
+							"value": "2"
+						},
+						{
+							"time": 0.114100001752377,
+							"value": "6"
+						},
+						{
+							"time": 0.150199994444847,
+							"value": "6"
+						},
+						{
+							"time": 0.184000000357628,
+							"value": "6"
+						},
+						{
+							"time": 0.220100000500679,
+							"value": "6"
+						},
+						{
+							"time": 0.257699996232986,
+							"value": "6"
+						}
+					],
+					"path": "Sprite:frame",
+					"type": 0
+				}
+			]
+		},
+		"AirLight_01": {
+			"length": 0.212120994925499,
+			"loop": 0,
+			"tracks": [
+				{
+					"keys": [
+						{
+							"time": 0.0,
+							"value": "&\"air_light_01\""
+						}
+					],
+					"path": "Sprite:animation",
+					"type": 0
+				},
+				{
+					"keys": [
+						{
+							"time": 0.0,
+							"value": "0"
+						},
+						{
+							"time": 0.0303029995411634,
+							"value": "1"
+						},
+						{
+							"time": 0.0606059990823269,
+							"value": "2"
+						},
+						{
+							"time": 0.0909089967608452,
+							"value": "3"
+						},
+						{
+							"time": 0.121211998164654,
+							"value": "4"
+						},
+						{
+							"time": 0.151515007019043,
+							"value": "5"
+						},
+						{
+							"time": 0.18181799352169,
+							"value": "6"
+						}
+					],
+					"path": "Sprite:frame",
+					"type": 0
+				}
+			]
+		},
+		"AirLight_02": {
+			"length": 0.21875,
+			"loop": 0,
+			"tracks": [
+				{
+					"keys": [
+						{
+							"time": 0.0,
+							"value": "&\"air_light_02\""
+						}
+					],
+					"path": "Sprite:animation",
+					"type": 0
+				},
+				{
+					"keys": [
+						{
+							"time": 0.0,
+							"value": "0"
+						},
+						{
+							"time": 0.03125,
+							"value": "1"
+						},
+						{
+							"time": 0.0625,
+							"value": "2"
+						},
+						{
+							"time": 0.09375,
+							"value": "3"
+						},
+						{
+							"time": 0.125,
+							"value": "4"
+						},
+						{
+							"time": 0.15625,
+							"value": "5"
+						},
+						{
+							"time": 0.1875,
+							"value": "6"
+						}
+					],
+					"path": "Sprite:frame",
+					"type": 0
+				}
+			]
+		},
+		"AirLight_03": {
+			"length": 0.333332985639572,
+			"loop": 0,
+			"tracks": [
+				{
+					"keys": [
+						{
+							"time": 0.0,
+							"value": "&\"air_light_03\""
+						}
+					],
+					"path": "Sprite:animation",
+					"type": 0
+				},
+				{
+					"keys": [
+						{
+							"time": 0.0,
+							"value": "0"
+						},
+						{
+							"time": 0.0370370000600815,
+							"value": "1"
+						},
+						{
+							"time": 0.074074000120163,
+							"value": "2"
+						},
+						{
+							"time": 0.111111000180244,
+							"value": "3"
+						},
+						{
+							"time": 0.148148000240326,
+							"value": "4"
+						},
+						{
+							"time": 0.185185000300407,
+							"value": "5"
+						},
+						{
+							"time": 0.222222000360489,
+							"value": "6"
+						},
+						{
+							"time": 0.259258985519409,
+							"value": "7"
+						},
+						{
+							"time": 0.296296000480652,
+							"value": "8"
+						}
+					],
+					"path": "Sprite:frame",
+					"type": 0
+				}
+			]
+		},
+		"Dash": {
+			"length": 0.121211998164654,
+			"loop": 0,
+			"tracks": [
+				{
+					"keys": [
+						{
+							"time": 0.0,
+							"value": "&\"dash\""
+						}
+					],
+					"path": "Sprite:animation",
+					"type": 0
+				},
+				{
+					"keys": [
+						{
+							"time": 0.0,
+							"value": "0"
+						},
+						{
+							"time": 0.0303029995411634,
+							"value": "1"
+						},
+						{
+							"time": 0.0606059990823269,
+							"value": "2"
+						},
+						{
+							"time": 0.0909089967608452,
+							"value": "3"
+						}
+					],
+					"path": "Sprite:frame",
+					"type": 0
+				}
+			]
+		},
+		"Fall": {
+			"length": 1.0,
+			"loop": 0,
+			"tracks": [
+				{
+					"keys": [
+						{
+							"time": 0.0,
+							"value": "&\"fall\""
+						}
+					],
+					"path": "Sprite:animation",
+					"type": 0
+				},
+				{
+					"keys": [
+						{
+							"time": 0.0,
+							"value": "0"
+						}
+					],
+					"path": "Sprite:frame",
+					"type": 0
+				}
+			]
+		},
+		"Idle": {
+			"length": 1.0,
+			"loop": 1,
+			"tracks": [
+				{
+					"keys": [
+						{
+							"time": 0.0,
+							"value": "&\"idle\""
+						}
+					],
+					"path": "Sprite:animation",
+					"type": 0
+				},
+				{
+					"keys": [
+						{
+							"time": 0.0,
+							"value": "0"
+						}
+					],
+					"path": "Sprite:frame",
+					"type": 0
+				}
+			]
+		},
+		"Jump": {
+			"length": 1.0,
+			"loop": 0,
+			"tracks": [
+				{
+					"keys": [
+						{
+							"time": 0.0,
+							"value": "&\"jump\""
+						}
+					],
+					"path": "Sprite:animation",
+					"type": 0
+				},
+				{
+					"keys": [
+						{
+							"time": 0.0,
+							"value": "0"
+						}
+					],
+					"path": "Sprite:frame",
+					"type": 0
+				}
+			]
+		},
+		"Launcher": {
+			"length": 0.333332985639572,
+			"loop": 0,
+			"tracks": [
+				{
+					"keys": [
+						{
+							"time": 0.0,
+							"value": "&\"launcher\""
+						}
+					],
+					"path": "Sprite:animation",
+					"type": 0
+				},
+				{
+					"keys": [
+						{
+							"time": 0.0,
+							"value": "0"
+						},
+						{
+							"time": 0.0238099992275238,
+							"value": "1"
+						},
+						{
+							"time": 0.0476190000772476,
+							"value": "2"
+						},
+						{
+							"time": 0.0714289993047714,
+							"value": "3"
+						},
+						{
+							"time": 0.0952380001544952,
+							"value": "4"
+						},
+						{
+							"time": 0.119047999382019,
+							"value": "5"
+						},
+						{
+							"time": 0.142857000231743,
+							"value": "6"
+						},
+						{
+							"time": 0.166666999459267,
+							"value": "7"
+						},
+						{
+							"time": 0.19047600030899,
+							"value": "8"
+						},
+						{
+							"time": 0.214285999536514,
+							"value": "9"
+						},
+						{
+							"time": 0.238095000386238,
+							"value": "10"
+						},
+						{
+							"time": 0.261905014514923,
+							"value": "11"
+						},
+						{
+							"time": 0.285714000463486,
+							"value": "12"
+						},
+						{
+							"time": 0.30952399969101,
+							"value": "13"
+						}
+					],
+					"path": "Sprite:frame",
+					"type": 0
+				}
+			]
+		},
+		"Light_01": {
+			"length": 0.214285999536514,
+			"loop": 0,
+			"tracks": [
+				{
+					"keys": [
+						{
+							"time": 0.0,
+							"value": "&\"light_01\""
+						}
+					],
+					"path": "Sprite:animation",
+					"type": 0
+				},
+				{
+					"keys": [
+						{
+							"time": 0.0,
+							"value": "0"
+						},
+						{
+							"time": 0.0357140004634857,
+							"value": "1"
+						},
+						{
+							"time": 0.0714289993047714,
+							"value": "2"
+						},
+						{
+							"time": 0.107142999768257,
+							"value": "3"
+						},
+						{
+							"time": 0.142857000231743,
+							"value": "4"
+						},
+						{
+							"time": 0.178571000695229,
+							"value": "5"
+						}
+					],
+					"path": "Sprite:frame",
+					"type": 0
+				}
+			]
+		},
+		"Light_02": {
+			"length": 0.222222000360489,
+			"loop": 0,
+			"tracks": [
+				{
+					"keys": [
+						{
+							"time": 0.0,
+							"value": "&\"light_02\""
+						}
+					],
+					"path": "Sprite:animation",
+					"type": 0
+				},
+				{
+					"keys": [
+						{
+							"time": 0.0,
+							"value": "0"
+						},
+						{
+							"time": 0.0277779996395111,
+							"value": "1"
+						},
+						{
+							"time": 0.0555559992790222,
+							"value": "2"
+						},
+						{
+							"time": 0.0833330005407333,
+							"value": "3"
+						},
+						{
+							"time": 0.111111000180244,
+							"value": "4"
+						},
+						{
+							"time": 0.138888999819756,
+							"value": "5"
+						},
+						{
+							"time": 0.166666999459267,
+							"value": "6"
+						},
+						{
+							"time": 0.194444000720978,
+							"value": "7"
+						}
+					],
+					"path": "Sprite:frame",
+					"type": 0
+				}
+			]
+		},
+		"Light_03": {
+			"length": 0.333332985639572,
+			"loop": 0,
+			"tracks": [
+				{
+					"keys": [
+						{
+							"time": 0.0,
+							"value": "&\"light_03\""
+						}
+					],
+					"path": "Sprite:animation",
+					"type": 0
+				},
+				{
+					"keys": [
+						{
+							"time": 0.0,
+							"value": "0"
+						},
+						{
+							"time": 0.0277779996395111,
+							"value": "1"
+						},
+						{
+							"time": 0.0555559992790222,
+							"value": "2"
+						},
+						{
+							"time": 0.0833330005407333,
+							"value": "3"
+						},
+						{
+							"time": 0.111111000180244,
+							"value": "4"
+						},
+						{
+							"time": 0.138888999819756,
+							"value": "5"
+						},
+						{
+							"time": 0.166666999459267,
+							"value": "6"
+						},
+						{
+							"time": 0.194444000720978,
+							"value": "7"
+						},
+						{
+							"time": 0.222222000360489,
+							"value": "8"
+						},
+						{
+							"time": 0.25,
+							"value": "9"
+						},
+						{
+							"time": 0.277777999639511,
+							"value": "10"
+						},
+						{
+							"time": 0.305555999279022,
+							"value": "11"
+						}
+					],
+					"path": "Sprite:frame",
+					"type": 0
+				}
+			]
+		},
+		"RESET": {
+			"length": 0.00100000004749745,
+			"loop": 0,
+			"tracks": [
+				{
+					"keys": [
+						{
+							"time": 0.0,
+							"value": "&\"idle\""
+						}
+					],
+					"path": "Sprite:animation",
+					"type": 0
+				},
+				{
+					"keys": [
+						{
+							"time": 0.0,
+							"value": "0"
+						}
+					],
+					"path": "Sprite:frame",
+					"type": 0
+				}
+			]
+		},
+		"Run": {
+			"length": 0.800000011920929,
+			"loop": 1,
+			"tracks": [
+				{
+					"keys": [
+						{
+							"time": 0.0,
+							"value": "&\"run\""
+						}
+					],
+					"path": "Sprite:animation",
+					"type": 0
+				},
+				{
+					"keys": [
+						{
+							"time": 0.0,
+							"value": "0"
+						},
+						{
+							"time": 0.100000001490116,
+							"value": "1"
+						},
+						{
+							"time": 0.200000002980232,
+							"value": "2"
+						},
+						{
+							"time": 0.300000011920929,
+							"value": "3"
+						},
+						{
+							"time": 0.400000005960464,
+							"value": "4"
+						},
+						{
+							"time": 0.5,
+							"value": "5"
+						},
+						{
+							"time": 0.600000023841858,
+							"value": "6"
+						},
+						{
+							"time": 0.699999988079071,
+							"value": "7"
+						}
+					],
+					"path": "Sprite:frame",
+					"type": 0
+				}
+			]
+		}
+	},
+	"shapes": {
+		"Floor/CollisionShape2D": {
+			"position": "Vector2(0, 0)",
+			"properties": {
+				"size": "Vector2(1700, 60)"
+			}
+		},
+		"LeftWall/CollisionShape2D": {
+			"position": "Vector2(0, 0)",
+			"properties": {
+				"size": "Vector2(40, 720)"
+			}
+		},
+		"Player/AttackHitbox/CollisionShape2D": {
+			"position": "Vector2(0, 0)",
+			"properties": {
+				"size": "Vector2(58, 46)"
+			}
+		},
+		"Player/CollisionShape2D": {
+			"position": "Vector2(0, -27)",
+			"properties": {
+				"height": "54.0",
+				"radius": "14.0"
+			}
+		},
+		"RightWall/CollisionShape2D": {
+			"position": "Vector2(0, 0)",
+			"properties": {
+				"size": "Vector2(40, 720)"
+			}
+		}
+	},
+	"sprite_frames": {
+		"air_heavy": {
+			"frames": [
+				{
+					"duration": 1.0,
+					"region": "Rect2(80, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(160, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(240, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(320, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(400, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(480, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(560, 0, 80, 48)"
+				}
+			],
+			"loop": false,
+			"speed": 9.0
+		},
+		"air_light_01": {
+			"frames": [
+				{
+					"duration": 1.0,
+					"region": "Rect2(0, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(80, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(160, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(240, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(320, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(400, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(480, 0, 80, 48)"
+				}
+			],
+			"loop": false,
+			"speed": 8.0
+		},
+		"air_light_02": {
+			"frames": [
+				{
+					"duration": 1.0,
+					"region": "Rect2(0, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(80, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(160, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(240, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(320, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(400, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(480, 0, 80, 48)"
+				}
+			],
+			"loop": false,
+			"speed": 7.0
+		},
+		"air_light_03": {
+			"frames": [
+				{
+					"duration": 1.0,
+					"region": "Rect2(0, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(80, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(160, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(240, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(320, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(400, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(480, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(560, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(640, 0, 80, 48)"
+				}
+			],
+			"loop": false,
+			"speed": 9.0
+		},
+		"dash": {
+			"frames": [
+				{
+					"duration": 1.0,
+					"region": "Rect2(80, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(160, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(240, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(320, 0, 80, 48)"
+				}
+			],
+			"loop": false,
+			"speed": 9.0
+		},
+		"die": {
+			"frames": [
+				{
+					"duration": 1.0,
+					"region": "Rect2(0, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(80, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(160, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(240, 0, 80, 48)"
+				}
+			],
+			"loop": false,
+			"speed": 6.0
+		},
+		"fall": {
+			"frames": [
+				{
+					"duration": 1.0,
+					"region": "Rect2(80, 0, 80, 48)"
+				}
+			],
+			"loop": true,
+			"speed": 1.0
+		},
+		"idle": {
+			"frames": [
+				{
+					"duration": 1.0,
+					"region": "Rect2(0, 0, 80, 48)"
+				}
+			],
+			"loop": true,
+			"speed": 1.0
+		},
+		"jump": {
+			"frames": [
+				{
+					"duration": 1.0,
+					"region": "Rect2(0, 0, 80, 48)"
+				}
+			],
+			"loop": false,
+			"speed": 1.0
+		},
+		"launcher": {
+			"frames": [
+				{
+					"duration": 1.0,
+					"region": "Rect2(0, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(80, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(160, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(240, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(320, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(400, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(480, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(560, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(640, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(720, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(800, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(880, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(960, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(1040, 0, 80, 48)"
+				}
+			],
+			"loop": false,
+			"speed": 42.0
+		},
+		"light_01": {
+			"frames": [
+				{
+					"duration": 1.0,
+					"region": "Rect2(0, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(80, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(160, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(240, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(320, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(400, 0, 80, 48)"
+				}
+			],
+			"loop": false,
+			"speed": 8.0
+		},
+		"light_02": {
+			"frames": [
+				{
+					"duration": 1.0,
+					"region": "Rect2(0, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(80, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(160, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(240, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(320, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(400, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(480, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(560, 0, 80, 48)"
+				}
+			],
+			"loop": false,
+			"speed": 6.0
+		},
+		"light_03": {
+			"frames": [
+				{
+					"duration": 1.0,
+					"region": "Rect2(0, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(80, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(160, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(240, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(320, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(400, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(480, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(560, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(640, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(720, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(800, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(880, 0, 80, 48)"
+				}
+			],
+			"loop": false,
+			"speed": 9.0
+		},
+		"run": {
+			"frames": [
+				{
+					"duration": 1.0,
+					"region": "Rect2(0, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(80, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(160, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(240, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(320, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(400, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(480, 0, 80, 48)"
+				},
+				{
+					"duration": 1.0,
+					"region": "Rect2(560, 0, 80, 48)"
+				}
+			],
+			"loop": true,
+			"speed": 10.0
+		}
+	}
+}

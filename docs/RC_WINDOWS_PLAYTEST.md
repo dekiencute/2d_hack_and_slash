@@ -8,7 +8,7 @@ Record before play:
 - Windows version / x86_64: **pending**
 - GPU / driver / display resolution: **pending**
 - Controller model / connection: **pending**
-- ZIP and executable SHA-256: compare with [artifact record](RC_ARTIFACTS.json).
+- ZIP and executable SHA-256: compare with [cleanup build record](CLEANUP_REPORT.md).
 
 PowerShell hash check:
 

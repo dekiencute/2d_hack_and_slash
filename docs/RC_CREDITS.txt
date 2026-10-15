@@ -1,48 +1,35 @@
 STYLEBREAKER — PRE-ALPHA v0.1.0
 
-Existing game/combat: Stylebreaker project contributors.
-Engine: Godot Engine 4.6.3 stable, https://godotengine.org, MIT.
-Bundled Noto Sans font: SIL Open Font License 1.1. Full engine/font/library
+Game/combat: Stylebreaker project contributors.
+Godot Engine 4.6.3 stable, https://godotengine.org, MIT.
+Bundled Noto Sans: SIL Open Font License 1.1. Full engine/font/library
 notices: LICENSES/GODOT_LICENSE.txt and GODOT_COPYRIGHT.txt.
 
 PIXEL ART
 Forest art by Eder Muniz — Free Pixel Art Forest.
 https://edermunizz.itch.io/free-pixel-art-forest
-Commercial compiled-game use and modification allowed by original bundled
-terms; appropriate credit REQUIRED. Redistributing/reselling asset files
-as assets is prohibited even if modified. Custom terms, not CC0 or plain
-CC BY. Original README identifies the creator; all 12 layers match the
-historical licensed pack. Source URL supplied by owner; live page not read.
-See LICENSES/FOREST_HISTORICAL_TERMS.txt and FOREST_HISTORICAL_README.txt.
+Applicable bundled custom terms allow personal/commercial game use and
+modification, require credit and prohibit asset-file redistribution/resale
+as an asset, even modified. Not CC0 or plain CC BY. See the bundled forest
+README and historical terms. Live creator page was not retrieved.
 
-PROVISIONAL CREDITS — CREATOR LICENSE TERMS STILL PENDING
 Character artwork: Joe Idaho (joe-idaho).
-Side Scrolling Hack N Slash Character
 https://joe-idaho.itch.io/side-scrolling-hack-n-slash-character
-
 Enemy artwork: Immortal Burrito (immortal-burrito), Blood Demons.
 https://immortal-burrito.itch.io/blood-demons
-
-Pixel Health Bar Asset Pack by Adwit Rahman (adwitr / @adwitr_itch.io).
+Pixel Health Bar Asset Pack by Adwit Rahman (adwitr).
 https://adwitr.itch.io/pixel-health-bar-asset-pack
 
-These source accounts/URLs were supplied by the owner; the Adwit name is
-also present in the uploaded pack/credit filename. Actual creator-page
-terms were not retrieved. The owner confirms free acquisition with
-commercial game-use permission, but required credit wording, modification,
-compiled distribution and source-sharing conditions still need the
-applicable licenses. No CC0, credit waiver or raw-file permission assumed.
+These three source accounts/URLs were supplied by the owner. The owner
+confirms commercial game-use permission; actual creator terms and required
+credit wording remain independently unverified. Provisional credit does
+not establish source-file sharing rights. Public packaging remains gated.
 
-RETAINED ORIGINAL MEDIA
-11 fallback player SVG strips, enemy/arena/icon SVGs, existing line/arc VFX
-and seven synthesized sound effects: project original media, CC0 1.0.
-See LICENSES/ORIGINAL_ASSETS_CC0.txt. This does NOT license uploaded pixel
-art or change ownership/licensing of pre-existing project code.
+AUDIO
+Seven retained original synthesized sound effects: project contributors,
+CC0 1.0. See LICENSES/AUDIO_CC0.txt. This audio grant does not license
+third-party pixel artwork or change pre-existing code rights.
 
-RELEASE LIMITS
-Public packaging remains locked on character/enemy/UI terms. Permission
-to ship runtime artwork inside a compiled game is separate from sharing
-PNG/PSD/Aseprite files or a source-project bundle. Do not distribute the
-forest as source assets. See ASSET_LICENSE_REPORT.md for evidence and
-remaining documents. The private QA workflow stays owner-only; native
-Windows playtesting remains a separate release requirement.
+The approved uploaded pixel art is the only game presentation. Private QA
+is owner-only. No raw PSD/Aseprite/GIF sources are packaged. Native Windows
+playtesting and documented rights remain prerequisites for public release.
