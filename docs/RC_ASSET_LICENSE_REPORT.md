@@ -36,9 +36,9 @@ Primary evidence recovered from historical commit `f3d6d48`:
 
 These **custom terms are not plain CC BY or CC0**. They authorize game use; they do not authorize publishing the forest PNG/PSD assets or a source-project/asset bundle. Use as runtime artwork inside the compiled game, include credit and preserve the applicable terms. No additional encryption requirement or new custom permission is invented: the applicable bundled grant is the permission evidence. This clearance does not clear any other pack or permit raw source redistribution.
 
-## What is still needed from the owner
+## Documents still needed for independent public clearance
 
-The original URLs are now supplied; there is no need to send them again.
+The original URLs are supplied; there is no need to send them again. The owner has asked work to proceed with the approved art and reconfirmed commercial-use permission. **Development/private QA proceeds without further document requests.** The list below records remaining independent-verification evidence for a later public-clearance review; it does not block the private QA build.
 
 | Group | Remaining evidence |
 |---|---|
@@ -69,4 +69,4 @@ Forest is promoted to `verified` for compiled-game use with primary evidence. Ch
 
 Original project media (14 SVGs, seven synthesized WAVs) remain CC0 under `resources/original/LICENSE.txt`; that grant does not license uploaded art or change pre-existing code rights. Godot MIT, bundled Noto Sans OFL and third-party notices remain in `GODOT_LICENSE.txt` / `GODOT_COPYRIGHT.txt`. Keep all applicable notices/credits in future packages. Unused sprites/UI options and all PSD/Aseprite/GIF source/reference files remain excluded from game export; source redistribution is separate from commercial game use.
 
-Updated credits: [RC_CREDITS.txt](RC_CREDITS.txt). Previous build/test record: [RC_VALIDATION.md](RC_VALIDATION.md). No new build, merge or itch.io publication is performed by this review. Native Windows sign-off is still required independently of licensing.
+Updated credits: [RC_CREDITS.txt](RC_CREDITS.txt). Previous build/test record: [RC_VALIDATION.md](RC_VALIDATION.md). The owner has directed an updated private QA build with the new credits/evidence; its results are recorded separately after validation. No merge or itch.io publication is performed. Native Windows sign-off is still required independently of licensing.

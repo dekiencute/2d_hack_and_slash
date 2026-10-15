@@ -1,0 +1,36 @@
+{
+  "status": "NOT READY",
+  "private_qa": true,
+  "godot": "4.6.3.stable.official.7d41c59c4",
+  "build_source_commit": "842c15a7d31c5016b938bb8fb23d0244c9df9207",
+  "build_worktree_dirty": false,
+  "windows_native_execution": "NOT TESTED",
+  "asset_rights_cleared": false,
+  "sha256": {
+    "builds/rc-private-qa/windows/Stylebreaker.exe": "d3ec40f23fec209880a064370ed33ed0f253d298cba0188928e95198e47c2624",
+    "builds/rc-private-qa/linux/Stylebreaker.x86_64": "504e10d778ae33cc15a77170b66083210ee9d170a2c1aec884d41c716501ca77",
+    "dist/private-qa/Stylebreaker-PreAlpha-v0.1.0-windows-x86_64-PRIVATE-QA-NOT-FOR-DISTRIBUTION.zip": "2afcca7cd9544a81cb50fa2eb792ca3907e27c041b682d8948e2924084a12e8f"
+  },
+  "zip_members": [
+    "Stylebreaker-PreAlpha-v0.1.0-windows-x86_64-PRIVATE-QA-NOT-FOR-DISTRIBUTION/ASSET_LICENSE_REPORT.json",
+    "Stylebreaker-PreAlpha-v0.1.0-windows-x86_64-PRIVATE-QA-NOT-FOR-DISTRIBUTION/ASSET_LICENSE_REPORT.md",
+    "Stylebreaker-PreAlpha-v0.1.0-windows-x86_64-PRIVATE-QA-NOT-FOR-DISTRIBUTION/BUILD_MANIFEST.json",
+    "Stylebreaker-PreAlpha-v0.1.0-windows-x86_64-PRIVATE-QA-NOT-FOR-DISTRIBUTION/BUILD_STATUS.txt",
+    "Stylebreaker-PreAlpha-v0.1.0-windows-x86_64-PRIVATE-QA-NOT-FOR-DISTRIBUTION/CHANGELOG.md",
+    "Stylebreaker-PreAlpha-v0.1.0-windows-x86_64-PRIVATE-QA-NOT-FOR-DISTRIBUTION/CREDITS.txt",
+    "Stylebreaker-PreAlpha-v0.1.0-windows-x86_64-PRIVATE-QA-NOT-FOR-DISTRIBUTION/LICENSES/FOREST_HISTORICAL_TERMS.txt",
+    "Stylebreaker-PreAlpha-v0.1.0-windows-x86_64-PRIVATE-QA-NOT-FOR-DISTRIBUTION/LICENSES/GODOT_COPYRIGHT.txt",
+    "Stylebreaker-PreAlpha-v0.1.0-windows-x86_64-PRIVATE-QA-NOT-FOR-DISTRIBUTION/LICENSES/GODOT_LICENSE.txt",
+    "Stylebreaker-PreAlpha-v0.1.0-windows-x86_64-PRIVATE-QA-NOT-FOR-DISTRIBUTION/LICENSES/ORIGINAL_ASSETS_CC0.txt",
+    "Stylebreaker-PreAlpha-v0.1.0-windows-x86_64-PRIVATE-QA-NOT-FOR-DISTRIBUTION/README.txt",
+    "Stylebreaker-PreAlpha-v0.1.0-windows-x86_64-PRIVATE-QA-NOT-FOR-DISTRIBUTION/Stylebreaker.exe"
+  ],
+  "pack_file_count": 156,
+  "declared_media_count": 47,
+  "media_audit": true,
+  "archived_sha256": {
+    "builds/rc-private-qa-history/842c15a/windows/Stylebreaker.exe": "d3ec40f23fec209880a064370ed33ed0f253d298cba0188928e95198e47c2624",
+    "builds/rc-private-qa-history/842c15a/linux/Stylebreaker.x86_64": "504e10d778ae33cc15a77170b66083210ee9d170a2c1aec884d41c716501ca77",
+    "dist/private-qa/history/842c15a/Stylebreaker-PreAlpha-v0.1.0-windows-x86_64-PRIVATE-QA-NOT-FOR-DISTRIBUTION.zip": "2afcca7cd9544a81cb50fa2eb792ca3907e27c041b682d8948e2924084a12e8f"
+  }
+}
