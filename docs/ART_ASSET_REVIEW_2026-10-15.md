@@ -148,3 +148,7 @@ Tested with **Godot 4.6.3.stable.official.7d41c59c4** on Linux:
 | Scope / source integrity | `git diff --exit-code origin/main -- actors combat levels systems ui assets/Art` passed. SHA-256 verified all 86 uploads unchanged. `git diff --check` and Python syntax check passed. |
 
 Not tested: native Aseprite/Photoshop editing or full PSD layer correctness, permission/entitlement with asset creators, Windows executable execution, physical controller/audio devices, or a new playable integration of the uploaded art. No new Windows executable was built or published by this review. The preview is an inspection tool, not approval of rights or an integrated combat animation set.
+
+## Separate review branch / PR status
+
+Committed on `review/art-asset-preview-2026-10-15`, based on `origin/main` at `74ee68d`, and pushed successfully. Automatic PR creation was attempted with `gh pr create`; GitHub's API returned `Post "https://api.github.com/graphql": Forbidden`, so this environment could not create the requested PR. [Open the separate branch comparison](https://github.com/dekiencute/2d_hack_and_slash/compare/main...review/art-asset-preview-2026-10-15?expand=1); [the prepared PR description](ART_PREVIEW_PR_DESCRIPTION.md) contains scope, findings and validation for review.
