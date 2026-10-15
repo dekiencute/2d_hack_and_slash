@@ -30,10 +30,10 @@ def main():
  with (ROOT/'docs/CLEANUP_DELETIONS.csv').open() as f:
   for row in csv.DictReader(f):
    p=Path(row['path'])
-   if not p.is_absolute():
+   if not p.is_absolute() and not row['path'].startswith(('.godot/','builds/','dist/','tools/__pycache__/')):
     deleted.append(row['path'])
     # Regenerated caches/build output are deliberately not treated as source.
-    if not row['path'].startswith(('.godot/','builds/','dist/','tools/__pycache__/')) and (ROOT/p).is_file():errors.append('Deleted source reappeared: '+str(p))
+    if (ROOT/p).is_file():errors.append('Deleted source reappeared: '+str(p))
  if args.pack:
   entries=json.loads(args.pack.read_text())['files']
   for e in entries:
