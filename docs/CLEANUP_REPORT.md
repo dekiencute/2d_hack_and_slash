@@ -59,3 +59,7 @@ Open `project.godot` with Godot 4.6.3 and press **F5** to try the standalone sce
 No uploaded app icon or separate pixel hit/dash particle set is selected. No replacement is generated: the executable keeps its engine shell icon, attacks use authored sheet pixels, and impact/dash feedback uses existing sounds, tint, health, hitstop and functional warning text. These presentation gaps are documented separately from release-blocking rights and native testing.
 
 Separate branch: `cleanup/pixel-art-only`. No automatic merge or itch.io publication.
+
+## Delivery
+
+The cleanup commits are pushed to `origin/cleanup/pixel-art-only` and the remote head was verified with `git ls-remote`. Creating the PR with `gh pr create --repo dekiencute/2d_hack_and_slash --base main --head cleanup/pixel-art-only` failed: `Post "https://api.github.com/graphql": Forbidden` (environment network policy). No PR number or successful creation is claimed. [Prepared PR description](CLEANUP_PR.md); [open the review form](https://github.com/dekiencute/2d_hack_and_slash/pull/new/cleanup/pixel-art-only). No merge or publication was performed.
