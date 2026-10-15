@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AttackData" format=3 uid="uid://dn4435xheio4y"]
+
+[ext_resource type="Script" uid="uid://b435isjtoomwb" path="res://combat/attacks/attack_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+move_id = &"light_01"
+animation_state = &"Light_01"
+damage = 8.0
+startup = 0.05
+active = 0.07
+recovery = 0.1
+hitstun = 0.16
+knockback_x = 90.0
+hitstop = 0.025
+lunge_speed = 130.0
+lunge_time = 0.05

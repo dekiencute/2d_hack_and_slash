@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://dbsilj3p4rm5u"]
+
+[ext_resource type="Script" uid="uid://dc47ige3gotn0" path="res://ui/hud.gd" id="1"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1")
+
+[node name="TopLeft" type="MarginContainer" parent="."]
+offset_left = 28.0
+offset_top = 22.0
+offset_right = 380.0
+offset_bottom = 220.0
+
+[node name="VBox" type="VBoxContainer" parent="TopLeft"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="HPLabel" type="Label" parent="TopLeft/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "HP  100 / 100"
+
+[node name="HPBar" type="ProgressBar" parent="TopLeft/VBox"]
+custom_minimum_size = Vector2(300, 22)
+layout_mode = 2
+max_value = 100.0
+value = 100.0
+show_percentage = false
+
+[node name="Style" type="Label" parent="TopLeft/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "STYLE  D"
+
+[node name="Score" type="Label" parent="TopLeft/VBox"]
+layout_mode = 2
+text = "Score: 0000"
+
+[node name="TopRight" type="MarginContainer" parent="."]
+offset_left = 1010.0
+offset_top = 24.0
+offset_right = 1250.0
+offset_bottom = 115.0
+
+[node name="VBox" type="VBoxContainer" parent="TopRight"]
+layout_mode = 2
+
+[node name="Wave" type="Label" parent="TopRight/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "WAVE  0 / 5"
+horizontal_alignment = 2
+
+[node name="Enemies" type="Label" parent="TopRight/VBox"]
+layout_mode = 2
+text = "ENEMIES  0"
+horizontal_alignment = 2
+
+[node name="CenterMessage" type="Label" parent="."]
+offset_left = 360.0
+offset_top = 125.0
+offset_right = 920.0
+offset_bottom = 235.0
+theme_override_colors/font_color = Color(1, 0.92, 0.66, 1)
+theme_override_font_sizes/font_size = 28
+text = "STYLEBREAKER ARENA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Controls" type="Label" parent="."]
+offset_left = 28.0
+offset_top = 592.0
+offset_right = 820.0
+offset_bottom = 705.0
+theme_override_colors/font_color = Color(0.8, 0.82, 0.88, 1)
+text = "A/D: Move    Space: Jump x2    Shift: Dash (invulnerable)\nJ: Light combo    K: Launcher / Air Heavy    R: Restart\nTry: J → J → K → Jump → J → J → K"
