@@ -5,7 +5,7 @@
       "id": "character",
       "status": "unverified",
       "evidence": [],
-      "attribution": "Creator and underlying character rights unresolved",
+      "attribution": "Character artwork: Joe Idaho (joe-idaho), Side Scrolling Hack N Slash Character; provisional until creator terms reviewed.",
       "files": [
         "assets/Art/Character/Idle.png",
         "assets/Art/Character/Run.png",
@@ -18,34 +18,85 @@
         "assets/Art/Character/AirCombo1.png",
         "assets/Art/Character/AirCombo2.png",
         "assets/Art/Character/AirCombo3.png"
-      ]
+      ],
+      "verification_state": "pending_creator_license_terms",
+      "creator": "Joe Idaho (joe-idaho; owner-identified source account)",
+      "source_url": "https://joe-idaho.itch.io/side-scrolling-hack-n-slash-character",
+      "source_url_verified": false,
+      "owner_statement_evidence": "docs/licenses/OWNER_COMMERCIAL_USE_STATEMENT_2026-10-15.md",
+      "license_name": "Not supplied / pending verification",
+      "compiled_game_permission": "owner_reported_not_yet_documented_by_creator_terms",
+      "source_file_redistribution": "not_established",
+      "modification_permission": "not_established",
+      "attribution_requirement": "not_established; source account now owner-identified, required credit wording pending creator terms",
+      "owner_needs_to_provide": [
+        "Saved creator-page license text, screenshot/PDF, bundled license/README or creator permission covering commercial compiled-game distribution, attribution, modifications and source-file restrictions.",
+        "Original archive name/version or file list if available, to connect the stated terms to these selected PNGs.",
+        "Include any character/IP restriction in the pack terms, given the historical Dante file group; no assumption is made that the depicted character is unrestricted."
+      ],
+      "source_link_confirmed_by_owner": true,
+      "source_verification_basis": "Exact URL supplied by owner; live itch.io page could not be retrieved (CONNECT proxy 403)."
     },
     {
       "id": "enemy",
       "status": "unverified",
       "evidence": [],
-      "attribution": "Demon Sword creator unresolved",
+      "attribution": "Enemy artwork: Immortal Burrito (immortal-burrito), Blood Demons; provisional until creator terms reviewed.",
       "files": [
         "assets/Art/Enemies/Demon_Sword/Sword.png"
-      ]
+      ],
+      "verification_state": "pending_creator_license_terms",
+      "creator": "Immortal Burrito (immortal-burrito; owner-identified source account)",
+      "source_url": "https://immortal-burrito.itch.io/blood-demons",
+      "source_url_verified": false,
+      "owner_statement_evidence": "docs/licenses/OWNER_COMMERCIAL_USE_STATEMENT_2026-10-15.md",
+      "license_name": "Not supplied / pending verification",
+      "compiled_game_permission": "owner_reported_not_yet_documented_by_creator_terms",
+      "source_file_redistribution": "not_established",
+      "modification_permission": "not_established",
+      "attribution_requirement": "not_established; source account now owner-identified, required credit wording pending creator terms",
+      "owner_needs_to_provide": [
+        "Saved creator-page license text, screenshot/PDF, bundled license/README or creator permission covering commercial compiled-game distribution, attribution, modifications and source-file restrictions.",
+        "Original archive name/version or file list if available, to connect the stated terms to these selected PNGs."
+      ],
+      "source_link_confirmed_by_owner": true,
+      "source_verification_basis": "Exact URL supplied by owner; live itch.io page could not be retrieved (CONNECT proxy 403)."
     },
     {
       "id": "ui",
       "status": "unverified",
       "evidence": [],
-      "attribution": "Pixel Health Bar Asset Pack 1 by Adwit Rahman (@adwitr_itch.io); credit is not permission",
+      "attribution": "Pixel Health Bar Asset Pack by Adwit Rahman (adwitr); provisional until creator terms reviewed.",
       "files": [
         "assets/Art/UI/Pixel Health Bar Asset Pack 1 by Adwit Rahman/Pixel Health Bar 1/Pixel1_Healthbar_0001_pixel1_healthbar.png",
         "assets/Art/UI/Pixel Health Bar Asset Pack 1 by Adwit Rahman/Pixel Health Bar 1/Pixel1_Healthbar_0002_pixel1_border.png"
-      ]
+      ],
+      "verification_state": "pending_creator_license_terms",
+      "creator": "Adwit Rahman (adwitr)",
+      "source_url": "https://adwitr.itch.io/pixel-health-bar-asset-pack",
+      "source_url_verified": false,
+      "owner_statement_evidence": "docs/licenses/OWNER_COMMERCIAL_USE_STATEMENT_2026-10-15.md",
+      "license_name": "Not supplied / pending verification",
+      "compiled_game_permission": "owner_reported_not_yet_documented_by_creator_terms",
+      "source_file_redistribution": "not_established",
+      "modification_permission": "not_established",
+      "attribution_requirement": "not_established; preserve known Adwit Rahman credit provisionally",
+      "creator_evidence": "Owner-supplied adwitr.itch.io pack URL and uploaded Adwit Rahman pack/credit filename; live creator page not retrieved.",
+      "owner_needs_to_provide": [
+        "Saved creator-page license text, screenshot/PDF, bundled license/README or creator permission covering commercial compiled-game distribution, attribution, modifications and source-file restrictions.",
+        "Original archive name/version or file list if available, to connect the stated terms to these selected PNGs."
+      ],
+      "source_link_confirmed_by_owner": true,
+      "source_verification_basis": "Exact URL supplied by owner; live itch.io page could not be retrieved (CONNECT proxy 403)."
     },
     {
       "id": "forest",
-      "status": "conditional",
+      "status": "verified",
       "evidence": [
-        "docs/licenses/FOREST_HISTORICAL_TERMS.txt"
+        "docs/licenses/FOREST_HISTORICAL_TERMS.txt",
+        "docs/licenses/FOREST_HISTORICAL_README.txt"
       ],
-      "attribution": "Free Pixel Art Forest by Eder Muniz; historical custom game-use terms require credit and prohibit source asset redistribution",
+      "attribution": "Forest art by Eder Muniz \u2014 Free Pixel Art Forest. Commercial compiled-game use allowed with credit; source asset redistribution prohibited.",
       "files": [
         "assets/Art/UI/Background/Background layers/Layer_0000_9.png",
         "assets/Art/UI/Background/Background layers/Layer_0001_8.png",
@@ -59,7 +110,25 @@
         "assets/Art/UI/Background/Background layers/Layer_0009_2.png",
         "assets/Art/UI/Background/Background layers/Layer_0010_1.png",
         "assets/Art/UI/Background/Background layers/Layer_0011_0.png"
-      ]
+      ],
+      "verification_state": "verified_compiled_game_only",
+      "creator": "Eder Muniz (edermunizz)",
+      "source_url": "https://edermunizz.itch.io/free-pixel-art-forest",
+      "source_url_verified": false,
+      "owner_statement_evidence": "docs/licenses/OWNER_COMMERCIAL_USE_STATEMENT_2026-10-15.md",
+      "license_name": "Historical custom Free Pixel Art Forest terms; not plain CC BY or CC0",
+      "compiled_game_permission": "allowed_by_applicable_bundled_terms",
+      "source_file_redistribution": "prohibited_by_historical_terms",
+      "modification_permission": "allowed_by_historical_terms",
+      "attribution_requirement": "required: Forest art by Eder Muniz",
+      "historical_evidence_urls": [
+        "https://github.com/dekiencute/2d_hack_and_slash/blob/f3d6d483d1da6fac2c85b21b794e174a8b547a45/resources/Environment/Free%20Pixel%20Art%20Forest/license.txt",
+        "https://github.com/dekiencute/2d_hack_and_slash/blob/f3d6d483d1da6fac2c85b21b794e174a8b547a45/resources/Environment/Free%20Pixel%20Art%20Forest/readme.txt"
+      ],
+      "owner_needs_to_provide": [],
+      "source_link_confirmed_by_owner": true,
+      "source_verification_basis": "Exact URL supplied by owner; live itch.io page could not be retrieved (CONNECT proxy 403).",
+      "verification_basis": "Original bundled README/license in matching historical pack, all 12 selected PNG hashes match, owner confirms original creator source URL. Clearance covers compiled game use, not source asset sharing; no live-page retrieval claimed."
     },
     {
       "id": "original_media",
@@ -93,5 +162,13 @@
       ]
     }
   ],
-  "note": "Verified requires reviewed commercial compiled-game use and all required notices. Uploaded source files are not granted CC0 by project notices."
+  "note": "Verified requires reviewed commercial compiled-game use and all required notices. Uploaded source files are not granted CC0 by project notices.",
+  "verification_review": {
+    "date": "2026-10-15",
+    "owner_statement": "docs/licenses/OWNER_COMMERCIAL_USE_STATEMENT_2026-10-15.md",
+    "owner_statement_scope": "Owner confirms free acquisition/commercial game-use permission and supplies the four creator download URLs. Creator terms remain missing for character/enemy/UI; forest has matching bundled license evidence.",
+    "live_source_check": "All four owner-supplied itch.io URLs attempted; each failed at managed CONNECT proxy with HTTP 403 (curl exit 56; origin status 000). No creator page content retrieved.",
+    "evidence_snapshot": "docs/licenses/SELECTED_THIRD_PARTY_EVIDENCE_2026-10-15.json",
+    "network_configuration_status": "Minimal four-host draft update attempted, rejected draft_not_editable; reread unchanged. No network configuration save/application confirmed."
+  }
 }

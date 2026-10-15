@@ -2,7 +2,7 @@
 
 A Godot **4.6.3** pixel-art 2D hack-and-slash pre-alpha: clear five waves in one forest arena. The owner-approved `pixel_art/arena.tscn` now starts with F5. The previous `levels/main.tscn` remains available with F6 or direct launch. No new artwork or mechanics were added by this release task.
 
-**Release status: NOT READY.** Character/enemy/UI rights remain unverified; forest terms require review. Native Windows playtesting is pending. The only new Windows artifact is private owner QA, not a public download. See [asset rights](docs/RC_ASSET_LICENSE_REPORT.md) and [release record](docs/RC_VALIDATION.md).
+**Release status: NOT READY.** Character/enemy/UI terms remain unverified; forest compiled-game use is documented with credit, while forest source-asset redistribution is prohibited. Native Windows playtesting is pending. The only new Windows artifact is private owner QA, not a public download. See [asset rights](docs/RC_ASSET_LICENSE_REPORT.md) and [release record](docs/RC_VALIDATION.md).
 
 Open `project.godot` and press F5, then choose **Enter the arena**. Keyboard and Xbox-style controller mappings appear on the title screen. The combat retains its data-driven three-hit ground/air chains, launcher, aerial slam, input buffer, double jump, dash cancellation/invulnerability, juggling, hitstop and Style scoring. Wave counts remain **2 / 3 / 3 / 4 / 5**, with at most two attackers.
 

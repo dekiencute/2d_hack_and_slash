@@ -1,6 +1,6 @@
 # Stylebreaker — Pre-Alpha v0.1.0 release-candidate record
 
-**NOT READY FOR PUBLIC RELEASE.** Character, enemy and UI rights are unverified; forest provenance/current terms and packaging need review. Native Windows playtesting has not happened. No public pixel ZIP, itch.io upload or automatic merge was performed.
+**NOT READY FOR PUBLIC RELEASE.** Current license follow-up: [asset report](RC_ASSET_LICENSE_REPORT.md) documents forest compiled-game permission with credit; character/enemy/UI creator terms remain pending. The build evidence below records the earlier QA artifact and is not rewritten by this later review. Native Windows playtesting has not happened. No public pixel ZIP, itch.io upload or automatic merge was performed.
 
 Branch: `release/prealpha-v0.1.0-rc`, based on approved integration merge **d319aae**. Tested build source: **842c15a7d31c5016b938bb8fb23d0244c9df9207**, clean worktree. Later commits record evidence/docs/audit tooling only; no game-code change follows that build.
 
