@@ -1,0 +1,257 @@
+{
+  "environment": {
+    "XDG_DATA_HOME": "/tmp/stylebreaker-cleanup/data",
+    "XDG_CONFIG_HOME": "/tmp/stylebreaker-cleanup/config",
+    "XDG_CACHE_HOME": "/tmp/stylebreaker-cleanup/cache"
+  },
+  "pipeline_invocation": [
+    "python",
+    "tools/release.py",
+    "--private-qa"
+  ],
+  "commands": [
+    {
+      "label": "version",
+      "command": [
+        "godot",
+        "--version"
+      ],
+      "cwd": "/workspace/2d_hack_and_slash",
+      "exit_code": 0
+    },
+    {
+      "label": "import",
+      "command": [
+        "godot",
+        "--headless",
+        "--editor",
+        "--path",
+        "/workspace/2d_hack_and_slash",
+        "--import",
+        "--quit"
+      ],
+      "cwd": "/workspace/2d_hack_and_slash",
+      "exit_code": 0
+    },
+    {
+      "label": "source-cleanup-audit",
+      "command": [
+        "python3",
+        "/workspace/2d_hack_and_slash/tools/check_pixel_only.py"
+      ],
+      "cwd": "/workspace/2d_hack_and_slash",
+      "exit_code": 0
+    },
+    {
+      "label": "pixel-source-regression",
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        "/workspace/2d_hack_and_slash",
+        "--script",
+        "tests/regression.gd"
+      ],
+      "cwd": "/workspace/2d_hack_and_slash",
+      "exit_code": 0
+    },
+    {
+      "label": "pixel-presentation",
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        "/workspace/2d_hack_and_slash",
+        "--script",
+        "tests/pixel_art_validation.gd"
+      ],
+      "cwd": "/workspace/2d_hack_and_slash",
+      "exit_code": 0
+    },
+    {
+      "label": "controller-death",
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        "/workspace/2d_hack_and_slash",
+        "--script",
+        "tests/release_controls_validation.gd"
+      ],
+      "cwd": "/workspace/2d_hack_and_slash",
+      "exit_code": 0
+    },
+    {
+      "label": "qa-import",
+      "command": [
+        "godot",
+        "--headless",
+        "--editor",
+        "--path",
+        "/tmp/stylebreaker-rc-9z4njxe4/project",
+        "--import",
+        "--quit"
+      ],
+      "cwd": "/workspace/2d_hack_and_slash",
+      "exit_code": 0
+    },
+    {
+      "label": "windows-export",
+      "command": [
+        "godot",
+        "--headless",
+        "--editor",
+        "--path",
+        "/tmp/stylebreaker-rc-9z4njxe4/project",
+        "--export-release",
+        "Windows Desktop",
+        "/workspace/2d_hack_and_slash/builds/rc-private-qa/windows/Stylebreaker.exe"
+      ],
+      "cwd": "/workspace/2d_hack_and_slash",
+      "exit_code": 0
+    },
+    {
+      "label": "linux-export",
+      "command": [
+        "godot",
+        "--headless",
+        "--editor",
+        "--path",
+        "/tmp/stylebreaker-rc-9z4njxe4/project",
+        "--export-release",
+        "Linux Validation",
+        "/workspace/2d_hack_and_slash/builds/rc-private-qa/linux/Stylebreaker.x86_64"
+      ],
+      "cwd": "/workspace/2d_hack_and_slash",
+      "exit_code": 0
+    },
+    {
+      "label": "linux-startup",
+      "command": [
+        "/workspace/2d_hack_and_slash/builds/rc-private-qa/linux/Stylebreaker.x86_64",
+        "--headless",
+        "--quit-after",
+        "120"
+      ],
+      "cwd": "/tmp/stylebreaker-rc-9z4njxe4",
+      "exit_code": 0
+    },
+    {
+      "label": "extracted-windows-pack-validation",
+      "command": [
+        "godot",
+        "--headless",
+        "--main-pack",
+        "/tmp/stylebreaker-rc-9z4njxe4/fresh-extract/Stylebreaker-PreAlpha-v0.1.0-windows-x86_64-PRIVATE-QA-NOT-FOR-DISTRIBUTION/Stylebreaker.exe",
+        "--script",
+        "/workspace/2d_hack_and_slash/tests/release_candidate_validation.gd",
+        "--",
+        "/workspace/2d_hack_and_slash/builds/rc-private-qa/PACK_EXPECTATIONS.json",
+        "/workspace/2d_hack_and_slash/builds/rc-private-qa/PACK_CONTENTS.json"
+      ],
+      "cwd": "/tmp/stylebreaker-rc-9z4njxe4/fresh-extract",
+      "exit_code": 0
+    },
+    {
+      "label": "extracted-windows-pack-regression",
+      "command": [
+        "godot",
+        "--headless",
+        "--main-pack",
+        "/tmp/stylebreaker-rc-9z4njxe4/fresh-extract/Stylebreaker-PreAlpha-v0.1.0-windows-x86_64-PRIVATE-QA-NOT-FOR-DISTRIBUTION/Stylebreaker.exe",
+        "--script",
+        "/workspace/2d_hack_and_slash/tests/regression.gd"
+      ],
+      "cwd": "/tmp/stylebreaker-rc-9z4njxe4/fresh-extract",
+      "exit_code": 0
+    },
+    {
+      "label": "extracted-windows-controller-death",
+      "command": [
+        "godot",
+        "--headless",
+        "--main-pack",
+        "/tmp/stylebreaker-rc-9z4njxe4/fresh-extract/Stylebreaker-PreAlpha-v0.1.0-windows-x86_64-PRIVATE-QA-NOT-FOR-DISTRIBUTION/Stylebreaker.exe",
+        "--script",
+        "/workspace/2d_hack_and_slash/tests/release_controls_validation.gd"
+      ],
+      "cwd": "/tmp/stylebreaker-rc-9z4njxe4/fresh-extract",
+      "exit_code": 0
+    },
+    {
+      "label": "extracted-pack-cleanup-audit",
+      "command": [
+        "python3",
+        "/workspace/2d_hack_and_slash/tools/check_pixel_only.py",
+        "--pack",
+        "/workspace/2d_hack_and_slash/builds/rc-private-qa/PACK_CONTENTS.json"
+      ],
+      "cwd": "/workspace/2d_hack_and_slash",
+      "exit_code": 0
+    },
+    {
+      "label": "derived-media-audit",
+      "command": [
+        "python3",
+        "/workspace/2d_hack_and_slash/tools/audit_rc_pack.py",
+        "--build",
+        "/workspace/2d_hack_and_slash/builds/rc-private-qa"
+      ],
+      "cwd": "/workspace/2d_hack_and_slash",
+      "exit_code": 0
+    },
+    {
+      "label": "rendered-regression",
+      "command": [
+        "godot",
+        "--path",
+        ".",
+        "--audio-driver",
+        "Dummy",
+        "--max-fps",
+        "60",
+        "--script",
+        "tests/regression.gd",
+        "--",
+        "--screenshots",
+        "/tmp/stylebreaker-cleanup/screenshots"
+      ],
+      "environment": {
+        "DISPLAY": ":99",
+        "LP_NUM_THREADS": "4"
+      },
+      "cwd": "/workspace/2d_hack_and_slash",
+      "exit_code": 0
+    },
+    {
+      "label": "rendered-pixel",
+      "command": [
+        "godot",
+        "--path",
+        ".",
+        "--audio-driver",
+        "Dummy",
+        "--max-fps",
+        "60",
+        "--script",
+        "tests/pixel_art_validation.gd"
+      ],
+      "environment": {
+        "DISPLAY": ":99",
+        "LP_NUM_THREADS": "4"
+      },
+      "cwd": "/workspace/2d_hack_and_slash",
+      "exit_code": 0
+    },
+    {
+      "label": "public-gate-negative-test",
+      "command": [
+        "python",
+        "tools/release.py"
+      ],
+      "cwd": "/workspace/2d_hack_and_slash",
+      "exit_code": 1,
+      "expected": true
+    }
+  ]
+}
