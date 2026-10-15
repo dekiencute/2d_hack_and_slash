@@ -4,8 +4,16 @@ var checks := 0
 var failures := 0
 var arena: Node
 var moves: Array[StringName] = []
+var scene_path := "res://levels/main.tscn"
+var screenshot_dir := "/tmp/stylebreaker-logs/screenshots"
 
 func _initialize() -> void:
+	var args := OS.get_cmdline_user_args()
+	for i in range(args.size() - 1):
+		if args[i] == "--scene":
+			scene_path = args[i + 1]
+		elif args[i] == "--screenshots":
+			screenshot_dir = args[i + 1]
 	seed(12345)
 	_run.call_deferred()
 
@@ -36,8 +44,8 @@ func capture(name: String) -> void:
 	if DisplayServer.get_name() == "headless":
 		return
 	await RenderingServer.frame_post_draw
-	DirAccess.make_dir_recursive_absolute("/tmp/stylebreaker-logs/screenshots")
-	var result := root.get_texture().get_image().save_png("/tmp/stylebreaker-logs/screenshots/" + name + ".png")
+	DirAccess.make_dir_recursive_absolute(screenshot_dir)
+	var result := root.get_texture().get_image().save_png(screenshot_dir.path_join(name) + ".png")
 	check(result == OK, "render screenshot " + name)
 
 func wait_for_wave(number: int) -> bool:
@@ -48,7 +56,7 @@ func wait_for_wave(number: int) -> bool:
 	return false
 
 func _run() -> void:
-	var scene := load("res://levels/main.tscn") as PackedScene
+	var scene := load(scene_path) as PackedScene
 	check(scene != null, "main scene and dependencies load")
 	arena = scene.instantiate()
 	root.add_child(arena)
