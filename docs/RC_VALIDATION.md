@@ -90,3 +90,7 @@ Screenshots copied unchanged from the first rendered command to `docs/media/rc-v
 3. **Public candidate verification after rights clearance:** resolve notices/inventory, enable an appropriate reviewed export configuration, rebuild a licensed public candidate, repeat archive/extracted-pack checks, perform native Windows sign-off, and have the owner approve publication. A future itch.io upload/download/hash check remains pending; nothing was uploaded here.
 
 Known prototype limits: one enemy type/arena, no music/saves/rebinding/online/progression, placeholder feedback/menu panels, integer camera view changes on resize, source/PNG enemy frame-count mismatch and short existing death/removal behavior. Windows output is unsigned and retains the default Godot shell icon because resource modification is disabled. No new mechanics/art or full-game completion is claimed.
+
+## Review branch / PR status
+
+Pushed **`release/prealpha-v0.1.0-rc`** successfully. `gh pr create` was attempted with [the prepared description](RC_PR_DESCRIPTION.md); GitHub returned `Post "https://api.github.com/graphql": Forbidden`, so this environment could not create the PR. [Open the separate review PR](https://github.com/dekiencute/2d_hack_and_slash/compare/main...release/prealpha-v0.1.0-rc?expand=1) using that description. Nothing was merged, published or uploaded; private QA binaries remain ignored local artifacts.
