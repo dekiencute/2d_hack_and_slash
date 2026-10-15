@@ -14,3 +14,11 @@ export_credentials.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+# Release output and local test evidence
+builds/
+dist/
+.test-artifacts/
+
+# Python tool cache
+__pycache__/

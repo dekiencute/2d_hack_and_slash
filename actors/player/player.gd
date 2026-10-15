@@ -2,6 +2,9 @@ extends CharacterBody2D
 
 signal health_changed(current: float, maximum: float)
 signal died
+signal attack_started(data: AttackData)
+signal dash_started
+signal damaged
 
 const SPEED := 340.0
 const ACCEL := 2200.0
@@ -79,10 +82,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		buffer_left = INPUT_BUFFER_TIME
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("reset"):
-		get_tree().reload_current_scene()
-		return
-
 	move_axis = Input.get_axis("move_left", "move_right")
 	has_move_input = Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right")
 
@@ -173,6 +172,7 @@ func _start_attack(data: AttackData) -> void:
 	attack_generation += 1
 	var generation := attack_generation
 	attacking = true
+	attack_started.emit(data)
 
 	# start() is intentional here: attacks are action states and should never
 	# get stuck because a graph path is missing.
@@ -181,20 +181,20 @@ func _start_attack(data: AttackData) -> void:
 	if data.lunge_time > 0.0:
 		velocity.x = facing * data.lunge_speed
 
-	await get_tree().create_timer(data.startup).timeout
+	await get_tree().create_timer(data.startup, false).timeout
 	if generation != attack_generation or dead:
 		return
 
 	_position_hitbox(data)
 	hitbox.activate(data, self, facing)
 
-	await get_tree().create_timer(data.active).timeout
+	await get_tree().create_timer(data.active, false).timeout
 	if generation != attack_generation or dead:
 		return
 
 	hitbox.deactivate()
 
-	await get_tree().create_timer(data.recovery).timeout
+	await get_tree().create_timer(data.recovery, false).timeout
 	if generation != attack_generation or dead:
 		return
 
@@ -248,6 +248,7 @@ func _start_dash() -> void:
 		facing = signf(move_axis)
 
 	animation_state.start(&"Dash", true)
+	dash_started.emit()
 
 func receive_hit(damage: float, knockback_x: float = 180.0) -> void:
 	if dead or invulnerability_left > 0.0 or dash_left > 0.0:
@@ -255,6 +256,7 @@ func receive_hit(damage: float, knockback_x: float = 180.0) -> void:
 
 	hp = maxf(0.0, hp - damage)
 	health_changed.emit(hp, max_hp)
+	damaged.emit()
 
 	var style := get_tree().get_first_node_in_group("style_system")
 	if style:

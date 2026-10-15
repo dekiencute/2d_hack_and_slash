@@ -21,10 +21,12 @@ var attacking := false
 var dead := false
 var action_generation := 0
 var token_held := false
+var telegraph_left := 0.0
+var flash_generation := 0
 var target: Node2D
 var base_color := Color(0.92, 0.31, 0.34, 1.0)
 
-@onready var body_visual: Polygon2D = $BodyVisual
+@onready var body_visual: Sprite2D = $BodyVisual
 @onready var hp_label: Label = $HPLabel
 @onready var hp_bar: ProgressBar = $HPBar
 
@@ -42,7 +44,7 @@ func configure_for_wave(wave: int, index: int) -> void:
 	attack_damage = 8.0 + float(wave - 1) * 1.5
 	attack_cooldown = maxf(0.72, 1.2 - float(wave - 1) * 0.08)
 	base_color = Color.from_hsv(fmod(0.98 + float(index) * 0.035, 1.0), 0.62, 0.92)
-	body_visual.color = base_color
+	body_visual.self_modulate = base_color
 	_update_label()
 
 func _physics_process(delta: float) -> void:
@@ -51,6 +53,8 @@ func _physics_process(delta: float) -> void:
 
 	air_suspend_left = maxf(0.0, air_suspend_left - delta)
 	attack_cooldown_left = maxf(0.0, attack_cooldown_left - delta)
+	telegraph_left = maxf(0.0, telegraph_left - delta)
+	queue_redraw()
 
 	if not is_on_floor():
 		var gravity_scale := air_suspend_gravity_scale if air_suspend_left > 0.0 else 1.0
@@ -90,10 +94,15 @@ func _begin_attack() -> void:
 	attacking = true
 	action_generation += 1
 	var generation := action_generation
-	body_visual.color = Color(1.0, 0.76, 0.2, 1.0)
+	body_visual.self_modulate = Color(1.0, 0.86, 0.35, 1.0)
+	telegraph_left = attack_windup
+	hp_label.text = "!  STRIKE  !"
 
-	await get_tree().create_timer(attack_windup).timeout
-	if generation != action_generation or dead or hitstun_left > 0.0:
+	await get_tree().create_timer(attack_windup, false).timeout
+	# An interrupted generation must never finish a newer attack or its token.
+	if generation != action_generation:
+		return
+	if dead or hitstun_left > 0.0:
 		_finish_attack(false)
 		return
 
@@ -106,14 +115,16 @@ func _begin_attack() -> void:
 			if target.has_method("receive_hit"):
 				target.receive_hit(attack_damage, direction * attack_knockback)
 
-	body_visual.color = Color(1.0, 0.42, 0.24, 1.0)
-	await get_tree().create_timer(attack_recovery).timeout
+	body_visual.self_modulate = Color(1.0, 0.42, 0.24, 1.0)
+	await get_tree().create_timer(attack_recovery, false).timeout
 	if generation == action_generation:
 		_finish_attack(true)
 
 func _finish_attack(apply_cooldown: bool) -> void:
 	attacking = false
-	body_visual.color = base_color
+	telegraph_left = 0.0
+	body_visual.self_modulate = base_color
+	_update_label()
 	if apply_cooldown:
 		attack_cooldown_left = attack_cooldown + randf_range(-0.12, 0.18)
 	_release_attack_token()
@@ -154,9 +165,8 @@ func receive_hit(attack: AttackData, facing: float, _attacker: Node) -> void:
 
 	if attacking:
 		action_generation += 1
-		attacking = false
+		_finish_attack(false)
 		attack_cooldown_left = maxf(attack_cooldown_left, 0.45)
-		_release_attack_token()
 
 	_flash()
 	_update_label()
@@ -165,9 +175,11 @@ func receive_hit(attack: AttackData, facing: float, _attacker: Node) -> void:
 		_die()
 
 func _flash() -> void:
-	body_visual.modulate = Color(1.0, 1.0, 1.0, 1.0)
-	await get_tree().create_timer(0.07, true, false, true).timeout
-	if is_instance_valid(body_visual):
+	flash_generation += 1
+	var generation := flash_generation
+	body_visual.modulate = Color(2.5, 2.5, 2.5, 1.0)
+	await get_tree().create_timer(0.07, false, false, true).timeout
+	if is_instance_valid(body_visual) and generation == flash_generation:
 		body_visual.modulate = Color.WHITE
 
 func _die() -> void:
@@ -175,14 +187,29 @@ func _die() -> void:
 	action_generation += 1
 	_release_attack_token()
 	died.emit(self)
-	body_visual.color = Color(0.28, 0.28, 0.32, 1.0)
+	body_visual.self_modulate = Color(0.28, 0.28, 0.32, 1.0)
 	hp_label.text = "DOWN"
 	collision_layer = 0
 	collision_mask = 0
-	await get_tree().create_timer(0.18).timeout
+	await get_tree().create_timer(0.18, false).timeout
 	queue_free()
 
 func _update_label() -> void:
-	hp_label.text = "HP  %d / %d" % [int(ceil(hp)), int(max_hp)]
+	hp_label.text = ""
 	hp_bar.max_value = max_hp
 	hp_bar.value = hp
+
+func stop_combat() -> void:
+	action_generation += 1
+	_finish_attack(false)
+	set_physics_process(false)
+	queue_redraw()
+
+func _exit_tree() -> void:
+	_release_attack_token()
+
+func _draw() -> void:
+	if attacking and telegraph_left > 0.0:
+		var progress := 1.0 - telegraph_left / attack_windup
+		draw_arc(Vector2(0, -32), 46.0, -PI * 0.5, -PI * 0.5 + TAU * progress, 32, Color(1.0, 0.76, 0.25), 2.0, true)
+		draw_line(Vector2(-attack_range, -2), Vector2(attack_range, -2), Color(1.0, 0.76, 0.25, 0.65), 3.0)

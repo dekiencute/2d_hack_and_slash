@@ -2,17 +2,17 @@
 
 [ext_resource type="Script" uid="uid://cuuuj3qiub2le" path="res://actors/player/player.gd" id="1"]
 [ext_resource type="Script" uid="uid://btjypdlmhuwk" path="res://combat/hitboxes/attack_hitbox.gd" id="2"]
-[ext_resource type="Texture2D" uid="uid://cejki7756dmjn" path="res://resources/Characters/Dante/reaction/Die.png" id="2_388e2"]
-[ext_resource type="Texture2D" uid="uid://ckv3uo0qky7jg" path="res://resources/Characters/Dante/combat/AirCombo1.png" id="2_ssdk0"]
-[ext_resource type="Texture2D" uid="uid://c5xkyf4n0e0mi" path="res://resources/Characters/Dante/combat/AirCombo2.png" id="3_7aotg"]
-[ext_resource type="Texture2D" uid="uid://kg140win0b5m" path="res://resources/Characters/Dante/movement/JumpAndFall.png" id="3_lsln6"]
-[ext_resource type="Texture2D" uid="uid://ci8bpu20nxjwe" path="res://resources/Characters/Dante/reaction/Idle.png" id="4_hiosj"]
-[ext_resource type="Texture2D" uid="uid://chpa4austfnlw" path="res://resources/Characters/Dante/combat/AirCombo3.png" id="4_k67x5"]
-[ext_resource type="Texture2D" uid="uid://bgdereb4kiv2c" path="res://resources/Characters/Dante/movement/Dash.png" id="5_7aotg"]
-[ext_resource type="Texture2D" uid="uid://ba37xl0vw2ubx" path="res://resources/Characters/Dante/movement/Run.png" id="5_ssdk0"]
-[ext_resource type="Texture2D" uid="uid://bm5ot70bx1ia3" path="res://resources/Characters/Dante/combat/GroundCombo1.png" id="6_388e2"]
-[ext_resource type="Texture2D" uid="uid://bmhgpj81mlod5" path="res://resources/Characters/Dante/combat/GroundCombo2.png" id="7_lsln6"]
-[ext_resource type="Texture2D" uid="uid://00frwfxpgjtn" path="res://resources/Characters/Dante/combat/GroundCombo3.png" id="8_hiosj"]
+[ext_resource type="Texture2D" path="res://resources/original/player_die.svg" id="2_388e2"]
+[ext_resource type="Texture2D" path="res://resources/original/player_aircombo1.svg" id="2_ssdk0"]
+[ext_resource type="Texture2D" path="res://resources/original/player_aircombo2.svg" id="3_7aotg"]
+[ext_resource type="Texture2D" path="res://resources/original/player_jumpandfall.svg" id="3_lsln6"]
+[ext_resource type="Texture2D" path="res://resources/original/player_idle.svg" id="4_hiosj"]
+[ext_resource type="Texture2D" path="res://resources/original/player_aircombo3.svg" id="4_k67x5"]
+[ext_resource type="Texture2D" path="res://resources/original/player_dash.svg" id="5_7aotg"]
+[ext_resource type="Texture2D" path="res://resources/original/player_run.svg" id="5_ssdk0"]
+[ext_resource type="Texture2D" path="res://resources/original/player_groundcombo1.svg" id="6_388e2"]
+[ext_resource type="Texture2D" path="res://resources/original/player_groundcombo2.svg" id="7_lsln6"]
+[ext_resource type="Texture2D" path="res://resources/original/player_groundcombo3.svg" id="8_hiosj"]
 [ext_resource type="Script" uid="uid://gf84wpp8q4l2" path="res://actors/player/camera_controller.gd" id="14_k67x5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsulePlayer"]
@@ -1434,7 +1434,7 @@ color = Color(0.9, 0.94, 1, 1)
 polygon = PackedVector2Array(0, -3, 38, -2, 44, 0, 38, 2, 0, 3)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1256323824]
-position = Vector2(3.0000002, -47)
+position = Vector2(3, -35)
 scale = Vector2(1.85, 1.8958334)
 sprite_frames = SubResource("SpriteFrames_388e2")
 animation = &"idle"
@@ -1450,7 +1450,8 @@ shape = SubResource("AttackShape")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=569757071]
 script = ExtResource("14_k67x5")
 base_vertical_offset = -120.0
-air_zoom = 1.6949999999999998
+air_vertical_offset = -145.0
+air_zoom = 1.46
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1329734707]
 libraries/ = SubResource("AnimationLibrary_8yk5o")

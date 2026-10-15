@@ -21,6 +21,8 @@ var wave := 0
 var enemies_alive := 0
 var run_over := false
 var spawning_wave := false
+var started := false
+var elapsed := 0.0
 var active_attackers: Dictionary = {}
 
 func _enter_tree() -> void:
@@ -32,10 +34,39 @@ func _ready() -> void:
 	_on_player_health_changed(player.hp, player.max_hp)
 	hud.set_wave(0, TOTAL_WAVES)
 	hud.set_enemies(0)
-	hud.set_message("STYLEBREAKER ARENA\nSurvive 5 waves. Mix moves to raise Style.")
-	await get_tree().create_timer(1.25).timeout
+	hud.start_requested.connect(start_run)
+	hud.restart_requested.connect(restart_run)
+	hud.pause_requested.connect(toggle_pause)
+	get_tree().paused = true
+
+func _process(delta: float) -> void:
+	if started and not run_over:
+		elapsed += delta / maxf(Engine.time_scale, 0.01)
+
+func start_run() -> void:
+	if started:
+		return
+	started = true
+	hud.hide_menu()
+	get_tree().paused = false
+	hud.set_message("BREAK THE PATTERN")
+	await get_tree().create_timer(1.25, false).timeout
 	if not run_over:
 		_start_next_wave()
+
+func restart_run() -> void:
+	get_tree().paused = false
+	Engine.time_scale = 1.0
+	get_tree().call_deferred("reload_current_scene")
+
+func toggle_pause() -> void:
+	if not started or run_over:
+		return
+	get_tree().paused = not get_tree().paused
+	if get_tree().paused:
+		hud.show_pause()
+	else:
+		hud.hide_menu()
 
 func _start_next_wave() -> void:
 	if run_over or spawning_wave:
@@ -51,13 +82,14 @@ func _start_next_wave() -> void:
 	hud.set_wave(wave, TOTAL_WAVES)
 	hud.set_enemies(enemies_alive)
 	hud.set_message("WAVE %d" % wave)
+	$CombatFeedback.play_sound("wave")
 
-	await get_tree().create_timer(0.65).timeout
+	await get_tree().create_timer(0.65, false).timeout
 	for i in range(enemy_count):
 		if run_over:
 			break
 		_spawn_enemy(i)
-		await get_tree().create_timer(0.18).timeout
+		await get_tree().create_timer(0.18, false).timeout
 
 	spawning_wave = false
 	if not run_over:
@@ -77,7 +109,7 @@ func _on_enemy_died(enemy: Node) -> void:
 
 	if enemies_alive == 0 and not run_over:
 		hud.set_message("WAVE CLEAR")
-		await get_tree().create_timer(1.15).timeout
+		await get_tree().create_timer(1.15, false).timeout
 		if not run_over:
 			_start_next_wave()
 
@@ -105,14 +137,24 @@ func _on_player_died() -> void:
 	if run_over:
 		return
 	run_over = true
-	hud.set_message("GAME OVER\nPress R to restart")
-	for enemy in get_tree().get_nodes_in_group("enemies"):
-		if is_instance_valid(enemy):
-			enemy.set_physics_process(false)
+	_finish_run(false)
 
 func _win_run() -> void:
 	run_over = true
-	hud.set_message("ARENA CLEAR!\nPress R to play again")
+	_finish_run(true)
+
+func _finish_run(won: bool) -> void:
+	hud.set_message("")
+	player.attack_generation += 1
+	player.attacking = false
+	player.hitbox.deactivate()
+	player.set_physics_process(false)
+	for enemy in get_tree().get_nodes_in_group("enemies"):
+		if is_instance_valid(enemy) and not enemy.dead:
+			enemy.stop_combat()
+	$StyleSystem.set_process(false)
+	hud.show_result(won, player.hp, $StyleSystem.peak_score, elapsed)
+	$CombatFeedback.play_sound("victory" if won else "defeat")
 
 func _setup_input_map() -> void:
 	_add_key_action("move_left", KEY_A)
@@ -122,6 +164,9 @@ func _setup_input_map() -> void:
 	_add_key_action("light_attack", KEY_J)
 	_add_key_action("heavy_attack", KEY_K)
 	_add_key_action("reset", KEY_R)
+	_add_key_action("pause", KEY_ESCAPE)
+	_add_key_action("mute", KEY_M)
+	_add_key_action("fullscreen", KEY_F11)
 
 	_add_joy_axis("move_left", JOY_AXIS_LEFT_X, -1.0)
 	_add_joy_axis("move_right", JOY_AXIS_LEFT_X, 1.0)
@@ -129,6 +174,8 @@ func _setup_input_map() -> void:
 	_add_joy_button("dash", JOY_BUTTON_B)
 	_add_joy_button("light_attack", JOY_BUTTON_X)
 	_add_joy_button("heavy_attack", JOY_BUTTON_Y)
+	_add_joy_button("pause", JOY_BUTTON_START)
+	_add_joy_button("reset", JOY_BUTTON_BACK)
 
 func _ensure_action(action: StringName) -> void:
 	if not InputMap.has_action(action):

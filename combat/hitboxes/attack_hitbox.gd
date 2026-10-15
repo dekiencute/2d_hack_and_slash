@@ -1,6 +1,8 @@
 class_name AttackHitbox
 extends Area2D
 
+signal hit_confirmed(target: Node2D, data: AttackData, direction: float)
+
 var attack: AttackData
 var owner_actor: Node
 var facing := 1.0
@@ -27,12 +29,15 @@ func _on_body_entered(body: Node) -> void:
 		return
 	if not body.has_method("receive_hit"):
 		return
+	if body.is_in_group("enemies") and body.get("dead"):
+		return
 
 	hit_targets[body] = true
 	var target_was_airborne := false
 	if body is CharacterBody2D:
 		target_was_airborne = not body.is_on_floor()
 	body.receive_hit(attack, facing, owner_actor)
+	hit_confirmed.emit(body, attack, facing)
 
 	if owner_actor.has_method("on_attack_hit_confirmed"):
 		owner_actor.on_attack_hit_confirmed(body, attack, target_was_airborne)

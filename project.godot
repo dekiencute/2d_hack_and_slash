@@ -11,8 +11,10 @@ config_version=5
 [application]
 
 config/name="Stylebreaker Prototype"
+config/version="0.1.0-prealpha.20261015"
+config/icon="res://resources/original/icon.svg"
 run/main_scene="res://levels/main.tscn"
-config/features=PackedStringArray("4.7")
+config/features=PackedStringArray("4.6", "GL Compatibility")
 
 [display]
 
@@ -21,14 +23,17 @@ window/size/viewport_height=720
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
+window/stretch/aspect="keep"
+window/size/min_width=960
+window/size/min_height=540
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_mcp/plugin.cfg")
+enabled=PackedStringArray()
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=0
+textures/canvas_textures/default_texture_filter=1
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 environment/defaults/default_clear_color=Color(0.055, 0.06, 0.08, 1)

@@ -13,6 +13,7 @@ const RANKS := [
 ]
 
 var score := 0.0
+var peak_score := 0.0
 var last_move: StringName = &""
 var repeat_count := 0
 var decay_delay := 1.4
@@ -37,6 +38,7 @@ func register_move(move_id: StringName, base_score: float) -> void:
 	var multipliers := [1.0, 0.7, 0.4, 0.1]
 	var index := mini(repeat_count, multipliers.size() - 1)
 	score += base_score * multipliers[index]
+	peak_score = maxf(peak_score, score)
 	style_changed.emit(get_rank(), score)
 
 func player_was_hit() -> void:
@@ -53,6 +55,7 @@ func get_rank() -> String:
 
 func reset() -> void:
 	score = 0.0
+	peak_score = 0.0
 	last_move = &""
 	repeat_count = 0
 	idle_time = 0.0

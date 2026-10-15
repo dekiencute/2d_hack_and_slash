@@ -1,45 +1,54 @@
 # Stylebreaker — Pre-Alpha 0.1.0 release gate (15 October 2026)
 
-Goal: publish a **working Windows prototype** on itch.io today, marked **In development**. Do not ship if the exported build does not start or assets are unlicensed.
+Prepare a working Windows prototype for itch.io, marked **In development**. The candidate must remain **Draft/Restricted** until a native Windows extracted-archive playtest and download verification pass. No upload or publication was performed by this work.
 
-## Confirmed from source
-- Godot project name: `Stylebreaker Prototype`; main scene `res://levels/main.tscn`.
-- Game loop: 5 waves, HP, enemy attack-token cap, defeat/victory and R restart.
-- Player scene has animated sprite references, including `resources/Characters/Dante/`.
-- Environment in `levels/main.tscn` references the mist-forest-background layer textures.
-- Existing controls: A/D, Space, Shift, J, K, R.
-- `export_presets.cfg` contains a Windows Desktop preset with an export path in `builds/`.
-- The project's `project.godot` declares `config/features=PackedStringArray("4.7")`; verify installed Godot and compatible export templates.
+## Implemented scope
 
-## BLOCKING checks (complete before Public)
-- [ ] Open exact clone in Godot; import finishes without errors and main scene starts with F5.
-- [ ] Confirm all sprite/background/resource files referenced from .tscn exist in the clone.
-- [ ] Confirm license and redistribution rights for ALL character/environment/audio assets. Especially review any "Dante" character sprites for copyrighted game-derived material. Replace unauthorized art before publishing.
-- [ ] Confirm five waves, game over, victory, R restart, inputs and HUD work in a playtest.
-- [ ] Export Windows release build; ensure .exe and .pck are both included if PCK is separate; launch it outside the editor.
-- [ ] Test archive extracted to a fresh directory; check missing DLL/assets and crash behavior.
-- [ ] Prepare actual in-game screenshots, a game cover, credits/licenses, and an honest limitations note.
-- [ ] Upload the verified ZIP to itch.io; select Windows and **In development**, then validate download on itch.io.
+- Existing move definitions, damage/timing, AnimationPlayer/AnimationTree architecture, five waves (`2 / 3 / 3 / 4 / 5`) and two-attacker cap preserved.
+- Interrupted enemy windups cannot finish a newer attack or release its token. Interrupted warnings reset correctly; hit flash is now visible. Dead enemies cannot award additional hit-confirm style.
+- Hitstop uses a scene-owned real-time countdown, freezes during pause and restores normal global speed when the scene exits. This also removes an orphaned timer warning reproduced by restarting mid-impact.
+- Combat/wave timers pause with gameplay. Title/controls, pause, keyboard/controller retry, victory/defeat results, peak Style, health and run time are available. The camera's accidental air zoom-in is corrected; ground framing remains unchanged.
+- Original masked fighter atlases, sentinel, arena, icon, line/arc combat VFX and seven synthesized SFX replace unclear asset packs. All original atlas regions are checked. New assets are CC0; [asset audit](ASSET_AUDIT_2026-10-15.md) and [removed-file inventory](REMOVED_ASSETS_2026-10-15.csv) record decisions.
+- Single Windows x86_64 preset embeds its PCK. Linux preset is for validation. Matching Godot 4.6.3 templates are required. Source-only tooling and caches are excluded. Stale binaries are deleted and new outputs ignored by Git.
+- Cover and actual Godot screenshots are in `docs/media`. Credits and engine/font notices are included in candidate ZIPs.
 
-## Priorities / scope freeze
-P0: resolve launch/import failures; licensing; five-wave combat loop; Windows export.
-P1: coherent original/player/enemy/environment sprites, hit effects, basic SFX, title/controls/credits, cover and screenshots.
-P2: Web export (only if Windows passes), polish, new mechanics.
-Avoid adding a new combat system, extra weapons, a boss or extensive menus before the initial release.
+## Validation record
 
-## Windows export instructions
-1. Godot > Editor > Manage Export Templates; install templates matching the installed Godot version.
-2. Project > Export > Windows Desktop; choose a valid export path, such as `builds/Stylebreaker-PreAlpha-0.1.0.exe`.
-3. Export Project (release build). Depending on the embed PCK setting, keep the resulting .pck alongside the .exe.
-4. ZIP the build output and test the extracted ZIP on Windows.
+Commands and logs are recorded in `builds/logs` by `tools/release.py`. Refer to `docs/VALIDATION_2026-10-15.md` for the final run and limits.
 
-## Cloud workflow
-- Codex Cloud can inspect and edit this GitHub repo without a local VS Code MCP login.
-- Codex's cloud environment is distinct from the Godot Editor on your PC. Do not claim editor integration or game execution without actual tool/runtime evidence.
-- Ask Codex to run Godot headless import + scene validation if a matching Godot binary is available; otherwise run locally in Godot.
-- Merge reviewed changes, then in GitHub Desktop Fetch origin > Pull origin before local playtesting/export.
-- Commit only source/assets to Git; do not commit generated Godot cache or packaged builds.
+| Gate | Status |
+|---|---|
+| Exact clone imports and main scene runs using Godot 4.6.3 | Verified by headless import, runtime checks and rendered X11/OpenGL run. |
+| Scene/script/resource dependencies and animation atlas bounds | Automated regression checks; original AttackData files unchanged. |
+| Shipped character/environment/audio redistribution rights | Original media, CC0; Godot MIT and engine/font notices bundled. Legacy packs excluded. |
+| Five-wave progression, defeat/victory, restart, combat inputs and HUD | Automated physics/input/overlap integration tests plus rendered captures. Human balance playtest remains pending. |
+| Windows release export | Candidate built with matching 4.6.3 templates; PE x86_64 structure and embedded PCK checked by release script. |
+| Fresh ZIP extraction / Windows resource bundle | ZIP CRC/hash and extracted bundle gameplay checked under a Linux Godot engine. |
+| **Native Windows executable starts outside editor, all five waves playable** | **BLOCKER — Windows/Wine unavailable in this environment. Do not treat Linux bundle tests as Windows execution.** |
+| Physical controller, native GPU/audio/device behavior | **Pending manual Windows checks.** Mappings and rendered UI checked without hardware. |
+| Upload / downloaded itch.io archive | **Pending.** Requires the verified candidate and itch.io account access. |
 
-## Go/no-go
-**GO**: licensed assets + repeatable 5-wave run + exported archive independently opens + download works.
-**NO-GO**: any critical crash, missing resource or unclear rights to shipped sprites. Itch.io page can stay Draft/Restricted until ready.
+## Reproduce and build
+
+1. Install **Godot 4.6.3 stable** and matching export templates from the official `godotengine/godot` 4.6.3-stable release. Install Windows x86_64 and Linux x86_64 templates through **Editor → Manage Export Templates**. This repository previously declared 4.7; the candidate is pinned to the version actually tested.
+2. From the project directory run:
+
+   ```sh
+   godot --headless --editor --path . --import
+   godot --headless --path . --script tests/regression.gd
+   python3 tools/release.py
+   ```
+
+   The automated release script is intended for Linux validation. On Windows, import/run the tests using `godot_console.exe` or the installed Godot command, then export through **Project → Export → Windows Desktop → Export Project** with debug disabled. The preset writes `builds/windows/Stylebreaker.exe`. Keep credits/licenses with the executable when making a ZIP manually.
+3. `tools/release.py` creates `dist/Stylebreaker-PreAlpha-0.1.0-windows-x86_64.zip`, its SHA-256 file, and logs. It checks errors in logs as well as exit codes. The PCK is embedded; no separate `.pck` should be uploaded.
+4. Extract the ZIP on a native Windows x86_64 PC into a new directory. Open `Stylebreaker.exe` without the editor. Check no missing DLL/resources, black screen or crash; test movement, double jump, light chains, launcher/air attacks, dash, SFX/mute, controller, pause, F11 and R. Clear all five waves and trigger defeat/retry. Record OS/GPU/controller and results here before Public. The executable is unsigned and resource editing is disabled for reproducible Linux cross-export; its shell icon remains the default Godot executable icon.
+
+## itch.io page and upload
+
+- Title: **Stylebreaker Prototype — Pre-Alpha 0.1.0**. Kind: downloadable game. Platform: Windows. Status: **In development**. Keep Draft/Restricted while gates are open.
+- Suggested description: “A compact 2D hack & slash combat prototype. Clear five waves, launch sentinels, continue the fight in the air, and mix attacks to build Style. Includes keyboard and Xbox-style controller mappings. One arena, one enemy type, original art and SFX. This pre-alpha has no music, saves or progression.”
+- Use `docs/media/itch-cover-630x500.png` as the cover and the actual title/arena/combat captures as screenshots. Include the controls from `PLAYER_README.txt`; do not imply more content.
+- Upload the verified ZIP and mark Windows. Preview the page, download the uploaded archive into a fresh directory, compare its SHA-256, launch it and repeat the short controls/retry check. Only then change visibility to Public.
+- Optional Butler command after those checks and selecting your actual itch account/project: `butler push dist/Stylebreaker-PreAlpha-0.1.0-windows-x86_64.zip YOUR_ACCOUNT/YOUR_PROJECT:windows --userversion 0.1.0-prealpha.20261015`.
+
+No required basic prototype asset is missing. Music, richer animation, extra enemies/arenas and other combat features remain outside scope. No web/macOS release is claimed. Do not distribute old builds or historical source snapshots containing the removed art.
