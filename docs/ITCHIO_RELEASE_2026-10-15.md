@@ -1,5 +1,7 @@
 # Stylebreaker — Pre-Alpha 0.1.0 release gate (15 October 2026)
 
+> **Current RC supersedes the historical candidate below.** Default startup is now the approved pixel arena; fallback remains available. See [RC validation](RC_VALIDATION.md), [current asset-rights report](RC_ASSET_LICENSE_REPORT.md) and [draft page materials](ITCHIO_PREALPHA_V0.1.0.md). Public packaging is blocked by rights; a separate private QA archive is for owner testing only. Native Windows playtesting is still required. No automatic merge or publication.
+
 > **Pixel-art integration review:** `res://pixel_art/arena.tscn` is an opt-in playable variant; F5 still uses the original arena documented below. See [integration, rights, tests and remaining work](PIXEL_ART_INTEGRATION.md). Uploaded pixel art and integration scripts are excluded from release presets while character/enemy/UI licenses await verification. This branch does not authorize an itch.io upload and does not rebuild or certify a Windows executable. The validation/build record below describes the earlier fallback candidate, not a pixel-art release.
 
 Prepare a working Windows prototype for itch.io, marked **In development**. The candidate must remain **Draft/Restricted** until a native Windows extracted-archive playtest and download verification pass. No upload or publication was performed by this work.

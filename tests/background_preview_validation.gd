@@ -116,7 +116,7 @@ func _run() -> void:
 	preview.select_backdrop(0)
 	check(not layers.get_node("Backdrop0/Base").visible and layers.get_node("Backdrop1/Base").visible, "default opaque base restores")
 	check(get_nodes_in_group("player").is_empty() and get_nodes_in_group("enemies").is_empty(), "preview instantiates no combat actors")
-	check(ProjectSettings.get_setting("application/run/main_scene") == "res://levels/main.tscn", "main gameplay scene setting remains unchanged")
+	check(ProjectSettings.get_setting("application/run/main_scene") == "res://pixel_art/arena.tscn", "approved pixel arena remains the startup scene")
 	preview.queue_free()
 	await process_frame
 	print("RESULT: %d checks, %d failures" % [checks, failures])

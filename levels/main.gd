@@ -171,6 +171,7 @@ func _setup_input_map() -> void:
 	_add_joy_axis("move_left", JOY_AXIS_LEFT_X, -1.0)
 	_add_joy_axis("move_right", JOY_AXIS_LEFT_X, 1.0)
 	_add_joy_button("jump", JOY_BUTTON_A)
+	_add_joy_button("ui_accept", JOY_BUTTON_A)
 	_add_joy_button("dash", JOY_BUTTON_B)
 	_add_joy_button("light_attack", JOY_BUTTON_X)
 	_add_joy_button("heavy_attack", JOY_BUTTON_Y)

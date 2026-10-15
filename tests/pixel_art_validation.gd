@@ -38,7 +38,7 @@ func _run() -> void:
 	art = arena.get_node("PixelPresentation")
 	await settle()
 	check(paused and arena.wave == 0, "pixel scene retains title gate")
-	check(ProjectSettings.get_setting("application/run/main_scene") == "res://levels/main.tscn", "F5 still runs original arena")
+	check(ProjectSettings.get_setting("application/run/main_scene") == "res://pixel_art/arena.tscn", "F5 starts the approved pixel arena")
 	var fallback = load("res://levels/main.tscn").instantiate()
 	check(fallback.get_script() == arena.get_script(), "both arenas use the identical combat director")
 	check(fallback.get_node("Player").get_script() == arena.player.get_script(), "player controller is unchanged")

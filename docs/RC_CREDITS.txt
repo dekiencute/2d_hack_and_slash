@@ -1,0 +1,30 @@
+STYLEBREAKER — PRE-ALPHA v0.1.0
+
+Existing game/combat: Stylebreaker project contributors.
+Engine: Godot Engine 4.6.3 stable, https://godotengine.org, MIT.
+Bundled Noto Sans font: SIL Open Font License 1.1. Full engine/font/library
+notices are in LICENSES/GODOT_LICENSE.txt and GODOT_COPYRIGHT.txt.
+
+PIXEL ART (PRIVATE QA; RIGHTS NOT CLEARED FOR PUBLIC DISTRIBUTION)
+Forest: Eder Muniz — Free Pixel Art Forest.
+Historical custom terms allow personal/commercial game use and modification,
+require credit, prohibit distributing source assets, including modified ones.
+See LICENSES/FOREST_HISTORICAL_TERMS.txt. Original provenance/current terms
+and compiled-game packaging remain subject to review.
+
+Health bar: Pixel Health Bar Asset Pack 1 by Adwit Rahman (@adwitr_itch.io).
+The artist credit identifies authorship; it does not establish permission.
+Character sheets: uploaded assets matching historical Dante inventory;
+creator license, entitlement and underlying character rights unresolved.
+Demon Sword: uploaded Sword.png; creator/license evidence unresolved.
+No missing author names, permissions or purchase records are invented here.
+
+RETAINED ORIGINAL MEDIA
+11 fallback player SVG strips, enemy/arena/icon SVGs, existing line/arc VFX
+and 7 synthesized sound effects were created for this project, CC0 1.0.
+No sampled recordings or new artwork were added by this release task.
+See LICENSES/ORIGINAL_ASSETS_CC0.txt. This grant does NOT license uploaded
+pixel art or change the license/ownership of pre-existing project code.
+
+Do not redistribute this private QA archive. Asset rights and native
+Windows playtesting must be resolved before a public release is approved.

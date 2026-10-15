@@ -4,7 +4,7 @@ var checks := 0
 var failures := 0
 var arena: Node
 var moves: Array[StringName] = []
-var scene_path := "res://levels/main.tscn"
+var scene_path := ""
 var screenshot_dir := "/tmp/stylebreaker-logs/screenshots"
 
 func _initialize() -> void:
@@ -56,6 +56,8 @@ func wait_for_wave(number: int) -> bool:
 	return false
 
 func _run() -> void:
+	if scene_path.is_empty():
+		scene_path = ProjectSettings.get_setting("application/run/main_scene")
 	var scene := load(scene_path) as PackedScene
 	check(scene != null, "main scene and dependencies load")
 	arena = scene.instantiate()

@@ -34,7 +34,7 @@ func _run() -> void:
 	check(preview.catalog.files.size() == 86, "inventory covers all 86 uploaded files")
 	check(preview.catalog.failures.is_empty(), "no missing import sources or invalid character grids")
 	check(get_nodes_in_group("player").is_empty() and get_nodes_in_group("enemies").is_empty() and get_nodes_in_group("hitstop").is_empty(), "preview instantiates no gameplay actors/services")
-	check(ProjectSettings.get_setting("application/run/main_scene") == "res://levels/main.tscn", "main scene remains the gameplay arena")
+	check(ProjectSettings.get_setting("application/run/main_scene") == "res://pixel_art/arena.tscn", "main scene is the approved pixel arena")
 	check(preview.canvas.texture_filter == CanvasItem.TEXTURE_FILTER_NEAREST, "preview canvas explicitly uses nearest filtering")
 	var unique: Dictionary = {}
 	var regions := 0

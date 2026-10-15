@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "groups": [
+    {
+      "id": "character",
+      "status": "unverified",
+      "evidence": [],
+      "attribution": "Creator and underlying character rights unresolved",
+      "files": [
+        "assets/Art/Character/Idle.png",
+        "assets/Art/Character/Run.png",
+        "assets/Art/Character/JumpAndFall.png",
+        "assets/Art/Character/Dash.png",
+        "assets/Art/Character/Die.png",
+        "assets/Art/Character/GroundCombo1.png",
+        "assets/Art/Character/GroundCombo2.png",
+        "assets/Art/Character/GroundCombo3.png",
+        "assets/Art/Character/AirCombo1.png",
+        "assets/Art/Character/AirCombo2.png",
+        "assets/Art/Character/AirCombo3.png"
+      ]
+    },
+    {
+      "id": "enemy",
+      "status": "unverified",
+      "evidence": [],
+      "attribution": "Demon Sword creator unresolved",
+      "files": [
+        "assets/Art/Enemies/Demon_Sword/Sword.png"
+      ]
+    },
+    {
+      "id": "ui",
+      "status": "unverified",
+      "evidence": [],
+      "attribution": "Pixel Health Bar Asset Pack 1 by Adwit Rahman (@adwitr_itch.io); credit is not permission",
+      "files": [
+        "assets/Art/UI/Pixel Health Bar Asset Pack 1 by Adwit Rahman/Pixel Health Bar 1/Pixel1_Healthbar_0001_pixel1_healthbar.png",
+        "assets/Art/UI/Pixel Health Bar Asset Pack 1 by Adwit Rahman/Pixel Health Bar 1/Pixel1_Healthbar_0002_pixel1_border.png"
+      ]
+    },
+    {
+      "id": "forest",
+      "status": "conditional",
+      "evidence": [
+        "docs/licenses/FOREST_HISTORICAL_TERMS.txt"
+      ],
+      "attribution": "Free Pixel Art Forest by Eder Muniz; historical custom game-use terms require credit and prohibit source asset redistribution",
+      "files": [
+        "assets/Art/UI/Background/Background layers/Layer_0000_9.png",
+        "assets/Art/UI/Background/Background layers/Layer_0001_8.png",
+        "assets/Art/UI/Background/Background layers/Layer_0002_7.png",
+        "assets/Art/UI/Background/Background layers/Layer_0003_6.png",
+        "assets/Art/UI/Background/Background layers/Layer_0004_Lights.png",
+        "assets/Art/UI/Background/Background layers/Layer_0005_5.png",
+        "assets/Art/UI/Background/Background layers/Layer_0006_4.png",
+        "assets/Art/UI/Background/Background layers/Layer_0007_Lights.png",
+        "assets/Art/UI/Background/Background layers/Layer_0008_3.png",
+        "assets/Art/UI/Background/Background layers/Layer_0009_2.png",
+        "assets/Art/UI/Background/Background layers/Layer_0010_1.png",
+        "assets/Art/UI/Background/Background layers/Layer_0011_0.png"
+      ]
+    },
+    {
+      "id": "original_media",
+      "status": "verified",
+      "evidence": [
+        "resources/original/LICENSE.txt"
+      ],
+      "attribution": "Original project art and synthesized SFX, CC0 1.0",
+      "files": [
+        "resources/original/arena.svg",
+        "resources/original/audio/dash.wav",
+        "resources/original/audio/defeat.wav",
+        "resources/original/audio/hit.wav",
+        "resources/original/audio/hurt.wav",
+        "resources/original/audio/slash.wav",
+        "resources/original/audio/victory.wav",
+        "resources/original/audio/wave.wav",
+        "resources/original/enemy.svg",
+        "resources/original/icon.svg",
+        "resources/original/player_aircombo1.svg",
+        "resources/original/player_aircombo2.svg",
+        "resources/original/player_aircombo3.svg",
+        "resources/original/player_dash.svg",
+        "resources/original/player_die.svg",
+        "resources/original/player_groundcombo1.svg",
+        "resources/original/player_groundcombo2.svg",
+        "resources/original/player_groundcombo3.svg",
+        "resources/original/player_idle.svg",
+        "resources/original/player_jumpandfall.svg",
+        "resources/original/player_run.svg"
+      ]
+    }
+  ],
+  "note": "Verified requires reviewed commercial compiled-game use and all required notices. Uploaded source files are not granted CC0 by project notices."
+}
