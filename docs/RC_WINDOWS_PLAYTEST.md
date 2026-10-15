@@ -1,6 +1,6 @@
 # Native Windows sign-off — NOT TESTED
 
-Owner-local QA only; asset rights remain unresolved. Do not distribute the private QA ZIP. Linux embedded-pack tests do not complete this checklist.
+Test the exact extracted Windows candidate. Optional `--private-qa` archives retain their owner-only label. Asset rights warnings remain unresolved; technical export does not verify permissions. Linux embedded-pack tests and automated Windows headless startup do not complete this interactive checklist.
 
 Record before play:
 
@@ -32,4 +32,4 @@ Extract the entire archive to a fresh folder outside the repository/editor. Keep
 
 Outcome: **PENDING — native Windows execution has not been tested.**
 
-Attach hardware details, exact artifact hashes and defects/pass results. Even a completed private QA playtest cannot clear missing art rights. After licensing changes require a new public candidate, repeat extraction/hash/startup checks on that exact candidate before approval.
+Attach hardware details, exact artifact hashes and defects/pass results. Even a completed private QA playtest cannot clear missing art rights. After any build changes, repeat extraction/hash/startup checks on the exact new candidate before approval.

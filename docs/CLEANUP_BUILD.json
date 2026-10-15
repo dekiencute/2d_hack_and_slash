@@ -129,7 +129,7 @@
   "all_seven_audio_samples_identical_to_origin_main": true,
   "windows_native_execution": "NOT TESTED",
   "physical_controller_and_audible_audio": "NOT TESTED",
-  "public_gate": "Expected exit 1: character/enemy/UI independently unverified; no public ZIP",
+  "public_gate": "Historical result before export-policy change: exit 1 for incomplete license evidence. Current workflow reports warnings and allows normal exports; see WINDOWS_EXPORT.md.",
   "template_source": "https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_export_templates.tpz",
   "template_sha256": {
     "version.txt": "4855bd38072b77c73c45739cf6a6787d7df790a368b0a437102f352650e6186b",
