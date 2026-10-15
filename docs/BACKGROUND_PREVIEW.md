@@ -74,3 +74,7 @@ godot --path . --audio-driver Dummy --rendering-method gl_compatibility --script
 Tested with **Godot 4.6.3.stable.official.7d41c59c4** on Linux. Headless validation passes **61 checks**: all 12 textures, 10 Parallax2D groups, shared registration, nearest filtering/integer zoom, alpha materials, light/art alignment during movement, camera clamp/auto/manual/reset, opaque-base selection, absence of combat actors, and unchanged main-scene selection. Rendered X11/OpenGL validation passes **65 checks**, including three captures and an actual rendered-pixel comparison of Lights on/off. Mesa llvmpipe reports only the virtual driver's unsupported V-Sync warning; no script/resource errors were reported. The centered and panned captures were visually inspected.
 
 Native Windows and integrated combat/background behavior were not tested or changed. No new Windows build is claimed. This is a standalone review scene, not a gameplay integration.
+
+## Review branch and PR status
+
+Pushed on the separate `review/background-parallax-preview` branch. `gh pr create` was attempted, but GitHub's API returned `Post "https://api.github.com/graphql": Forbidden`; this environment could not create the PR. [Open the separate comparison](https://github.com/dekiencute/2d_hack_and_slash/compare/main...review/background-parallax-preview?expand=1) and use [the prepared PR description](BACKGROUND_PREVIEW_PR.md). Nothing was merged automatically.
