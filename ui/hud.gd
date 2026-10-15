@@ -4,12 +4,11 @@ signal start_requested
 signal restart_requested
 signal pause_requested
 
-const INK := Color("101d2d")
 const PAPER := Color("e0eeec")
 const TEAL := Color("69ded0")
 const GOLD := Color("f1c77c")
 var root: Control
-var hp_bar: ProgressBar
+var hp_bar: TextureProgressBar
 var hp_label: Label
 var style_label: Label
 var score_label: Label
@@ -22,31 +21,27 @@ var menu_body: Label
 var menu_button: Button
 var sound_button: Button
 var menu_kind := "title"
+var last_view_size := Vector2.ZERO
+const HEALTH_BAR = preload("res://pixel_art/health_bar.gd")
 
 func _ready() -> void:
 	root = Control.new()
 	root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	root.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(root)
-	_panel(Rect2(24, 24, 300, 134), root)
 	_label("BREAKER  /  VITALS", Rect2(40, 34, 250, 22), 14, TEAL)
 	hp_label = _label("100 / 100", Rect2(40, 58, 260, 25), 19)
-	hp_bar = ProgressBar.new()
-	hp_bar.position = Vector2(40, 91)
-	hp_bar.size = Vector2(266, 10)
-	hp_bar.show_percentage = false
-	hp_bar.add_theme_stylebox_override("background", _style(Color("273c4c")))
-	hp_bar.add_theme_stylebox_override("fill", _style(TEAL))
+	hp_bar = HEALTH_BAR.new()
+	hp_bar.position = Vector2(40, 85)
+	hp_bar.scale = Vector2(3, 3)
 	root.add_child(hp_bar)
-	_label("MIX MOVES. BREAK THE PATTERN.", Rect2(40, 115, 270, 22), 13, Color("8caaaF"))
-	_panel(Rect2(1010, 24, 246, 168), root)
+	_label("MIX MOVES. BREAK THE PATTERN.", Rect2(40, 128, 270, 22), 13, Color("8caaaF"))
 	wave_label = _label("WAVE  0 / 5", Rect2(1030, 37, 210, 30), 22, PAPER)
-	enemy_label = _label("0 SENTINELS", Rect2(1030, 71, 210, 23), 15, TEAL)
+	enemy_label = _label("0 ENEMIES", Rect2(1030, 71, 210, 23), 15, TEAL)
 	style_label = _label("STYLE  D", Rect2(1030, 106, 210, 35), 29, GOLD)
 	score_label = _label("0000  POINTS", Rect2(1030, 149, 210, 23), 14, PAPER)
 	message_label = _label("", Rect2(360, 125, 560, 100), 30, GOLD)
 	message_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	_panel(Rect2(24, 647, 1232, 49), root)
 	_label("A / D  Move     SPACE  Jump ×2     SHIFT  Dash     J  Light     K  Heavy     R  Retry     ESC  Pause", Rect2(40, 657, 1060, 26), 16)
 	sound_button = _button("SFX ON  [M]", Rect2(1122, 654, 120, 32), root)
 	sound_button.pressed.connect(_toggle_sound)
@@ -57,7 +52,6 @@ func _ready() -> void:
 	shade.color = Color(0.025, 0.05, 0.085, 0.93)
 	shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	overlay.add_child(shade)
-	_panel(Rect2(176, 76, 928, 562), overlay)
 	_label("COMBAT LAB    /    01                   PRE-ALPHA · 15 OCT 2026", Rect2(224, 107, 840, 26), 15, TEAL, overlay)
 	menu_title = _label("STYLEBREAKER", Rect2(220, 158, 840, 74), 59, PAPER, overlay)
 	menu_body = _label("", Rect2(224, 255, 840, 270), 19, PAPER, overlay)
@@ -78,44 +72,33 @@ func _label(text: String, rect: Rect2, font_size: int, color: Color = PAPER, par
 	label.size = rect.size
 	label.add_theme_font_size_override("font_size", font_size)
 	label.add_theme_color_override("font_color", color)
+	label.add_theme_color_override("font_outline_color", Color.BLACK)
+	label.add_theme_constant_override("outline_size", 3)
 	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	(parent if parent else root).add_child(label)
 	return label
 
-func _style(color: Color, border: Color = Color.TRANSPARENT) -> StyleBoxFlat:
-	var style := StyleBoxFlat.new()
-	style.bg_color = color
-	style.border_color = border
-	style.set_border_width_all(1)
-	style.set_corner_radius_all(5)
-	return style
-
-func _panel(rect: Rect2, parent: Control) -> void:
-	var panel := Panel.new()
-	panel.position = rect.position
-	panel.size = rect.size
-	panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	panel.add_theme_stylebox_override("panel", _style(INK, Color("33515c")))
-	parent.add_child(panel)
-
 func _button(text: String, rect: Rect2, parent: Control) -> Button:
 	var button := Button.new()
 	button.text = text
+	button.flat = true
+	for state in ["normal", "hover", "pressed", "focus", "disabled"]:
+		button.add_theme_stylebox_override(state, StyleBoxEmpty.new())
+	button.add_theme_color_override("font_hover_color", GOLD)
+	button.add_theme_color_override("font_focus_color", GOLD)
+	button.add_theme_color_override("font_outline_color", Color.BLACK)
+	button.add_theme_constant_override("outline_size", 3)
 	button.position = rect.position
 	button.size = rect.size
 	button.add_theme_font_size_override("font_size", 16)
 	button.add_theme_color_override("font_color", PAPER)
-	button.add_theme_stylebox_override("normal", _style(Color("1b3947"), Color("4b8c8c")))
-	button.add_theme_stylebox_override("hover", _style(Color("2c5661"), TEAL))
-	button.add_theme_stylebox_override("pressed", _style(Color("366770"), TEAL))
-	button.add_theme_stylebox_override("focus", _style(Color(0, 0, 0, 0), GOLD))
 	parent.add_child(button)
 	return button
 
 func show_title() -> void:
 	menu_kind = "title"
 	menu_title.text = "STYLEBREAKER"
-	menu_body.text = "Five waves. One arena. Make every hit count.\n\nA / D  Move     SPACE  Double jump     SHIFT  Invulnerable dash\nJ  Light combo     K  Launcher / Air heavy     R  Restart\nPad: Left stick · A Jump · B Dash · X Light · Y Heavy · Start Pause\n\nTry: J → J → K → Jump → J → J → K\nGold rings warn of strikes. Dash through danger; vary moves for Style.\n\nOriginal art & synthesized SFX · No music · F11 Fullscreen · M Mute"
+	menu_body.text = "Five waves. One arena. Make every hit count.\n\nA / D  Move     SPACE  Double jump     SHIFT  Invulnerable dash\nJ  Light combo     K  Launcher / Air heavy     R  Restart\nPad: Left stick · A Jump · B Dash · X Light · Y Heavy · Start Pause\n\nTry: J → J → K → Jump → J → J → K\n! STRIKE ! text warns of attacks. Dash through danger; vary moves for Style.\n\nPixel art · Synthesized SFX · No music · F11 Fullscreen · M Mute"
 	menu_button.text = "ENTER THE ARENA   [ENTER / A]"
 	overlay.show()
 	menu_button.grab_focus()
@@ -179,7 +162,7 @@ func set_wave(current: int, total: int) -> void:
 	wave_label.text = "WAVE  %d / %d" % [current, total]
 
 func set_enemies(count: int) -> void:
-	enemy_label.text = "%d SENTINELS" % count
+	enemy_label.text = "%d ENEMIES" % count
 
 func set_message(text: String) -> void:
 	message_label.text = text
@@ -188,3 +171,27 @@ func set_message(text: String) -> void:
 func _on_style_changed(rank: String, score: float) -> void:
 	style_label.text = "STYLE  %s" % rank
 	score_label.text = "%04d  POINTS" % int(score)
+
+func _process(_delta: float) -> void:
+	var size := get_viewport().get_visible_rect().size
+	if size == last_view_size:
+		return
+	# Existing controls are repositioned rather than fractionally scaling UI pixels.
+	var change := size - (Vector2(1280, 720) if last_view_size == Vector2.ZERO else last_view_size)
+	for child in root.get_children():
+		if child == overlay:
+			for panel in child.get_children():
+				if not panel is ColorRect:
+					panel.position += change / 2.0
+		elif child is Control:
+			if child.position.y >= (647.0 if last_view_size == Vector2.ZERO else last_view_size.y - 73.0):
+				child.position.y += change.y
+			elif child.position.x >= (1010.0 if last_view_size == Vector2.ZERO else last_view_size.x - 270.0):
+				child.position.x += change.x
+			if child is Label and child.text.begins_with("A / D  Move"):
+				child.text = "A / D  Move · SPACE  Jump ×2 · SHIFT  Dash · J  Light · K  Heavy · R  Retry · ESC  Pause"
+				child.add_theme_font_size_override("font_size", 13)
+				child.size.x = size.x - 200.0
+	sound_button.position.x = size.x - 158.0
+	message_label.position.x = (size.x - message_label.size.x) / 2.0
+	last_view_size = size

@@ -2,18 +2,17 @@
 
 [ext_resource type="Script" uid="uid://cuuuj3qiub2le" path="res://actors/player/player.gd" id="1"]
 [ext_resource type="Script" uid="uid://btjypdlmhuwk" path="res://combat/hitboxes/attack_hitbox.gd" id="2"]
-[ext_resource type="Texture2D" path="res://resources/original/player_die.svg" id="2_388e2"]
-[ext_resource type="Texture2D" path="res://resources/original/player_aircombo1.svg" id="2_ssdk0"]
-[ext_resource type="Texture2D" path="res://resources/original/player_aircombo2.svg" id="3_7aotg"]
-[ext_resource type="Texture2D" path="res://resources/original/player_jumpandfall.svg" id="3_lsln6"]
-[ext_resource type="Texture2D" path="res://resources/original/player_idle.svg" id="4_hiosj"]
-[ext_resource type="Texture2D" path="res://resources/original/player_aircombo3.svg" id="4_k67x5"]
-[ext_resource type="Texture2D" path="res://resources/original/player_dash.svg" id="5_7aotg"]
-[ext_resource type="Texture2D" path="res://resources/original/player_run.svg" id="5_ssdk0"]
-[ext_resource type="Texture2D" path="res://resources/original/player_groundcombo1.svg" id="6_388e2"]
-[ext_resource type="Texture2D" path="res://resources/original/player_groundcombo2.svg" id="7_lsln6"]
-[ext_resource type="Texture2D" path="res://resources/original/player_groundcombo3.svg" id="8_hiosj"]
-[ext_resource type="Script" uid="uid://gf84wpp8q4l2" path="res://actors/player/camera_controller.gd" id="14_k67x5"]
+[ext_resource type="Texture2D" path="res://assets/Art/Character/Die.png" id="2_388e2"]
+[ext_resource type="Texture2D" path="res://assets/Art/Character/AirCombo1.png" id="2_ssdk0"]
+[ext_resource type="Texture2D" path="res://assets/Art/Character/AirCombo2.png" id="3_7aotg"]
+[ext_resource type="Texture2D" path="res://assets/Art/Character/JumpAndFall.png" id="3_lsln6"]
+[ext_resource type="Texture2D" path="res://assets/Art/Character/Idle.png" id="4_hiosj"]
+[ext_resource type="Texture2D" path="res://assets/Art/Character/AirCombo3.png" id="4_k67x5"]
+[ext_resource type="Texture2D" path="res://assets/Art/Character/Dash.png" id="5_7aotg"]
+[ext_resource type="Texture2D" path="res://assets/Art/Character/Run.png" id="5_ssdk0"]
+[ext_resource type="Texture2D" path="res://assets/Art/Character/GroundCombo1.png" id="6_388e2"]
+[ext_resource type="Texture2D" path="res://assets/Art/Character/GroundCombo2.png" id="7_lsln6"]
+[ext_resource type="Texture2D" path="res://assets/Art/Character/GroundCombo3.png" id="8_hiosj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsulePlayer"]
 radius = 14.0
@@ -1422,20 +1421,10 @@ script = ExtResource("1")
 position = Vector2(0, -27)
 shape = SubResource("CapsulePlayer")
 
-[node name="Visual" type="Polygon2D" parent="." unique_id=969699472]
-visible = false
-position = Vector2(0, -28)
-color = Color(0.34901962, 0.72156864, 1, 0.011764706)
-polygon = PackedVector2Array(-15, -26, 12, -26, 16, 6, 7, 25, -12, 25, -17, 2)
-
-[node name="Sword" type="Polygon2D" parent="Visual" unique_id=1623848848]
-position = Vector2(17, 2)
-color = Color(0.9, 0.94, 1, 1)
-polygon = PackedVector2Array(0, -3, 38, -2, 44, 0, 38, 2, 0, 3)
-
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1256323824]
-position = Vector2(3, -35)
-scale = Vector2(1.85, 1.8958334)
+texture_filter = 1
+position = Vector2(0, -48)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_388e2")
 animation = &"idle"
 
@@ -1446,12 +1435,6 @@ script = ExtResource("2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox" unique_id=1536032259]
 shape = SubResource("AttackShape")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=569757071]
-script = ExtResource("14_k67x5")
-base_vertical_offset = -120.0
-air_vertical_offset = -145.0
-air_zoom = 1.46
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1329734707]
 libraries/ = SubResource("AnimationLibrary_8yk5o")

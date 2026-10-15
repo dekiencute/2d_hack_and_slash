@@ -14,7 +14,7 @@ A compact pixel-art 2D hack-and-slash prototype. Clear five waves, launch enemie
 
 Stylebreaker is a small combat pre-alpha set in one forest arena. Move, double jump and dash through enemy attacks. Chain ground strikes, launch enemies, continue combos in the air and finish with an aerial slam. Repeating the same move earns less Style; mixing attacks rewards variety.
 
-Includes one enemy type, five waves, keyboard and Xbox-style controller mappings, synthesized sound effects, pause/retry and victory/defeat screens. No music, saves, progression, multiplayer or remapping. Some feedback and UI panels remain placeholders.
+Includes one enemy type, five waves, keyboard and Xbox-style controller mappings, synthesized sound effects, pause/retry and victory/defeat screens. No music, saves, progression, multiplayer or remapping. Hit warnings and menus use functional text controls.
 
 ## Install and controls
 
@@ -35,9 +35,9 @@ Requires Windows x86_64 and an OpenGL 3.3-compatible GPU. Extract the whole ZIP 
 
 ## Credits and screenshots
 
-Use verified attribution/terms in `RC_CREDITS.txt` and `RC_ASSET_LICENSE_REPORT.md` once rights are cleared. Do not state “all art CC0”: only retained original media has that grant.
+Use verified attribution/terms in `RC_CREDITS.txt` and `RC_ASSET_LICENSE_REPORT.md` once rights are cleared. Do not state “all art CC0”: only the seven retained sound effects have that grant.
 
-Actual tested pixel-gameplay captures are in `docs/media/rc-v0.1.0/`: title, arena, combat and victory. Until permissions are verified these are **review evidence only**, not cleared public marketing. No new cover art is generated; cover selection remains for owner review. Historical geometric screenshots/cover do not represent this pixel version.
+Actual tested pixel-gameplay captures are in `docs/media/cleanup/`: title, arena, combat and victory. Until permissions are verified these are **review evidence only**, not cleared public marketing. No new cover art is generated; cover selection remains for owner review. Historical geometric screenshots/cover do not represent this pixel version.
 
 ## Before publication
 

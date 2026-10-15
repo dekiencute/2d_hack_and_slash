@@ -131,34 +131,20 @@
       "verification_basis": "Original bundled README/license in matching historical pack, all 12 selected PNG hashes match, owner confirms original creator source URL. Clearance covers compiled game use, not source asset sharing; no live-page retrieval claimed."
     },
     {
-      "id": "original_media",
+      "id": "original_audio",
       "status": "verified",
       "evidence": [
-        "resources/original/LICENSE.txt"
+        "resources/audio/LICENSE.txt"
       ],
-      "attribution": "Original project art and synthesized SFX, CC0 1.0",
+      "attribution": "Seven retained original synthesized SFX, CC0 1.0. Audio only; no visual artwork.",
       "files": [
-        "resources/original/arena.svg",
-        "resources/original/audio/dash.wav",
-        "resources/original/audio/defeat.wav",
-        "resources/original/audio/hit.wav",
-        "resources/original/audio/hurt.wav",
-        "resources/original/audio/slash.wav",
-        "resources/original/audio/victory.wav",
-        "resources/original/audio/wave.wav",
-        "resources/original/enemy.svg",
-        "resources/original/icon.svg",
-        "resources/original/player_aircombo1.svg",
-        "resources/original/player_aircombo2.svg",
-        "resources/original/player_aircombo3.svg",
-        "resources/original/player_dash.svg",
-        "resources/original/player_die.svg",
-        "resources/original/player_groundcombo1.svg",
-        "resources/original/player_groundcombo2.svg",
-        "resources/original/player_groundcombo3.svg",
-        "resources/original/player_idle.svg",
-        "resources/original/player_jumpandfall.svg",
-        "resources/original/player_run.svg"
+        "resources/audio/dash.wav",
+        "resources/audio/defeat.wav",
+        "resources/audio/hit.wav",
+        "resources/audio/hurt.wav",
+        "resources/audio/slash.wav",
+        "resources/audio/victory.wav",
+        "resources/audio/wave.wav"
       ]
     }
   ],

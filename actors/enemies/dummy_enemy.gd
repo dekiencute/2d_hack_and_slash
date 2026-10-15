@@ -28,7 +28,7 @@ var base_color := Color(0.92, 0.31, 0.34, 1.0)
 
 @onready var body_visual: Sprite2D = $BodyVisual
 @onready var hp_label: Label = $HPLabel
-@onready var hp_bar: ProgressBar = $HPBar
+@onready var hp_bar: TextureProgressBar = $HPBar
 
 func _ready() -> void:
 	add_to_group("enemies")
@@ -54,7 +54,6 @@ func _physics_process(delta: float) -> void:
 	air_suspend_left = maxf(0.0, air_suspend_left - delta)
 	attack_cooldown_left = maxf(0.0, attack_cooldown_left - delta)
 	telegraph_left = maxf(0.0, telegraph_left - delta)
-	queue_redraw()
 
 	if not is_on_floor():
 		var gravity_scale := air_suspend_gravity_scale if air_suspend_left > 0.0 else 1.0
@@ -203,13 +202,6 @@ func stop_combat() -> void:
 	action_generation += 1
 	_finish_attack(false)
 	set_physics_process(false)
-	queue_redraw()
 
 func _exit_tree() -> void:
 	_release_attack_token()
-
-func _draw() -> void:
-	if attacking and telegraph_left > 0.0:
-		var progress := 1.0 - telegraph_left / attack_windup
-		draw_arc(Vector2(0, -32), 46.0, -PI * 0.5, -PI * 0.5 + TAU * progress, 32, Color(1.0, 0.76, 0.25), 2.0, true)
-		draw_line(Vector2(-attack_range, -2), Vector2(attack_range, -2), Color(1.0, 0.76, 0.25, 0.65), 3.0)

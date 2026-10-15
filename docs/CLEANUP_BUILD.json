@@ -1,0 +1,140 @@
+{
+  "date": "2026-10-15",
+  "status": "PRIVATE QA ONLY \u2014 NOT READY FOR PUBLIC RELEASE",
+  "godot": "4.6.3.stable.official.7d41c59c4",
+  "source_commit": "049a2e48a7e69b3e8008aa2d2163b5ba4452a258",
+  "source_worktree_dirty_at_build": false,
+  "artifact_sha256": {
+    "builds/rc-private-qa/windows/Stylebreaker.exe": "db3a85462310b1455c26c30d31394dd5e8b10cfd7c71775f708ad43129dc2982",
+    "builds/rc-private-qa/linux/Stylebreaker.x86_64": "1441ea028a3fc3517ccb0459ee9454d1cdf82d1b394747969845cc10595266c6",
+    "dist/private-qa/Stylebreaker-PreAlpha-v0.1.0-windows-x86_64-PRIVATE-QA-NOT-FOR-DISTRIBUTION.zip": "75c41f488946db5053f8424a6016d74de8fa78138e89ac3df6d381b8f2d27fdb"
+  },
+  "zip_file_count": 14,
+  "zip_crc_and_extracted_file_hashes_verified": true,
+  "pack_file_count": 123,
+  "derived_media_audit": {
+    "all_derived_media_declared": true,
+    "count": 33,
+    "paths": [
+      "res://.godot/imported/AirCombo1.png-86fd6d09641dd02d5df0c1abee5d5f76.ctex",
+      "res://.godot/imported/AirCombo2.png-ac4be21b6b3fd8edc2323c255f56a85c.ctex",
+      "res://.godot/imported/AirCombo3.png-4122c41907115d2f5032696f96af8aa5.ctex",
+      "res://.godot/imported/Dash.png-1f9bff90e25f421e3f51913a1471cbe3.ctex",
+      "res://.godot/imported/Die.png-cf6a261866430de4cad6a10f693045a7.ctex",
+      "res://.godot/imported/GroundCombo1.png-473122ca8f4cf4c3a208801608ce837c.ctex",
+      "res://.godot/imported/GroundCombo2.png-1b0bbcdec18cee7cbc493c4716fffbab.ctex",
+      "res://.godot/imported/GroundCombo3.png-941594d3ec313715789250c42eda3b49.ctex",
+      "res://.godot/imported/Idle.png-25777d45aff13cb14f911e9db784479e.ctex",
+      "res://.godot/imported/JumpAndFall.png-1d4de5d3834ee3b7f61565487f0ed566.ctex",
+      "res://.godot/imported/Layer_0000_9.png-7cab5dae818611c9cf8a8449592c0ad0.ctex",
+      "res://.godot/imported/Layer_0001_8.png-b4e32f29edc51d7859346d5f45e74cea.ctex",
+      "res://.godot/imported/Layer_0002_7.png-1ade2919d23b9e1b33cb6bea0854ffdb.ctex",
+      "res://.godot/imported/Layer_0003_6.png-fe72605a3d5664bb84ef6d5a30d6a70f.ctex",
+      "res://.godot/imported/Layer_0004_Lights.png-bbced838b9dbf2a64bdf864d65972907.ctex",
+      "res://.godot/imported/Layer_0005_5.png-3edf82199abbd9580ca8ea30e773eaf8.ctex",
+      "res://.godot/imported/Layer_0006_4.png-72af35ff969e128b652d3fb38839c3b5.ctex",
+      "res://.godot/imported/Layer_0007_Lights.png-a127327dbe6eaca77a7a561cf08611d7.ctex",
+      "res://.godot/imported/Layer_0008_3.png-9bf6a0ec9390b2b4db67c787e442bc45.ctex",
+      "res://.godot/imported/Layer_0009_2.png-16d8e6a0334215ae987e7e3888901654.ctex",
+      "res://.godot/imported/Layer_0010_1.png-7e551564d1a293f64f3e4c5d6eb0dbec.ctex",
+      "res://.godot/imported/Layer_0011_0.png-97f0ce05c2ff739e00147fa45be5d476.ctex",
+      "res://.godot/imported/Pixel1_Healthbar_0001_pixel1_healthbar.png-4abb6670d1ab244159312a4f598aa495.ctex",
+      "res://.godot/imported/Pixel1_Healthbar_0002_pixel1_border.png-309aabe68f0cf1ab7ed46783ce279517.ctex",
+      "res://.godot/imported/Run.png-0775030876cd2cbddaa376edeb6cf454.ctex",
+      "res://.godot/imported/Sword.png-32a692af3afcebb1b47ad1d6d55e113a.ctex",
+      "res://.godot/imported/dash.wav-45cc260b4ac725a3d0bc1a91d62c68eb.sample",
+      "res://.godot/imported/defeat.wav-c0bd173266a17c1a5833c78bb5031d47.sample",
+      "res://.godot/imported/hit.wav-26dcba07e0d24288f9ceb37dfb2540fb.sample",
+      "res://.godot/imported/hurt.wav-9d619f86a1cf77a42ce2de69e33bf910.sample",
+      "res://.godot/imported/slash.wav-17e43216d420fc096a6c21563a4c6ed0.sample",
+      "res://.godot/imported/victory.wav-c38abddcb8fbd50e92610eaf4790e761.sample",
+      "res://.godot/imported/wave.wav-bb71910dda39dc48239dabb848fc2b68.sample"
+    ]
+  },
+  "tests": {
+    "controller-death": {
+      "checks": 13,
+      "failures": 0
+    },
+    "derived-media-audit": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "extracted-pack-cleanup-audit": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "extracted-windows-controller-death": {
+      "checks": 13,
+      "failures": 0
+    },
+    "extracted-windows-pack-regression": {
+      "checks": 47,
+      "failures": 0
+    },
+    "extracted-windows-pack-validation": {
+      "checks": 67,
+      "failures": 0
+    },
+    "import": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "linux-export": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "linux-startup": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "pixel-presentation": {
+      "checks": 62,
+      "failures": 0
+    },
+    "pixel-source-regression": {
+      "checks": 47,
+      "failures": 0
+    },
+    "qa-import": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "source-cleanup-audit": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "version": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "windows-export": {
+      "errors": 0,
+      "warnings": 0
+    }
+  },
+  "rendered_tests": {
+    "combat_regression": {
+      "checks": 51,
+      "failures": 0,
+      "screenshots": 4
+    },
+    "pixel_presentation": {
+      "checks": 62,
+      "failures": 0
+    },
+    "warning": "X11 virtual graphics driver cannot set V-Sync; one driver warning per rendered run. No parser/resource/runtime errors."
+  },
+  "protected_files_sha256_verified": 70,
+  "all_seven_audio_samples_identical_to_origin_main": true,
+  "windows_native_execution": "NOT TESTED",
+  "physical_controller_and_audible_audio": "NOT TESTED",
+  "public_gate": "Expected exit 1: character/enemy/UI independently unverified; no public ZIP",
+  "template_source": "https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_export_templates.tpz",
+  "template_sha256": {
+    "version.txt": "4855bd38072b77c73c45739cf6a6787d7df790a368b0a437102f352650e6186b",
+    "windows_release_x86_64.exe": "91724f15024a3a545e28ccd83134403d31ce2323a38e51c95e4dfa282f732ab6",
+    "linux_release.x86_64": "2c78919325d7f29fa7607287c7c1eeac367ea4c94e7b8b6f5f4c6b20492f73d0"
+  },
+  "first_attempt": "Cleanup auditor incorrectly rejected regenerated .godot pixel caches; corrected in 049a2e4. No ZIP from failed attempt retained. Complete pipeline rerun passed."
+}

@@ -114,9 +114,9 @@ def main():
         if sha(templates / name) != record['sha256']:
             raise RuntimeError('Template does not match the recorded official 4.6.3 file: ' + name)
     run('import', [args.godot, '--headless', '--editor', '--path', str(ROOT), '--import', '--quit'])
-    for label, extra in [('pixel', []), ('fallback', ['--', '--scene', 'res://levels/main.tscn'])]:
-        run(label + '-source-regression', [args.godot, '--headless', '--path', str(ROOT), '--script', 'tests/regression.gd'] + extra, checks=True)
-    for label, script in [('pixel-presentation', 'pixel_art_validation'), ('controller-death', 'release_controls_validation'), ('background-preview', 'background_preview_validation'), ('asset-preview', 'asset_preview_validation')]:
+    run('source-cleanup-audit', ['python3', str(ROOT / 'tools/check_pixel_only.py')])
+    run('pixel-source-regression', [args.godot, '--headless', '--path', str(ROOT), '--script', 'tests/regression.gd'], checks=True)
+    for label, script in [('pixel-presentation', 'pixel_art_validation'), ('controller-death', 'release_controls_validation')]:
         run(label, [args.godot, '--headless', '--path', str(ROOT), '--script', 'tests/' + script + '.gd'], checks=True)
 
     suffix = '-PRIVATE-QA-NOT-FOR-DISTRIBUTION' if args.private_qa else '-RELEASE-CANDIDATE'
@@ -134,17 +134,21 @@ def main():
     linux.parent.mkdir(exist_ok=True)
     windows.unlink(missing_ok=True)
     linux.unlink(missing_ok=True)
-    selected = ['res://pixel_art/arena.tscn', 'res://levels/main.tscn'] + [a['path'] for a in report['assets']]
+    selected = ['res://pixel_art/arena.tscn'] + [a['path'] for a in report['assets']]
     # Script preload() paths and global classes are not all traversed by selected-scene export.
     selected += ['res://' + str(p.relative_to(ROOT))
-                 for folder in ['actors', 'combat', 'levels', 'systems', 'ui', 'resources', 'pixel_art']
+                 for folder in ['actors', 'combat', 'systems', 'ui', 'resources', 'pixel_art']
                  for p in (ROOT / folder).rglob('*') if p.suffix in ['.gd', '.tscn', '.tres']]
     selected = sorted(set(selected))
     all_media = ['res://' + str(p.relative_to(ROOT)) for p in (ROOT / 'assets/Art').rglob('*') if p.suffix.lower() in ['.png', '.gif', '.psd', '.aseprite']]
     pack_spec = {'private_qa': args.private_qa, 'expected_assets': [a['path'] for a in report['assets']],
                  'forbidden_assets': sorted(set(all_media) - {a['path'] for a in report['assets']}),
-                 'forbidden_paths': ['res://preview/art_preview.tscn', 'res://tests/background_preview.tscn',
-                                     'res://tools/release.py', 'res://addons/godot_mcp/plugin.cfg']}
+                 'forbidden_paths': []}
+    import csv
+    with (ROOT / 'docs/CLEANUP_DELETIONS.csv').open() as ledger:
+        pack_spec['forbidden_paths'] = ['res://' + row['path'] for row in csv.DictReader(ledger)
+                                        if not row['path'].startswith(('/', '.godot/', 'builds/', 'dist/'))]
+
     pack_spec_path = build / 'PACK_EXPECTATIONS.json'
     pack_spec_path.write_text(json.dumps(pack_spec, indent=2) + '\n')
     with tempfile.TemporaryDirectory(prefix='stylebreaker-rc-') as temp_name:
@@ -169,12 +173,12 @@ def main():
         stage.mkdir()
         shutil.copy2(windows, stage / 'Stylebreaker.exe')
         for src, dest in [('PLAYER_README.txt', 'README.txt'), ('RC_CREDITS.txt', 'CREDITS.txt'),
-                          ('RC_ASSET_LICENSE_REPORT.md', 'ASSET_LICENSE_REPORT.md'), ('RC_CHANGELOG.md', 'CHANGELOG.md')]:
+                          ('RC_ASSET_LICENSE_REPORT.md', 'ASSET_LICENSE_REPORT.md')]:
             shutil.copy2(ROOT / 'docs' / src, stage / dest)
         shutil.copy2(build / 'ASSET_LICENSE_REPORT.json', stage / 'ASSET_LICENSE_REPORT.json')
         licenses = stage / 'LICENSES'
         licenses.mkdir()
-        shutil.copy2(ROOT / 'resources/original/LICENSE.txt', licenses / 'ORIGINAL_ASSETS_CC0.txt')
+        shutil.copy2(ROOT / 'resources/audio/LICENSE.txt', licenses / 'AUDIO_CC0.txt')
         for file in (ROOT / 'docs/licenses').iterdir():
             if file.is_file():
                 shutil.copy2(file, licenses / file.name)
@@ -224,6 +228,8 @@ def main():
                 '--script', str(ROOT / 'tests/regression.gd')], extracted, checks=True)
             run('extracted-windows-controller-death', [args.godot, '--headless', '--main-pack', str(extracted_exe),
                 '--script', str(ROOT / 'tests/release_controls_validation.gd')], extracted, checks=True)
+            run('extracted-pack-cleanup-audit', ['python3', str(ROOT / 'tools/check_pixel_only.py'), '--pack', str(build / 'PACK_CONTENTS.json')])
+            run('derived-media-audit', ['python3', str(ROOT / 'tools/audit_rc_pack.py'), '--build', str(build)])
             shutil.move(temporary_zip, archive)
         except BaseException:
             temporary_zip.unlink(missing_ok=True)

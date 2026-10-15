@@ -1,7 +1,6 @@
 extends Node
 ## Read-only observer of the original enemy state. Never schedules attacks or damage.
 const SHEET = preload("res://assets/Art/Enemies/Demon_Sword/Sword.png")
-const HEALTH_BAR = preload("res://pixel_art/health_bar.gd")
 var actor
 var sprite: Sprite2D
 var bar: TextureProgressBar
@@ -11,7 +10,7 @@ var elapsed := 0.0
 
 func _ready() -> void:
 	actor = get_parent()
-	sprite = actor.body_visual
+	sprite = actor.get_node("BodyVisual")
 	sprite.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	sprite.centered = false
 	sprite.position = Vector2(-64, -102)
@@ -22,11 +21,7 @@ func _ready() -> void:
 			texture.atlas = SHEET
 			texture.region = Rect2(column * 128, row * 64, 128, 64)
 			frames.append(texture)
-	actor.hp_bar.hide()
-	bar = HEALTH_BAR.new()
-	bar.name = "PixelHealth"
-	bar.position = Vector2(-41, -84)
-	actor.add_child(bar)
+	bar = actor.get_node("HPBar")
 	_process(0.0)
 
 func _process(delta: float) -> void:

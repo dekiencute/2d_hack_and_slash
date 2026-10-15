@@ -80,7 +80,7 @@ func _run() -> void:
 			var texture := frames.get_frame_texture(animation, frame) as AtlasTexture
 			if texture and (texture.region.end.x > texture.atlas.get_width() or texture.region.end.y > texture.atlas.get_height()):
 				frame_bounds_ok = false
-	check(frame_bounds_ok, "every animation frame fits its original replacement atlas")
+	check(frame_bounds_ok, "every animation frame fits its uploaded pixel atlas")
 	var has_pad_jump := false
 	for event in InputMap.action_get_events("jump"):
 		if event is InputEventJoypadButton and event.button_index == JOY_BUTTON_A:

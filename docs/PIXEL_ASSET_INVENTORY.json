@@ -1,0 +1,360 @@
+{
+  "runtime_png_count": 26,
+  "retained_sources": [
+    {
+      "path": "assets/Art/Character/2WayShootGun1.png",
+      "sha256": "bdcd8aff254e6f0d8d3083e6df933560d315f81f3a056ba82065daf6acb4b191",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/Character/2WayShootGun2.png",
+      "sha256": "75af1900acee5f58b8279645b15aa8ee912edc7b2783f6c34809b2d1a6a64123",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/Character/AirCombo1.png",
+      "sha256": "cb3d1b72dadb93a4458d38c17e7a7d0e11e8805d01f153eff3ddbf7e922e5fe3",
+      "runtime_selected": true,
+      "purpose": "player frame atlas"
+    },
+    {
+      "path": "assets/Art/Character/AirCombo2.png",
+      "sha256": "fa45b338de2603836fb783c50cf6b17ab123dcf771d59358e8bc14955b7549ca",
+      "runtime_selected": true,
+      "purpose": "player frame atlas"
+    },
+    {
+      "path": "assets/Art/Character/AirCombo3.png",
+      "sha256": "8a06e181bdf85a6fc7b2497af56519867b220a1ed9f2769733e414b60129c685",
+      "runtime_selected": true,
+      "purpose": "player frame atlas"
+    },
+    {
+      "path": "assets/Art/Character/AirShootGun1.png",
+      "sha256": "b1e8faa0dc30709c7fd55fa0c40f2785bdf7fe4853d1fd6206cafda68aef8a18",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/Character/AirShootGun2.png",
+      "sha256": "f87f58b96b3dfca30987647e023f81c0d4f6a2c5974ce734520dc214a7493d3e",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/Character/Dash.png",
+      "sha256": "d97670663df6440c684b30c265db80553637b615e744978dee5030e611607d65",
+      "runtime_selected": true,
+      "purpose": "player frame atlas"
+    },
+    {
+      "path": "assets/Art/Character/Die.png",
+      "sha256": "d880aaac6a2faf8ffed78a1c61842c026a6d1cb5b46b5681f1b9053233b8c0c3",
+      "runtime_selected": true,
+      "purpose": "player frame atlas"
+    },
+    {
+      "path": "assets/Art/Character/GroundCombo1.png",
+      "sha256": "07430f55b81070466838a696176029071c03872790c8abd920a280840495671d",
+      "runtime_selected": true,
+      "purpose": "player frame atlas"
+    },
+    {
+      "path": "assets/Art/Character/GroundCombo2.png",
+      "sha256": "2008c03370cc783707c96247775b9afb9ec5bf57825ec3a695ecefa655d5e148",
+      "runtime_selected": true,
+      "purpose": "player frame atlas"
+    },
+    {
+      "path": "assets/Art/Character/GroundCombo3.png",
+      "sha256": "f1239eaa985ab85d23a8039be144534389df721c0dd1a1e8b3ffe826568b21ca",
+      "runtime_selected": true,
+      "purpose": "player frame atlas"
+    },
+    {
+      "path": "assets/Art/Character/Idle.png",
+      "sha256": "a72b0d362e69691f1fcbf00619655458f240795717754d274b8501831fb3070b",
+      "runtime_selected": true,
+      "purpose": "player frame atlas"
+    },
+    {
+      "path": "assets/Art/Character/JumpAndFall.png",
+      "sha256": "5d74a03496b426bf44cf7b6b4a96c7e99dc36dbebef82d82b76e8df080c299e8",
+      "runtime_selected": true,
+      "purpose": "player frame atlas"
+    },
+    {
+      "path": "assets/Art/Character/LungingStab.png",
+      "sha256": "866b36fbde4a689ce36d8cc208b450482906f52ac646b76426a9236923725c69",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/Character/Run.png",
+      "sha256": "4aa782cba1c0efbeefe64e7ce746d85d204bd7b6bbc01b5e467d4ed81eb47995",
+      "runtime_selected": true,
+      "purpose": "player frame atlas"
+    },
+    {
+      "path": "assets/Art/Character/ShootGun1.png",
+      "sha256": "75cf6a03e7719231862766fe18cb19abf0845ce488cfa1e384f4a7dc6f5c2b38",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/Character/ShootGun2.png",
+      "sha256": "683d9f9eee41ef2f3c28b5e9448480e6a1849dc5cffd1ec585b6e95b06e247c0",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/Character/TakeHit.png",
+      "sha256": "9889178384d23683dae89714e97744505e09ebfc6c08102ee137efd7626e8117",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/Enemies/Demon_Sword/Sword.aseprite",
+      "sha256": "5b44ac893538402b79289d725ceae7c7f0cbafa22ed1368f5bd07a7abecde0a0",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/Enemies/Demon_Sword/Sword.png",
+      "sha256": "9cb5f52ebccaa23ba0b4087315196950901a655a9e23b79cde553642c9bb3ad8",
+      "runtime_selected": true,
+      "purpose": "enemy frame atlas"
+    },
+    {
+      "path": "assets/Art/Enemies/Demon_Sword/eg/Sword_eg.aseprite",
+      "sha256": "88f69afa2e05795b53ed2af9c14a240fb6bf6aacb4446b0977e574ba5f5f4c24",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/Enemies/Demon_Sword/eg/Sword_eg.gif",
+      "sha256": "f5328c01b085c35ef3a3b043abe7e1a4332fee3bd0dc6a0be80f520e13e66466",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/Enemies/Demon_Sword/eg/eg_run2.aseprite",
+      "sha256": "d3d85cf10eceae547278e35f019d707fb13e46441465b343236091dd67311bb5",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/Enemies/Demon_Sword/eg/sowrd_eg2.gif",
+      "sha256": "cda49f1bd9057a27deaa626ade4addf9a86896a8a88128c861de287bfd0e4fb8",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/UI/Background/Background layers/Layer_0000_9.png",
+      "sha256": "d2a18cf43adfc29109fa41db1ab113773aa2571aae80477f65f562371daef9be",
+      "runtime_selected": true,
+      "purpose": "forest depth/light layer"
+    },
+    {
+      "path": "assets/Art/UI/Background/Background layers/Layer_0001_8.png",
+      "sha256": "7d07451c38b9951c74ba76988ad5930aa09f5d59e65123ea854269a40b461b34",
+      "runtime_selected": true,
+      "purpose": "forest depth/light layer"
+    },
+    {
+      "path": "assets/Art/UI/Background/Background layers/Layer_0002_7.png",
+      "sha256": "11eed0061810aeecd57296203865a374b3250a90673dc0764c9cc9f9d09c8b88",
+      "runtime_selected": true,
+      "purpose": "forest depth/light layer"
+    },
+    {
+      "path": "assets/Art/UI/Background/Background layers/Layer_0003_6.png",
+      "sha256": "610fc196909f12bc170759961e3388c5da2d2b9f10c919abcd96d0b4d31969f3",
+      "runtime_selected": true,
+      "purpose": "forest depth/light layer"
+    },
+    {
+      "path": "assets/Art/UI/Background/Background layers/Layer_0004_Lights.png",
+      "sha256": "4cb1658de8f0d25ef98a9b88e97d2b4ca13f07b5786d51096593f30128789274",
+      "runtime_selected": true,
+      "purpose": "forest depth/light layer"
+    },
+    {
+      "path": "assets/Art/UI/Background/Background layers/Layer_0005_5.png",
+      "sha256": "9c053e4b1f61692669ffa62c5b952c5858f55adeadfe71dfcbf2b70dee43f3e1",
+      "runtime_selected": true,
+      "purpose": "forest depth/light layer"
+    },
+    {
+      "path": "assets/Art/UI/Background/Background layers/Layer_0006_4.png",
+      "sha256": "f09bf8f05931f6dccbc70a48e898ed27c745dea44e3e8b3fae9031597ea223f9",
+      "runtime_selected": true,
+      "purpose": "forest depth/light layer"
+    },
+    {
+      "path": "assets/Art/UI/Background/Background layers/Layer_0007_Lights.png",
+      "sha256": "738b3e2d041055f2377f9df1b0acd58421b576eeca6454b90f7aabfa48910ee1",
+      "runtime_selected": true,
+      "purpose": "forest depth/light layer"
+    },
+    {
+      "path": "assets/Art/UI/Background/Background layers/Layer_0008_3.png",
+      "sha256": "c9c7b091b46361b609028c52c507762f496a47a9b289a24a302bd12d3d89d77f",
+      "runtime_selected": true,
+      "purpose": "forest depth/light layer"
+    },
+    {
+      "path": "assets/Art/UI/Background/Background layers/Layer_0009_2.png",
+      "sha256": "fc5eeb67d3c754fdd8b88da32da63563724f34114fa8b54496eb9267cdfc645b",
+      "runtime_selected": true,
+      "purpose": "forest depth/light layer"
+    },
+    {
+      "path": "assets/Art/UI/Background/Background layers/Layer_0010_1.png",
+      "sha256": "17f90d731323f73d5c72485ba7dc1355c15f2c4d0c2ea2537f43172b9a825345",
+      "runtime_selected": true,
+      "purpose": "forest depth/light layer"
+    },
+    {
+      "path": "assets/Art/UI/Background/Background layers/Layer_0011_0.png",
+      "sha256": "2843b1ef9cd3837040f5355d71ce369cbfe201f1d5c042866d1d06bd2ef5592a",
+      "runtime_selected": true,
+      "purpose": "forest depth/light layer"
+    },
+    {
+      "path": "assets/Art/UI/Pixel Health Bar Asset Pack 1 by Adwit Rahman/Health Bar Asset Pack by Adwit Rahman.psd",
+      "sha256": "a796e1492cf944dc7aa0711a58d67b6319c19ff37b46317ea2090df7a5475bc6",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/UI/Pixel Health Bar Asset Pack 1 by Adwit Rahman/Pixel Health Bar 1/Health_0000_Created-by-Adwit-Rahman-@adwitr_itch.io-.png",
+      "sha256": "12c333d19869d7ebfc9b084b8ba65b1e4b089f4a40b1a0ff7f7d81a94732a45e",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/UI/Pixel Health Bar Asset Pack 1 by Adwit Rahman/Pixel Health Bar 1/Heart.png",
+      "sha256": "e15a5f2f79ac23726805dcc9636fe5c50d82fbbda310ecf795e855c8a27fc115",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/UI/Pixel Health Bar Asset Pack 1 by Adwit Rahman/Pixel Health Bar 1/Pixel (1).png",
+      "sha256": "1699afc65de09b6c877f3007df02a65a6ee0765c044fcd84d2d8bd1be95cd384",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/UI/Pixel Health Bar Asset Pack 1 by Adwit Rahman/Pixel Health Bar 1/Pixel (2).png",
+      "sha256": "ab30ebe0b2b12e12b2ee20f1825eb822ef2c636d33442978ce9973458663ac79",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/UI/Pixel Health Bar Asset Pack 1 by Adwit Rahman/Pixel Health Bar 1/Pixel (3).png",
+      "sha256": "f854833e73f1b485ea128d111ead9b06893ee4b846d0f24c5e9d7fb3c614f8bb",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/UI/Pixel Health Bar Asset Pack 1 by Adwit Rahman/Pixel Health Bar 1/Pixel (4).png",
+      "sha256": "ebd1aae64d70dcf2813cd832e8a0ae825d0b8656afc65c09a4673f9809fcb871",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/UI/Pixel Health Bar Asset Pack 1 by Adwit Rahman/Pixel Health Bar 1/Pixel 2.png",
+      "sha256": "6369d10e33f5d15f0fffeb1598d6366cbe3cfb62a3204713ab275923cd1f28fe",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/UI/Pixel Health Bar Asset Pack 1 by Adwit Rahman/Pixel Health Bar 1/Pixel1_Healthbar_0000_pixel1_staminabar.png",
+      "sha256": "7a8f8e46d174cf47636da9ada35eebdca9a161c811faeb06c404f54a527a51be",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/UI/Pixel Health Bar Asset Pack 1 by Adwit Rahman/Pixel Health Bar 1/Pixel1_Healthbar_0001_pixel1_healthbar.png",
+      "sha256": "33a133d4134f5fea45abfa125ca234721fde44fe1328ff79ef8633bc2dc61cfe",
+      "runtime_selected": true,
+      "purpose": "health-bar fill/border"
+    },
+    {
+      "path": "assets/Art/UI/Pixel Health Bar Asset Pack 1 by Adwit Rahman/Pixel Health Bar 1/Pixel1_Healthbar_0002_pixel1_border.png",
+      "sha256": "d27b88c6f4ea5c4ef802a05f4e66a1dcc2862bbde3f6b48894fc79321cd7e40b",
+      "runtime_selected": true,
+      "purpose": "health-bar fill/border"
+    },
+    {
+      "path": "assets/Art/UI/Pixel Health Bar Asset Pack 1 by Adwit Rahman/Pixel Health Bar 1/Pixel1_Healthbar_0003_pixel1_healthbarcomplete.png",
+      "sha256": "76255980198fa824133fa27284300ce9513761841476415f010fb714d4cec201",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/UI/Pixel Health Bar Asset Pack 1 by Adwit Rahman/Pixel Health Bar 1/Pixel1_Healthbar_0004_Background.png",
+      "sha256": "af5743db4deee37bb09609ff6db67282ac2d390db2525575974fc9a9991161e8",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/UI/Pixel Health Bar Asset Pack 1 by Adwit Rahman/Pixel Health Bar 1/Pixel2_Healthbar_0000_Pixel2_HealthBarComplete.png",
+      "sha256": "7f400de02f98945147115c778fa543c7e1c2c2e5cb5f03899c90e206503dfe5a",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/UI/Pixel Health Bar Asset Pack 1 by Adwit Rahman/Pixel Health Bar 1/Pixel2_Healthbar_0001_pixel2_EmblemSpace.png",
+      "sha256": "14d78294163f016831dd6401db290d47e1623a2d907979c0789a4fd46879c482",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/UI/Pixel Health Bar Asset Pack 1 by Adwit Rahman/Pixel Health Bar 1/Pixel2_Healthbar_0002_pixel2_Border.png",
+      "sha256": "f30bb0f45f957cb130e2fd4d0c35f4ee27e46b50bfd6a4e59f6f716bc2430f03",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/UI/Pixel Health Bar Asset Pack 1 by Adwit Rahman/Pixel Health Bar 1/Pixel2_Healthbar_0003_pixel2_HealthBars.png",
+      "sha256": "d85d7c8fe38c8edb407efdc1898c1d31c57a499610b6f9100b5d846403494d1f",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/UI/Pixel Health Bar Asset Pack 1 by Adwit Rahman/Pixel Health Bar 1/Pixel2_Healthbar_0004_Background.png",
+      "sha256": "1b94e0509d2fd202b5f8d76df3c9e25d3f708102e76e6d84d5282ed9ab9b987e",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/UI/Pixel Health Bar Asset Pack 1 by Adwit Rahman/Pixel Health Bar 1/RPG Style (1).png",
+      "sha256": "41966671de505e425080302abd4f9f94932f9b79ecb9cd9cad41aefafbff8e84",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/UI/Pixel Health Bar Asset Pack 1 by Adwit Rahman/Pixel Health Bar 1/RPG Style (2).png",
+      "sha256": "4d943cdb182777addc6cab607cc1195b0a929c119e8cfa1469aa009fc4ca5cb3",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/UI/Pixel Health Bar Asset Pack 1 by Adwit Rahman/Pixel1_Healthbar.psd",
+      "sha256": "8dda5e0c796214d9657d88abe6ad1ecdced48cff4f1959fdd39825605dd2f66c",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    },
+    {
+      "path": "assets/Art/UI/Pixel Health Bar Asset Pack 1 by Adwit Rahman/Pixel2_Healthbar.psd",
+      "sha256": "94d96848f2995caf98331b6135dd29c80361c2d1f52efcf31c2fe5dabf869217",
+      "runtime_selected": false,
+      "purpose": "owner-supplied option/authoring reference; not packaged at runtime"
+    }
+  ],
+  "note": "All uploaded source art retained unchanged. Functional UI font/overlay controls use Godot; no substitute artwork created."
+}

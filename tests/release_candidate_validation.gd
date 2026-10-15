@@ -54,8 +54,8 @@ func _run() -> void:
 	await process_frame
 	await process_frame
 	check(paused and arena.wave == 0 and arena.hud.menu_title.text == "STYLEBREAKER", "export reaches real title gate")
-	check(arena.has_node("PixelPresentation/Forest") and arena.has_node("PixelPresentation/PixelCamera"), "export creates shared forest and integer camera")
-	check(arena.get_node("PixelPresentation").forest.get_child_count() == 10, "export retains all ten forest depth groups")
+	check(arena.has_node("Forest") and arena.has_node("PixelCamera"), "export creates shared forest and integer camera")
+	check(arena.get_node("Forest").get_child_count() == 10, "export retains all ten forest depth groups")
 	var frames: SpriteFrames = arena.player.sprite.sprite_frames
 	var player_textures := true
 	for animation in frames.get_animation_names():
@@ -63,7 +63,7 @@ func _run() -> void:
 			var texture := frames.get_frame_texture(animation, i) as AtlasTexture
 			player_textures = player_textures and texture != null and texture.atlas.resource_path.begins_with("res://assets/Art/Character/")
 	check(player_textures, "export actually uses uploaded player atlases")
-	check(ResourceLoader.exists("res://levels/main.tscn"), "previous arena remains available as fallback")
+	check(packed.get_state().get_node_instance(0) == null, "exported arena has a standalone native root")
 	var keys := {"move_left": KEY_A, "move_right": KEY_D, "jump": KEY_SPACE, "dash": KEY_SHIFT, "light_attack": KEY_J, "heavy_attack": KEY_K, "reset": KEY_R, "pause": KEY_ESCAPE, "mute": KEY_M, "fullscreen": KEY_F11, "ui_accept": KEY_ENTER}
 	for action in keys:
 		var found := false
@@ -83,6 +83,10 @@ func _run() -> void:
 		check(found, action + " controller axis")
 	var files: Array[Dictionary] = []
 	inventory("res://", files)
+	var clean := true
+	for entry in files:
+		clean = clean and not entry.path.contains(".svg")
+	check(clean, "embedded pack contains no SVG or imported SVG texture")
 	var out := FileAccess.open(args[1], FileAccess.WRITE)
 	check(out != null, "write complete embedded-pack file inventory")
 	if out:

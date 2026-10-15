@@ -1,0 +1,655 @@
+{
+  "expected_media": [
+    "res://assets/Art/Character/Idle.png",
+    "res://assets/Art/Character/Run.png",
+    "res://assets/Art/Character/JumpAndFall.png",
+    "res://assets/Art/Character/Dash.png",
+    "res://assets/Art/Character/Die.png",
+    "res://assets/Art/Character/GroundCombo1.png",
+    "res://assets/Art/Character/GroundCombo2.png",
+    "res://assets/Art/Character/GroundCombo3.png",
+    "res://assets/Art/Character/AirCombo1.png",
+    "res://assets/Art/Character/AirCombo2.png",
+    "res://assets/Art/Character/AirCombo3.png",
+    "res://assets/Art/Enemies/Demon_Sword/Sword.png",
+    "res://assets/Art/UI/Pixel Health Bar Asset Pack 1 by Adwit Rahman/Pixel Health Bar 1/Pixel1_Healthbar_0001_pixel1_healthbar.png",
+    "res://assets/Art/UI/Pixel Health Bar Asset Pack 1 by Adwit Rahman/Pixel Health Bar 1/Pixel1_Healthbar_0002_pixel1_border.png",
+    "res://assets/Art/UI/Background/Background layers/Layer_0000_9.png",
+    "res://assets/Art/UI/Background/Background layers/Layer_0001_8.png",
+    "res://assets/Art/UI/Background/Background layers/Layer_0002_7.png",
+    "res://assets/Art/UI/Background/Background layers/Layer_0003_6.png",
+    "res://assets/Art/UI/Background/Background layers/Layer_0004_Lights.png",
+    "res://assets/Art/UI/Background/Background layers/Layer_0005_5.png",
+    "res://assets/Art/UI/Background/Background layers/Layer_0006_4.png",
+    "res://assets/Art/UI/Background/Background layers/Layer_0007_Lights.png",
+    "res://assets/Art/UI/Background/Background layers/Layer_0008_3.png",
+    "res://assets/Art/UI/Background/Background layers/Layer_0009_2.png",
+    "res://assets/Art/UI/Background/Background layers/Layer_0010_1.png",
+    "res://assets/Art/UI/Background/Background layers/Layer_0011_0.png",
+    "res://resources/audio/dash.wav",
+    "res://resources/audio/defeat.wav",
+    "res://resources/audio/hit.wav",
+    "res://resources/audio/hurt.wav",
+    "res://resources/audio/slash.wav",
+    "res://resources/audio/victory.wav",
+    "res://resources/audio/wave.wav"
+  ],
+  "files": [
+    {
+      "bytes": 1067,
+      "path": "res://project.binary",
+      "sha256": "4e496bcd73eb34c4a016c0520857e08859966254106732e5eddebca31b540119"
+    },
+    {
+      "bytes": 537,
+      "path": "res://.godot/global_script_class_cache.cfg",
+      "sha256": "c82fd3f7adcbd0fec9532c0ef3bef4af3c2f8dcab1068047c1dcd96700cb8f23"
+    },
+    {
+      "bytes": 6071,
+      "path": "res://.godot/uid_cache.bin",
+      "sha256": "ef98ccf36e4bc09de6b483b02aecc5e716f338eb4ba06ac1fa3d59d6c0bec55b"
+    },
+    {
+      "bytes": 682,
+      "path": "res://.godot/exported/133200997/export-143e161d1de14cad2278a4c01129dabd-air_heavy.res",
+      "sha256": "e7b3d6c707a911b0eb36b1bd80392db8fd3af3537a42026ba7ddd7ffe06ebcb9"
+    },
+    {
+      "bytes": 44873,
+      "path": "res://.godot/exported/133200997/export-278a2038b0c989bfb0f406b01569d6e0-player.scn",
+      "sha256": "784d6a832865e054740d7195ec6982941ebe6c547858d8cca46c23545de83f42"
+    },
+    {
+      "bytes": 2175,
+      "path": "res://.godot/exported/133200997/export-39f257eb244a76456e0d0c0f34e03c78-dummy_enemy.scn",
+      "sha256": "1f8e70354322fb6a1a6cf8c21275dbd73c2c14dbccbce5f5539f864553c132a4"
+    },
+    {
+      "bytes": 669,
+      "path": "res://.godot/exported/133200997/export-454cb6c1d008d8a19f62bf5089c3f12b-air_light.res",
+      "sha256": "1cfe9487af7eeebac3eceff3f1943f219a4bc40bb899173b883ff99ce6e85248"
+    },
+    {
+      "bytes": 680,
+      "path": "res://.godot/exported/133200997/export-4d3c3aa88d2d94dc29dd0b0926a06f03-launcher.res",
+      "sha256": "18961c67f74bd86b94de67dd4d510428b5adb1aa831accdddf4f6ce9dedb9926"
+    },
+    {
+      "bytes": 691,
+      "path": "res://.godot/exported/133200997/export-50bdc0616e8094f258c7cf335fa812aa-air_light_02.res",
+      "sha256": "1cfcc4e67878aeba114f69f91ad23da3115cbdf399eee6abc605f12eb2f98a8c"
+    },
+    {
+      "bytes": 3882,
+      "path": "res://.godot/exported/133200997/export-528b1bcd39eeb1d2b626c30c0ff02915-forest_layers.scn",
+      "sha256": "9e8f7498162e78b62f49851169ac4d767e6146e398ef7da86a3a1e0985b87e4b"
+    },
+    {
+      "bytes": 696,
+      "path": "res://.godot/exported/133200997/export-64223b0ba75dff3a23c166c6a0f8ac75-light_02.res",
+      "sha256": "e20fd34e36babc5d20bcb942b053f936ea7a808dd12f47ae75041e6bc79a56d7"
+    },
+    {
+      "bytes": 684,
+      "path": "res://.godot/exported/133200997/export-80d7f1f43a4be4455b50aef5c4ef60a3-light_01.res",
+      "sha256": "0b2068f4b4fbda3d42c1b110beef64681980b0aeaec72f8ea2b59757c9b18882"
+    },
+    {
+      "bytes": 675,
+      "path": "res://.godot/exported/133200997/export-a758d2efa133dc6d1c3c3b8850092134-air_light_01.res",
+      "sha256": "92663f4bfb989300e66480a405f7935b68ca1769102d9b11d0cf921ce7673fa7"
+    },
+    {
+      "bytes": 2503,
+      "path": "res://.godot/exported/133200997/export-b218fc509f4c4dd1ca701f773de51e95-arena.scn",
+      "sha256": "6072076459d06b17b2bfa989c26ed0bed6ef00541121604028ba388354e09314"
+    },
+    {
+      "bytes": 708,
+      "path": "res://.godot/exported/133200997/export-bab6eb13998c1d76cbb0c1fb3e7dc228-hud.scn",
+      "sha256": "869f63c59071db77eb814b0c398657648fd197a7fe9ac7fac21af0692f9b3cd9"
+    },
+    {
+      "bytes": 675,
+      "path": "res://.godot/exported/133200997/export-c200cc72da0ff350d5a5a0f4b114507d-air_light_03.res",
+      "sha256": "0bebd751bfec4982076d313b15798049d9e68f454c59d01842ef977e4b9a613a"
+    },
+    {
+      "bytes": 680,
+      "path": "res://.godot/exported/133200997/export-d241250f9bad81741a92992a63a5a561-light_03.res",
+      "sha256": "a464e6b00296a8c9efb9a19824c4aa2d38b7dae5a155d530a3ce21656d4a60f9"
+    },
+    {
+      "bytes": 1168,
+      "path": "res://.godot/imported/AirCombo1.png-86fd6d09641dd02d5df0c1abee5d5f76.ctex",
+      "sha256": "b80accee51e33393ef7fc8ce83bfda40774bc4ed2ac27426e118d714825e7957"
+    },
+    {
+      "bytes": 1568,
+      "path": "res://.godot/imported/AirCombo2.png-ac4be21b6b3fd8edc2323c255f56a85c.ctex",
+      "sha256": "b5196eb3895a0b2940fb8adb661a93a0e4cbeda02bf3ed503205a286a8976b31"
+    },
+    {
+      "bytes": 1452,
+      "path": "res://.godot/imported/AirCombo3.png-4122c41907115d2f5032696f96af8aa5.ctex",
+      "sha256": "fd91763dafd4ba23fcb8056b9809235004663a174eb08a4975fd5e4316a7a321"
+    },
+    {
+      "bytes": 1056,
+      "path": "res://.godot/imported/Dash.png-1f9bff90e25f421e3f51913a1471cbe3.ctex",
+      "sha256": "8f8b9e0f3d1ff53cf0e8c8c8d6ff4f41971b036af979c090b77e1b133ad844c4"
+    },
+    {
+      "bytes": 856,
+      "path": "res://.godot/imported/Die.png-cf6a261866430de4cad6a10f693045a7.ctex",
+      "sha256": "13f8efc760f93a52966b6e0b17a41c813c92ada171491da58d20692c5580421a"
+    },
+    {
+      "bytes": 1412,
+      "path": "res://.godot/imported/GroundCombo1.png-473122ca8f4cf4c3a208801608ce837c.ctex",
+      "sha256": "65f4ad443b00ff341a912613591caf1852d2692d221e4cdaf474bb2908d13099"
+    },
+    {
+      "bytes": 1544,
+      "path": "res://.godot/imported/GroundCombo2.png-1b0bbcdec18cee7cbc493c4716fffbab.ctex",
+      "sha256": "48d6fdf06578b73b11a40abfbe8748dca4828ec66ab259c1c406965f7b24f7fe"
+    },
+    {
+      "bytes": 2738,
+      "path": "res://.godot/imported/GroundCombo3.png-941594d3ec313715789250c42eda3b49.ctex",
+      "sha256": "e909e0aea41b2828d74e71b62279fe4f19be9d33a3b81cc987bdaf2f9a81e82c"
+    },
+    {
+      "bytes": 346,
+      "path": "res://.godot/imported/Idle.png-25777d45aff13cb14f911e9db784479e.ctex",
+      "sha256": "6d38d99787a45c6c2ec81bebcc28e165c3f41aa80486f3ad2105649ef6e3b78f"
+    },
+    {
+      "bytes": 628,
+      "path": "res://.godot/imported/JumpAndFall.png-1d4de5d3834ee3b7f61565487f0ed566.ctex",
+      "sha256": "eb7fef4093e4c74264eacd4e16d2ad5904af34e914fad9f1626935f6463face3"
+    },
+    {
+      "bytes": 1390,
+      "path": "res://.godot/imported/Layer_0000_9.png-7cab5dae818611c9cf8a8449592c0ad0.ctex",
+      "sha256": "35649a28735fb54479148b7b8f8a4d1aae44cb1e72e8373dc5338555078309a5"
+    },
+    {
+      "bytes": 3658,
+      "path": "res://.godot/imported/Layer_0001_8.png-b4e32f29edc51d7859346d5f45e74cea.ctex",
+      "sha256": "44047baeb864122c5f90b057a740f9cd012dec38eedbfd45cb42848cfb14b947"
+    },
+    {
+      "bytes": 5694,
+      "path": "res://.godot/imported/Layer_0002_7.png-1ade2919d23b9e1b33cb6bea0854ffdb.ctex",
+      "sha256": "45ce482aa7dca75ee1c42f413e6db10b03fa65614ce02fc74493896223296b8f"
+    },
+    {
+      "bytes": 12348,
+      "path": "res://.godot/imported/Layer_0003_6.png-fe72605a3d5664bb84ef6d5a30d6a70f.ctex",
+      "sha256": "ff6dd3472672221c263167424f8c570d2ea76f6f36b7218f3321c1bc519b03a7"
+    },
+    {
+      "bytes": 1074,
+      "path": "res://.godot/imported/Layer_0004_Lights.png-bbced838b9dbf2a64bdf864d65972907.ctex",
+      "sha256": "5c047fb3c6b8cc12bdd87875855ae1b3d6d222bd162999decdf7ee96a105b025"
+    },
+    {
+      "bytes": 9582,
+      "path": "res://.godot/imported/Layer_0005_5.png-3edf82199abbd9580ca8ea30e773eaf8.ctex",
+      "sha256": "e74d7b9fd79c85a902900571ad53ec45a2ddee46bd7026a77c41d6688d925356"
+    },
+    {
+      "bytes": 5668,
+      "path": "res://.godot/imported/Layer_0006_4.png-72af35ff969e128b652d3fb38839c3b5.ctex",
+      "sha256": "e65e63efa21dea0b4f28bae9f245beb45553abb2b22bc3b8b59b33d0bb3ff653"
+    },
+    {
+      "bytes": 876,
+      "path": "res://.godot/imported/Layer_0007_Lights.png-a127327dbe6eaca77a7a561cf08611d7.ctex",
+      "sha256": "65bc254d84808598ec45110ba9aa78fbceea58aa8c477b1689ce8f91aef2dc71"
+    },
+    {
+      "bytes": 3312,
+      "path": "res://.godot/imported/Layer_0008_3.png-9bf6a0ec9390b2b4db67c787e442bc45.ctex",
+      "sha256": "aea520bdbb6a56f7dca871a6eaf6c720c8f267b0cf7af9ed670ef131ce609906"
+    },
+    {
+      "bytes": 1910,
+      "path": "res://.godot/imported/Layer_0009_2.png-16d8e6a0334215ae987e7e3888901654.ctex",
+      "sha256": "4022b57a11ba02b7910fcba827249674e53b94c331a036ab90d1d3da1f635b56"
+    },
+    {
+      "bytes": 130,
+      "path": "res://.godot/imported/Layer_0010_1.png-7e551564d1a293f64f3e4c5d6eb0dbec.ctex",
+      "sha256": "2ecd30d90e6915f21c6ff893256fc0bb73629811e668b46228f2c709b1c1e725"
+    },
+    {
+      "bytes": 190,
+      "path": "res://.godot/imported/Layer_0011_0.png-97f0ce05c2ff739e00147fa45be5d476.ctex",
+      "sha256": "7ce7077cea1732aec0e23c99b2b3fcc383bd136cc0602b0ed68ace3c82d4adef"
+    },
+    {
+      "bytes": 160,
+      "path": "res://.godot/imported/Pixel1_Healthbar_0001_pixel1_healthbar.png-4abb6670d1ab244159312a4f598aa495.ctex",
+      "sha256": "d894ad3109d366b60ab3454accb4312b90636493cf1a764b4a3aa080c7852b58"
+    },
+    {
+      "bytes": 192,
+      "path": "res://.godot/imported/Pixel1_Healthbar_0002_pixel1_border.png-309aabe68f0cf1ab7ed46783ce279517.ctex",
+      "sha256": "3ea3a361bb11e3b4d516057ed9ed399c8a28cfab411bb352bafd7fbfdcc0a717"
+    },
+    {
+      "bytes": 1658,
+      "path": "res://.godot/imported/Run.png-0775030876cd2cbddaa376edeb6cf454.ctex",
+      "sha256": "8718d5ec76e0185391ffb373cc042e14f12aab83eb1201aee091fd207d015e2b"
+    },
+    {
+      "bytes": 6762,
+      "path": "res://.godot/imported/Sword.png-32a692af3afcebb1b47ad1d6d55e113a.ctex",
+      "sha256": "73112453ae1ccc1eaf9d6fb2146b95e5596a0701c1b429b6b774e50f4f4f0541"
+    },
+    {
+      "bytes": 2095,
+      "path": "res://.godot/imported/dash.wav-45cc260b4ac725a3d0bc1a91d62c68eb.sample",
+      "sha256": "e8ea14950b7b941af769bfeda6d64c8516b3f7e0c581d9ff5a84d518910a9597"
+    },
+    {
+      "bytes": 7543,
+      "path": "res://.godot/imported/defeat.wav-c0bd173266a17c1a5833c78bb5031d47.sample",
+      "sha256": "0596afe2b794b0016e3894dfe7ad31cbe3a6c668442142a683e41c25b2be95d0"
+    },
+    {
+      "bytes": 1479,
+      "path": "res://.godot/imported/hit.wav-26dcba07e0d24288f9ceb37dfb2540fb.sample",
+      "sha256": "1c06197447ef5f909f01f39798bf2cce27ffd042e386538cd4fee949b235a6e0"
+    },
+    {
+      "bytes": 2647,
+      "path": "res://.godot/imported/hurt.wav-9d619f86a1cf77a42ce2de69e33bf910.sample",
+      "sha256": "b8b720922b8b838bbbd34a3409b0da704ebea89257d74c7e3687b65f88789910"
+    },
+    {
+      "bytes": 1655,
+      "path": "res://.godot/imported/slash.wav-17e43216d420fc096a6c21563a4c6ed0.sample",
+      "sha256": "1cb78531a9de59d0f04e768c2623894f52d85392bcf6b1510b953294fcd6b518"
+    },
+    {
+      "bytes": 11119,
+      "path": "res://.godot/imported/victory.wav-c38abddcb8fbd50e92610eaf4790e761.sample",
+      "sha256": "f9efed2fe70b1c07a6c9e34756f350827484987e4197bf65c498220ccde8c074"
+    },
+    {
+      "bytes": 6199,
+      "path": "res://.godot/imported/wave.wav-bb71910dda39dc48239dabb848fc2b68.sample",
+      "sha256": "7ce943d1862efb605b6010d7468a09d864e0711cc2877e883d75d7aa7713d6b4"
+    },
+    {
+      "bytes": 53,
+      "path": "res://actors/enemies/dummy_enemy.gd.remap",
+      "sha256": "6da7f62c74f54220f54a144999e33cbf56fad7f50583015f7b619c7039afc62a"
+    },
+    {
+      "bytes": 5542,
+      "path": "res://actors/enemies/dummy_enemy.gdc",
+      "sha256": "2c8e079a25b485f8ff587324dd1c3d3ec1b58b9383968582d1cdd983d9778b35"
+    },
+    {
+      "bytes": 104,
+      "path": "res://actors/enemies/dummy_enemy.tscn.remap",
+      "sha256": "7c30f38edc731b3abdf9238ba9985be55fc42264b4e87de38a7654fe623f3924"
+    },
+    {
+      "bytes": 47,
+      "path": "res://actors/player/player.gd.remap",
+      "sha256": "a9ff2d25ed0bb2a91dbde6b875c8f7ca5ae03f7fa1ac57e42ecec36d67474eea"
+    },
+    {
+      "bytes": 7041,
+      "path": "res://actors/player/player.gdc",
+      "sha256": "b4dfda7b77a445b32d0f5f273183a6aa0abf75cd75d8e4c723761867b016f02d"
+    },
+    {
+      "bytes": 99,
+      "path": "res://actors/player/player.tscn.remap",
+      "sha256": "35d264e6acf7ba6e8f3cf9d812a6a164b537d70e60c8306786579f2190216f7e"
+    },
+    {
+      "bytes": 197,
+      "path": "res://assets/Art/Character/AirCombo1.png.import",
+      "sha256": "0b70ebb57ed000504793051df5eaa79c304ebcea79df2d39b5670b76e214e607"
+    },
+    {
+      "bytes": 198,
+      "path": "res://assets/Art/Character/AirCombo2.png.import",
+      "sha256": "7c7d2407ea221330be2c45bc174c20bd8727f181d3c554396d214ccac2118918"
+    },
+    {
+      "bytes": 198,
+      "path": "res://assets/Art/Character/AirCombo3.png.import",
+      "sha256": "9da92085e615d21298082fda3488bcf231b62e987fa0138b153e8bceff85a727"
+    },
+    {
+      "bytes": 193,
+      "path": "res://assets/Art/Character/Dash.png.import",
+      "sha256": "2a73be0a9fc764e482623a2347e47e8baddc2ddba67960cef6b37b4134badaed"
+    },
+    {
+      "bytes": 192,
+      "path": "res://assets/Art/Character/Die.png.import",
+      "sha256": "44620af66106aea823edbec0660d608f3c8253f3dadbd8ec7b5988ae68b5eee1"
+    },
+    {
+      "bytes": 201,
+      "path": "res://assets/Art/Character/GroundCombo1.png.import",
+      "sha256": "fd2c48738d9cf63b698435a33328f82333a3d21a793133b38a3f6bb1a46da926"
+    },
+    {
+      "bytes": 200,
+      "path": "res://assets/Art/Character/GroundCombo2.png.import",
+      "sha256": "d86b37f4c0b17d3ec3199c9ba61224d11900a81bcb68d25d2c32629eac2d966d"
+    },
+    {
+      "bytes": 201,
+      "path": "res://assets/Art/Character/GroundCombo3.png.import",
+      "sha256": "ffe13631e027f99b236d16f719e2ed79948e4a22016361689e28246f5cdbe043"
+    },
+    {
+      "bytes": 192,
+      "path": "res://assets/Art/Character/Idle.png.import",
+      "sha256": "0ed32fa6cadf061e4f12f57c2ca7cd5b7c37cfadc01818d5f3a2335ace3485f6"
+    },
+    {
+      "bytes": 200,
+      "path": "res://assets/Art/Character/JumpAndFall.png.import",
+      "sha256": "56028b15a53404a442ad35c87540c37ab54ee5c60700c437e5bebc37542badba"
+    },
+    {
+      "bytes": 191,
+      "path": "res://assets/Art/Character/Run.png.import",
+      "sha256": "3e2525095f1c8f367e068d1ddba5a4f8f8b34c5e47ba74dc1e89359e437b268c"
+    },
+    {
+      "bytes": 193,
+      "path": "res://assets/Art/Enemies/Demon_Sword/Sword.png.import",
+      "sha256": "c8be20a1e5ef706bc34442353b8acf44a6bb6f8640668249a07219a55830c40a"
+    },
+    {
+      "bytes": 201,
+      "path": "res://assets/Art/UI/Background/Background layers/Layer_0000_9.png.import",
+      "sha256": "655206ad5baf02ccd6b05a1ffa21eb6ec14cc2c3ef771836df6ecb63f2413814"
+    },
+    {
+      "bytes": 201,
+      "path": "res://assets/Art/UI/Background/Background layers/Layer_0001_8.png.import",
+      "sha256": "79222aa72621c91c2196f221294b77d163de2b026d418dea8571cbe4c47d8021"
+    },
+    {
+      "bytes": 201,
+      "path": "res://assets/Art/UI/Background/Background layers/Layer_0002_7.png.import",
+      "sha256": "0d449429adac4699c80a8b60c6280d96adbc5ee0ebbb94463082a3c77a92bd84"
+    },
+    {
+      "bytes": 200,
+      "path": "res://assets/Art/UI/Background/Background layers/Layer_0003_6.png.import",
+      "sha256": "993de7330ad480299be56d74f33b0df4273b92f5f11e520ef7e26893d81486c2"
+    },
+    {
+      "bytes": 206,
+      "path": "res://assets/Art/UI/Background/Background layers/Layer_0004_Lights.png.import",
+      "sha256": "4c88f91a79b490ab47bd6639c3552eab43fc9ef8a43b5ee5aaea8e5325171877"
+    },
+    {
+      "bytes": 200,
+      "path": "res://assets/Art/UI/Background/Background layers/Layer_0005_5.png.import",
+      "sha256": "26fe61c809c7406c0f8dec4502954253c59104fbdd26427cfa0aadcd450a4cd9"
+    },
+    {
+      "bytes": 201,
+      "path": "res://assets/Art/UI/Background/Background layers/Layer_0006_4.png.import",
+      "sha256": "5d80ea0e587feb505175b6c62072ffeedab388d822ea7c30144922ad5bade8de"
+    },
+    {
+      "bytes": 206,
+      "path": "res://assets/Art/UI/Background/Background layers/Layer_0007_Lights.png.import",
+      "sha256": "57b9fd38e526c24b3429419e37d666e72673ff1ec242cae71faf001731fc763c"
+    },
+    {
+      "bytes": 200,
+      "path": "res://assets/Art/UI/Background/Background layers/Layer_0008_3.png.import",
+      "sha256": "95a443e3bbfb6ffc05fb5d1b37f187a5859d46e1866add6b405f18d872b83513"
+    },
+    {
+      "bytes": 201,
+      "path": "res://assets/Art/UI/Background/Background layers/Layer_0009_2.png.import",
+      "sha256": "4bdad7254bd4980b546e9e9de14503b7cd92ca00de95a52988e161df6b221f49"
+    },
+    {
+      "bytes": 201,
+      "path": "res://assets/Art/UI/Background/Background layers/Layer_0010_1.png.import",
+      "sha256": "a4ce0e63ef9d61b0a62936850c5505efc90c4e6128072484c7a0257f07ad8ef9"
+    },
+    {
+      "bytes": 200,
+      "path": "res://assets/Art/UI/Background/Background layers/Layer_0011_0.png.import",
+      "sha256": "f1edac2efe04657c7dc1052ebb838b57d217c917cf19ea4d0f35bfe2e2fd373c"
+    },
+    {
+      "bytes": 226,
+      "path": "res://assets/Art/UI/Pixel Health Bar Asset Pack 1 by Adwit Rahman/Pixel Health Bar 1/Pixel1_Healthbar_0001_pixel1_healthbar.png.import",
+      "sha256": "fdb33a2189310f9637e7071fd4d28b445858c278876df2faad4be758337bfa91"
+    },
+    {
+      "bytes": 224,
+      "path": "res://assets/Art/UI/Pixel Health Bar Asset Pack 1 by Adwit Rahman/Pixel Health Bar 1/Pixel1_Healthbar_0002_pixel1_border.png.import",
+      "sha256": "2f5e2e929e5eecafda0752777a83f0192d52b04ebb68cbc4d8db53b6abb12d25"
+    },
+    {
+      "bytes": 53,
+      "path": "res://combat/attacks/attack_data.gd.remap",
+      "sha256": "9a818a38f8ce0624f0ed342f94a5c37dbad1831e092c2f10b276fab756413a8f"
+    },
+    {
+      "bytes": 587,
+      "path": "res://combat/attacks/attack_data.gdc",
+      "sha256": "c388dbfcfcacbf92f01dbb5b3d93da1142261f088c62dacaa83e37c547f23c31"
+    },
+    {
+      "bytes": 56,
+      "path": "res://combat/hitboxes/attack_hitbox.gd.remap",
+      "sha256": "25d5712ca16b0985a4bbd522048b869425e298eac44ac423e10a9a30d137dee1"
+    },
+    {
+      "bytes": 1470,
+      "path": "res://combat/hitboxes/attack_hitbox.gdc",
+      "sha256": "a872a6733238bf38a7dd0899fe8901542cc0e289d0474679e03ec816f0e7afc9"
+    },
+    {
+      "bytes": 42,
+      "path": "res://pixel_art/arena.gd.remap",
+      "sha256": "278f944d62c96efbbfe313b2e30120d316f15a207bd7dfe8872a54e1a04a1ada"
+    },
+    {
+      "bytes": 5782,
+      "path": "res://pixel_art/arena.gdc",
+      "sha256": "e7f8adbda5ccd6a7d7f76f7796a1b22c7bb35d4a7d4962a422473dc31d317acc"
+    },
+    {
+      "bytes": 98,
+      "path": "res://pixel_art/arena.tscn.remap",
+      "sha256": "72b960afc88e765ffe85ed1ed60546339bf5c615aca37cf565431ac6960489bf"
+    },
+    {
+      "bytes": 49,
+      "path": "res://pixel_art/enemy_visual.gd.remap",
+      "sha256": "bcb1e816ffa09ee3eb5afc3113e4ea333bcc9759b60a8642244aef4028d3132b"
+    },
+    {
+      "bytes": 2143,
+      "path": "res://pixel_art/enemy_visual.gdc",
+      "sha256": "ff2f9889f3d725ef8c16847fc518ecfdf92e7981be9b249c2fff03649456eeab"
+    },
+    {
+      "bytes": 50,
+      "path": "res://pixel_art/forest_layers.gd.remap",
+      "sha256": "7869be6354987ca2029edf02a1faa134497d79f50065cb45cabb357034c9b797"
+    },
+    {
+      "bytes": 290,
+      "path": "res://pixel_art/forest_layers.gdc",
+      "sha256": "d2fdb9a6cf1cd0f54cde839ab1fcb059c615e4676cc18dfd97dd068819bfa55c"
+    },
+    {
+      "bytes": 106,
+      "path": "res://pixel_art/forest_layers.tscn.remap",
+      "sha256": "5c930dfb5886f93af69ecc84f95b9e813b26af1454ea5cc3579cfdb649a4d99d"
+    },
+    {
+      "bytes": 47,
+      "path": "res://pixel_art/health_bar.gd.remap",
+      "sha256": "b3e69b1d8cd2e2a33dc31aeb6c0889b149e67f564cc1262c1eb05c10fafb0ffd"
+    },
+    {
+      "bytes": 965,
+      "path": "res://pixel_art/health_bar.gdc",
+      "sha256": "1498d7c98fd0ee75528573346506bb4185b34903ac8ccf9b9d32e4df5744087b"
+    },
+    {
+      "bytes": 49,
+      "path": "res://pixel_art/pixel_camera.gd.remap",
+      "sha256": "7304150702d9d263005c5c93521b22d7b998a0be20d658076f3f4596cbdc1d2a"
+    },
+    {
+      "bytes": 1178,
+      "path": "res://pixel_art/pixel_camera.gdc",
+      "sha256": "038d2e9ba9c8f058b994fb8e28006988366b651416a9d9537345d69a349995e4"
+    },
+    {
+      "bytes": 102,
+      "path": "res://resources/attacks/air_heavy.tres.remap",
+      "sha256": "3b33e5b57fa644ae8174aeb1381476d56bee2181dd6a8529d05e57c988d0122a"
+    },
+    {
+      "bytes": 102,
+      "path": "res://resources/attacks/air_light.tres.remap",
+      "sha256": "06755c8c96c0ed9e9ab8a3656b78b917fc3f7163e3d7b5b2df4100c8a51210ff"
+    },
+    {
+      "bytes": 105,
+      "path": "res://resources/attacks/air_light_01.tres.remap",
+      "sha256": "7279f2f812743bb92abfe1419834eccf58227d7eaae6579703fb80234c936196"
+    },
+    {
+      "bytes": 105,
+      "path": "res://resources/attacks/air_light_02.tres.remap",
+      "sha256": "214e3c5599b17cc74102f6a103b9f21beb56af7f967b359883596600a3330053"
+    },
+    {
+      "bytes": 105,
+      "path": "res://resources/attacks/air_light_03.tres.remap",
+      "sha256": "6e5aaa61921452bb8a32f65017ff0228a0323fbd799492e916ca567b9063c000"
+    },
+    {
+      "bytes": 101,
+      "path": "res://resources/attacks/launcher.tres.remap",
+      "sha256": "2950be094c878daae69e034b6f7928a6a3057b23cf9751169925d93c8be13e1d"
+    },
+    {
+      "bytes": 101,
+      "path": "res://resources/attacks/light_01.tres.remap",
+      "sha256": "b8a4371bb6b082e73637b3c612b266c8cd95e7e5b3f2c064dcdc21d0f3f6fc2f"
+    },
+    {
+      "bytes": 101,
+      "path": "res://resources/attacks/light_02.tres.remap",
+      "sha256": "d777a8798c5f6be7d24c61332fe0b55b407e2498679bf764efc851e3d16acf0a"
+    },
+    {
+      "bytes": 101,
+      "path": "res://resources/attacks/light_03.tres.remap",
+      "sha256": "7a870613af70348c20890ee79314563edfb0e88011818facd1f56c1faf479b41"
+    },
+    {
+      "bytes": 151,
+      "path": "res://resources/audio/dash.wav.import",
+      "sha256": "1c0068c673c9373420d33abecaadc218147ef1273c7d62abae2960f7250c8a86"
+    },
+    {
+      "bytes": 153,
+      "path": "res://resources/audio/defeat.wav.import",
+      "sha256": "45e813ff2dcf5b86651f0461dc2d74803fb9e0017cd385ead6b2d148b960b1e2"
+    },
+    {
+      "bytes": 150,
+      "path": "res://resources/audio/hit.wav.import",
+      "sha256": "339e77dbd0a390b104220eaf508502d387da513d5409b5e44788a67d17188422"
+    },
+    {
+      "bytes": 150,
+      "path": "res://resources/audio/hurt.wav.import",
+      "sha256": "9548fea7ad6db94d95ea7d5540384dba10b100d6f0d67ed96237a8a858d4856f"
+    },
+    {
+      "bytes": 151,
+      "path": "res://resources/audio/slash.wav.import",
+      "sha256": "da275b03b3eb6477c0d12a269a609b95839658558edcad3e8e597620d545f391"
+    },
+    {
+      "bytes": 153,
+      "path": "res://resources/audio/victory.wav.import",
+      "sha256": "fbf19f538cacc691c071545118d5fbf6b7e63e2e345dc7b6f4a8b35abb813c40"
+    },
+    {
+      "bytes": 151,
+      "path": "res://resources/audio/wave.wav.import",
+      "sha256": "776e0999e52792932c6a161c6eb6f12ad22b28cd9519aea0f1779a93d294066e"
+    },
+    {
+      "bytes": 47,
+      "path": "res://systems/combat_audio.gd.remap",
+      "sha256": "2431736c0d5a124227cf0501963fbd3b28f49325b11f751ae628ca0223c7dd38"
+    },
+    {
+      "bytes": 1615,
+      "path": "res://systems/combat_audio.gdc",
+      "sha256": "185e5d50fdd26e271cced3db3189e2de9b0f7aa61a92bc5662ae3b42c20aafc7"
+    },
+    {
+      "bytes": 42,
+      "path": "res://systems/hitstop.gd.remap",
+      "sha256": "241746894f5642639fa8549a535f9e6fec66cbb35e1dfee4b4b6cb7638204e43"
+    },
+    {
+      "bytes": 825,
+      "path": "res://systems/hitstop.gdc",
+      "sha256": "37b9f65c64c1c98d2ea7703a066009567f469d7e9bf276bf8ec7f6ef21de13d7"
+    },
+    {
+      "bytes": 53,
+      "path": "res://systems/style/style_system.gd.remap",
+      "sha256": "c00d695814aaf47bec2f52764243dff3cdb66fc650d0275e4d6b4192407d993c"
+    },
+    {
+      "bytes": 1505,
+      "path": "res://systems/style/style_system.gdc",
+      "sha256": "377c17fef07fd20d0013debc567a5fb52f58f8833b4ccb15daa499e7613346e4"
+    },
+    {
+      "bytes": 33,
+      "path": "res://ui/hud.gd.remap",
+      "sha256": "88d7ac2de4efe036b47d8558084e16a055c80820fbeea4767998932a79328fab"
+    },
+    {
+      "bytes": 7567,
+      "path": "res://ui/hud.gdc",
+      "sha256": "822dd0f3f287e290fec7e824ef98e389c01e9b2eaa8ed8eb8ee9d2a8789358e0"
+    },
+    {
+      "bytes": 96,
+      "path": "res://ui/hud.tscn.remap",
+      "sha256": "531d629e2e8bbf6fd226f9ae1f543b2bb40287a2e0c21333ca86d2c0c7887f05"
+    }
+  ],
+  "public_release_approved": false
+}

@@ -14,7 +14,6 @@ config/name="Stylebreaker"
 config/version="0.1.0-prealpha.20261015"
 run/main_scene="res://pixel_art/arena.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://resources/original/icon.svg"
 
 [display]
 
