@@ -37,6 +37,6 @@ The test captures title, first-wave arena, a real launcher impact and scripted v
 
 - **Native Windows execution:** neither a Windows host nor Wine is available. The Windows executable must be launched from a fresh extracted ZIP and played through victory and defeat outside the editor. GPU/driver compatibility, audible SFX, device behavior, physical controller input, resizing and full-screen transitions need that check.
 - **itch.io upload/download:** no itch.io publishing access or upload was used. Follow the dated release gate after Windows validation; keep the page Draft/Restricted until the uploaded download is checked.
-- **PR creation:** attempted with GitHub CLI; final availability is reported in the task response. The branch and a prepared PR description are retained even if API access is unavailable.
+- **PR creation:** the feature branch was pushed successfully, but `gh pr create` failed with `Post "https://api.github.com/graphql": Forbidden`. No PR was created. Open [the prepared branch comparison](https://github.com/dekiencute/2d_hack_and_slash/compare/main...release/itchio-prealpha-2026-10-15?expand=1) and use [the prepared PR description](PR_DESCRIPTION_2026-10-15.md). This is an environment GitHub API access blocker; Git push succeeded.
 
 Required basic prototype assets are present. Music, extra enemy types/arenas, animation expansion, save/rebinding and progression are outside scope.

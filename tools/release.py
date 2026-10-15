@@ -92,7 +92,7 @@ def main():
         revision = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
         dirty = bool(subprocess.check_output(['git', 'status', '--porcelain'], cwd=ROOT, text=True).strip())
         source_files = [p for folder in ['actors', 'combat', 'levels', 'systems', 'ui', 'resources']
-                        for p in (ROOT / folder).rglob('*') if p.is_file() and p.suffix not in ['.import', '.uid']]
+                        for p in (ROOT / folder).rglob('*') if p.is_file()]
         source_files += [ROOT / 'project.godot', ROOT / 'export_presets.cfg']
         manifest = {'godot': version, 'source_commit': revision, 'source_worktree_dirty': dirty,
                     'windows_native_execution': 'NOT TESTED', 'source_sha256': {
