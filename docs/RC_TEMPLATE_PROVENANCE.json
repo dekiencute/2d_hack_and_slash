@@ -1,0 +1,21 @@
+{
+  "source": "https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_export_templates.tpz",
+  "method": "HTTPS byte-range ZIP extraction; zipfile validates each member CRC",
+  "files": {
+    "version.txt": {
+      "sha256": "4855bd38072b77c73c45739cf6a6787d7df790a368b0a437102f352650e6186b",
+      "bytes": 13,
+      "zip_crc32": "9263573e"
+    },
+    "windows_release_x86_64.exe": {
+      "sha256": "91724f15024a3a545e28ccd83134403d31ce2323a38e51c95e4dfa282f732ab6",
+      "bytes": 104659456,
+      "zip_crc32": "9b972102"
+    },
+    "linux_release.x86_64": {
+      "sha256": "2c78919325d7f29fa7607287c7c1eeac367ea4c94e7b8b6f5f4c6b20492f73d0",
+      "bytes": 71075864,
+      "zip_crc32": "428f40f8"
+    }
+  }
+}
