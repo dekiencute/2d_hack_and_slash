@@ -105,3 +105,7 @@ godot --headless --main-pack /tmp/stylebreaker-pixel/windows.pck --script "$PWD/
 ![Five-wave victory](media/pixel-art/04-victory.png)
 
 Title and camera-right captures are alongside these files. They are unedited Godot viewport captures, not generated artwork or a promised public release build.
+
+## Review branch and PR status
+
+Implementation committed as **e5fb0fc** on **`integration/pixel-art-arena`**, based on `origin/main` at `808dd4d`, and pushed successfully. `gh pr create` was attempted with [the prepared description](PIXEL_ART_PR.md), including screenshots and validation. GitHub returned `Post "https://api.github.com/graphql": Forbidden`; this environment could not create the PR. [Open a separate review PR](https://github.com/dekiencute/2d_hack_and_slash/compare/main...integration/pixel-art-arena?expand=1) using that description. No PR was merged and nothing was published to itch.io.
