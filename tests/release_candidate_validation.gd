@@ -64,13 +64,13 @@ func _run() -> void:
 			player_textures = player_textures and texture != null and texture.atlas.resource_path.begins_with("res://assets/Art/Character/")
 	check(player_textures, "export actually uses uploaded player atlases")
 	check(ResourceLoader.exists("res://levels/main.tscn"), "previous arena remains available as fallback")
-	var keys := {"move_left": KEY_A, "move_right": KEY_D, "jump": KEY_SPACE, "dash": KEY_SHIFT, "light_attack": KEY_J, "heavy_attack": KEY_K, "reset": KEY_R, "pause": KEY_ESCAPE, "mute": KEY_M, "fullscreen": KEY_F11}
+	var keys := {"move_left": KEY_A, "move_right": KEY_D, "jump": KEY_SPACE, "dash": KEY_SHIFT, "light_attack": KEY_J, "heavy_attack": KEY_K, "reset": KEY_R, "pause": KEY_ESCAPE, "mute": KEY_M, "fullscreen": KEY_F11, "ui_accept": KEY_ENTER}
 	for action in keys:
 		var found := false
 		for event in InputMap.action_get_events(action):
-			found = found or (event is InputEventKey and event.physical_keycode == keys[action])
+			found = found or (event is InputEventKey and (event.physical_keycode == keys[action] or event.keycode == keys[action]))
 		check(found, action + " keyboard binding")
-	var buttons := {"jump": JOY_BUTTON_A, "dash": JOY_BUTTON_B, "light_attack": JOY_BUTTON_X, "heavy_attack": JOY_BUTTON_Y, "pause": JOY_BUTTON_START, "reset": JOY_BUTTON_BACK}
+	var buttons := {"jump": JOY_BUTTON_A, "dash": JOY_BUTTON_B, "light_attack": JOY_BUTTON_X, "heavy_attack": JOY_BUTTON_Y, "pause": JOY_BUTTON_START, "reset": JOY_BUTTON_BACK, "ui_accept": JOY_BUTTON_A}
 	for action in buttons:
 		var found := false
 		for event in InputMap.action_get_events(action):

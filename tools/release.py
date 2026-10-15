@@ -116,7 +116,7 @@ def main():
     run('import', [args.godot, '--headless', '--editor', '--path', str(ROOT), '--import', '--quit'])
     for label, extra in [('pixel', []), ('fallback', ['--', '--scene', 'res://levels/main.tscn'])]:
         run(label + '-source-regression', [args.godot, '--headless', '--path', str(ROOT), '--script', 'tests/regression.gd'] + extra, checks=True)
-    for label, script in [('pixel-presentation', 'pixel_art_validation'), ('background-preview', 'background_preview_validation'), ('asset-preview', 'asset_preview_validation')]:
+    for label, script in [('pixel-presentation', 'pixel_art_validation'), ('controller-death', 'release_controls_validation'), ('background-preview', 'background_preview_validation'), ('asset-preview', 'asset_preview_validation')]:
         run(label, [args.godot, '--headless', '--path', str(ROOT), '--script', 'tests/' + script + '.gd'], checks=True)
 
     suffix = '-PRIVATE-QA-NOT-FOR-DISTRIBUTION' if args.private_qa else '-RELEASE-CANDIDATE'
@@ -135,6 +135,11 @@ def main():
     windows.unlink(missing_ok=True)
     linux.unlink(missing_ok=True)
     selected = ['res://pixel_art/arena.tscn', 'res://levels/main.tscn'] + [a['path'] for a in report['assets']]
+    # Script preload() paths and global classes are not all traversed by selected-scene export.
+    selected += ['res://' + str(p.relative_to(ROOT))
+                 for folder in ['actors', 'combat', 'levels', 'systems', 'ui', 'resources', 'pixel_art']
+                 for p in (ROOT / folder).rglob('*') if p.suffix in ['.gd', '.tscn', '.tres']]
+    selected = sorted(set(selected))
     all_media = ['res://' + str(p.relative_to(ROOT)) for p in (ROOT / 'assets/Art').rglob('*') if p.suffix.lower() in ['.png', '.gif', '.psd', '.aseprite']]
     pack_spec = {'private_qa': args.private_qa, 'expected_assets': [a['path'] for a in report['assets']],
                  'forbidden_assets': sorted(set(all_media) - {a['path'] for a in report['assets']}),
@@ -217,6 +222,8 @@ def main():
                 '--script', str(ROOT / 'tests/release_candidate_validation.gd'), '--', str(pack_spec_path), str(build / 'PACK_CONTENTS.json')], extracted, checks=True)
             run('extracted-windows-pack-regression', [args.godot, '--headless', '--main-pack', str(extracted_exe),
                 '--script', str(ROOT / 'tests/regression.gd')], extracted, checks=True)
+            run('extracted-windows-controller-death', [args.godot, '--headless', '--main-pack', str(extracted_exe),
+                '--script', str(ROOT / 'tests/release_controls_validation.gd')], extracted, checks=True)
             shutil.move(temporary_zip, archive)
         except BaseException:
             temporary_zip.unlink(missing_ok=True)

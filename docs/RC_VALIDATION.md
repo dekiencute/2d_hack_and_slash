@@ -4,7 +4,7 @@
 
 Branch: `release/prealpha-v0.1.0-rc`, based on approved integration merge `d319aae`.
 Default startup: `res://pixel_art/arena.tscn`; fallback: `res://levels/main.tscn`.
-Combat scripts, timings, hitboxes, AI, scoring and wave progression are unchanged.
+Combat timings, hitboxes, AI, scoring and wave progression are unchanged. Input setup gains the missing controller-A menu confirmation binding; this fixes a reproduced startup issue.
 
 ## Validation record
 
