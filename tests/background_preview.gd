@@ -74,10 +74,7 @@ func set_parallax_enabled(enabled: bool) -> void:
 func _sync_parallax_camera() -> void:
 	# Finite, full-canvas layers share a world origin. Feed this scene's camera
 	# offset to Parallax2D explicitly instead of its viewport-top-left offset.
-	for layer in $Layers.get_children():
-		# Refresh scroll-scale changes even when the camera is stationary.
-		layer.screen_offset = camera.position + Vector2.ONE
-		layer.screen_offset = camera.position
+	$Layers.sync_camera_offset(camera.position)
 
 func set_lights_visible(far_visible: bool, near_visible: bool) -> void:
 	far_lights.visible = far_visible
