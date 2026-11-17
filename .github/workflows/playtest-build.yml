@@ -28,7 +28,7 @@ jobs:
       - name: Install Godot and export templates
         uses: chickensoft-games/setup-godot@v2
         with:
-          version: '4.6.3'
+          version: '4.7'
           use-dotnet: false
           include-templates: true
 
@@ -50,7 +50,7 @@ jobs:
                 Where-Object { $_.Name -match '(?i)godot' -and $_.Name -notmatch '(?i)mono|dotnet' })
             }
           }
-          $expected = '4.6.3'
+          $expected = '4.7'
           $selected = $null
           foreach ($candidate in ($candidates | Sort-Object FullName -Unique)) {
             $output = @(& $candidate.FullName --headless --version 2>&1)
