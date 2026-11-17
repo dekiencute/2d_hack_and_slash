@@ -1,7 +1,7 @@
 {
-  "engine_version": "4.7.stable",
-  "source": "https://github.com/godotengine/godot-builds/releases/download/4.7-stable/Godot_v4.7-stable_export_templates.tpz",
-  "method": "Matching 4.7.stable installation verified at build-time, SHA-256 recorded from installed templates; independently verified template digests not yet pinned",
+  "engine_version": "4.7.2.stable",
+  "source": "https://github.com/godotengine/godot-builds/releases/download/4.7.2-stable/Godot_v4.7.2-stable_export_templates.tpz",
+  "method": "Matching 4.7.2.stable installation verified at build-time, SHA-256 recorded from installed templates; independently verified template digests not yet pinned",
   "files": {
     "version.txt": {
       "sha256": null
