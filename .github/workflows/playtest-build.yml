@@ -57,7 +57,7 @@ jobs:
             $code = $LASTEXITCODE
             $version = ($output | Out-String).Trim()
             Write-Host "Candidate: $($candidate.FullName) (exit $code, version '$version')"
-            if ($code -eq 0 -and $version -match "^$([regex]::Escape($expected))\\.stable\\.") {
+            if ($code -eq 0 -and $version -match "^$([regex]::Escape($expected))\.stable\.") {
               $selected = $candidate.FullName
               break
             }
