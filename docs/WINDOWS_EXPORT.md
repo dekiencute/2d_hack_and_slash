@@ -4,7 +4,7 @@ The normal exporter and **Windows Desktop** preset include the approved pixel-ar
 
 ## Windows setup and command
 
-Install Python **3.9+**, Godot **4.6.3 stable** and its matching official export templates (Godot: **Editor → Manage Export Templates**). Use the official Windows x86_64 console executable for CLI output. Keep both files from the portable Windows editor download together; the console executable may need its companion editor executable. A short checkout path such as `C:\src\Stylebreaker` avoids older Windows path-length restrictions.
+Install Python **3.9+**, Godot **4.7 stable** and its matching official export templates (Godot: **Editor → Manage Export Templates**). Use the official Windows x86_64 console executable for CLI output. Keep both files from the portable Windows editor download together; the console executable may need its companion editor executable. A short checkout path such as `C:\src\Stylebreaker` avoids older Windows path-length restrictions.
 
 From PowerShell in the repository:
 
@@ -12,19 +12,19 @@ From PowerShell in the repository:
 py -3 .\tools\release.py
 ```
 
-Detection checks `GODOT_BIN`, common Godot command names on PATH, and the official `Godot_v4.6.3-stable_win64_console.exe`/editor filename in the checkout or PATH directories (also common Windows install folders). If Godot is elsewhere, specify its path; spaces are supported:
+Detection checks `GODOT_BIN`, common Godot command names on PATH, and the official `Godot_v4.7-stable_win64_console.exe`/editor filename in the checkout or PATH directories (also common Windows install folders). If Godot is elsewhere, specify its path; spaces are supported:
 
 ```powershell
-py -3 .\tools\release.py --godot "C:\Tools\Godot\Godot_v4.6.3-stable_win64_console.exe"
+py -3 .\tools\release.py --godot "C:\Tools\Godot\Godot_v4.7-stable_win64_console.exe"
 ```
 
-Default Windows templates: `%APPDATA%\Godot\export_templates\4.6.3.stable`. For a portable/self-contained/custom template installation:
+Default Windows templates: `%APPDATA%\Godot\export_templates\4.7.stable`. For a portable/self-contained/custom template installation:
 
 ```powershell
-py -3 .\tools\release.py --godot "C:\Tools\Godot\Godot_v4.6.3-stable_win64_console.exe" --templates-dir "C:\Tools\Godot Templates\4.6.3.stable"
+py -3 .\tools\release.py --godot "C:\Tools\Godot\Godot_v4.7-stable_win64_console.exe" --templates-dir "C:\Tools\Godot Templates\4.7.stable"
 ```
 
-The directory must contain `version.txt` and `windows_release_x86_64.exe`, matching recorded official SHA-256 fingerprints. Windows does **not** require or run a Linux template. On Linux, the workflow also requires the matching Linux Release template for its supplemental exported-game startup check. macOS uses its native Godot editor for the Windows data-pack tests without launching a Linux binary. Linux/macOS invocation: `python3 tools/release.py`.
+The directory must contain `version.txt` and `windows_release_x86_64.exe`, installed template SHA-256 values recorded in the build manifest; independently pinned 4.7 template fingerprints are pending. Windows does **not** require or run a Linux template. On Linux, the workflow also requires the matching Linux Release template for its supplemental exported-game startup check. macOS uses its native Godot editor for the Windows data-pack tests without launching a Linux binary. Linux/macOS invocation: `python3 tools/release.py`.
 
 ## Outputs and mandatory checks
 
