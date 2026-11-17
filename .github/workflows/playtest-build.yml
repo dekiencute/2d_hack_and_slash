@@ -32,13 +32,29 @@ jobs:
           use-dotnet: false
           include-templates: true
 
-      - name: Verify Godot version
+      - name: Resolve installed Godot executable
         shell: pwsh
-        run: godot --version
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $cmd = Get-Command godot -ErrorAction Stop
+          $godotExe = $cmd.Source
+          if (-not (Test-Path -LiteralPath $godotExe -PathType Leaf)) {
+            throw "Godot executable not found at: $godotExe"
+          }
+          $version = & $godotExe --version
+          Write-Host "Godot executable: $godotExe"
+          Write-Host "Godot version: $version"
+          if ($LASTEXITCODE -ne 0 -or -not ($version -match '^4\.6\.3')) {
+            throw "Expected Godot 4.6.3, got: $version"
+          }
+          "GODOT_BIN=$godotExe" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
 
       - name: Generate validated Windows playtest package
         shell: pwsh
-        run: python tools/release.py
+        run: |
+          if (-not $env:GODOT_BIN) { throw 'GODOT_BIN was not exported by the setup step' }
+          python tools/release.py --godot "$env:GODOT_BIN"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
       - name: Upload Windows QA build and checksum
         if: success()
