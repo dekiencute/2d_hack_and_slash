@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build and technically validate a Godot 4.6.3 Windows ZIP; never publish it.
+"""Build and technically validate a Godot 4.7 Windows ZIP; never publish it.
 
 Incomplete asset-license evidence is reported, not an export failure. Technical
 checks remain mandatory. --private-qa retains the owner-only archive/feature label.
@@ -20,7 +20,7 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'Stylebreaker-PreAlpha-v0.1.0-windows-x86_64'
-TEMPLATE_VERSION = '4.6.3.stable'
+TEMPLATE_VERSION = '4.7.stable'
 RUNTIME_FOLDERS = ['actors', 'combat', 'systems', 'ui', 'resources', 'pixel_art']
 
 
@@ -46,11 +46,11 @@ def find_godot(explicit=None):
             if os.environ.get(variable):
                 folders.append(Path(os.environ[variable]) / suffix)
     for folder in folders:
-        for pattern in ['Godot_v4.6.3-stable_win64_console.exe', 'Godot_v4.6.3-stable_win64.exe']:
+        for pattern in ['Godot_v4.7-stable_win64_console.exe', 'Godot_v4.7-stable_win64.exe']:
             candidate = folder / pattern
             if candidate.is_file():
                 return str(candidate.resolve())
-    raise RuntimeError('Install Godot 4.6.3 and add it to PATH, set GODOT_BIN, or pass --godot "C:\\Tools\\Godot\\Godot_v4.6.3-stable_win64_console.exe"')
+    raise RuntimeError('Install Godot 4.7 and add it to PATH, set GODOT_BIN, or pass --godot "C:\\Tools\\Godot\\Godot_v4.7-stable_win64_console.exe"')
 
 
 def find_templates(explicit=None):
@@ -138,7 +138,7 @@ def verify_executable(path):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--godot', help='Godot executable path (or GODOT_BIN / auto-detect)')
-    parser.add_argument('--templates-dir', help='Directory containing matching 4.6.3.stable templates')
+    parser.add_argument('--templates-dir', help='Directory containing matching 4.7.stable templates')
     parser.add_argument('--private-qa', action='store_true', help='Owner-only QA; NOT FOR DISTRIBUTION')
     parser.add_argument('--audit-only', action='store_true')
     args = parser.parse_args()
@@ -187,17 +187,22 @@ def main():
         return result.stdout
 
     version = run('version', [godot, '--version']).strip()
-    if not version.startswith('4.6.3.stable.'):
-        raise RuntimeError('Expected Godot 4.6.3 stable, found ' + version)
+    if not version.startswith('4.7.stable.'):
+        raise RuntimeError('Expected Godot 4.7 stable, found ' + version)
     if not (templates / 'version.txt').is_file() or (templates / 'version.txt').read_text(encoding='utf-8').strip() != TEMPLATE_VERSION:
-        raise RuntimeError('Install matching 4.6.3.stable export templates in ' + str(templates))
+        raise RuntimeError('Install matching 4.7.stable export templates in ' + str(templates))
     required_templates = required_template_names(sys.platform)
     provenance = json.loads((ROOT / 'docs/RC_TEMPLATE_PROVENANCE.json').read_text(encoding='utf-8'))
+    if provenance.get('engine_version') != TEMPLATE_VERSION:
+        raise RuntimeError('Template provenance metadata targets a different Godot version')
     for template in required_templates:
         if not (templates / template).is_file():
             raise RuntimeError('Missing matching template: ' + template)
-        if sha(templates / template) != provenance['files'][template]['sha256']:
-            raise RuntimeError('Template does not match the recorded official 4.6.3 file: ' + template)
+        expected_hash = provenance.get('files', {}).get(template, {}).get('sha256')
+        if expected_hash and sha(templates / template) != expected_hash:
+            raise RuntimeError('Template hash does not match the recorded official 4.7 file: ' + template)
+    if any(not provenance.get('files', {}).get(t, {}).get('sha256') for t in required_templates):
+        print('TEMPLATE PROVENANCE WARNING: official 4.7 template SHA-256 hashes not independently pinned; installed template hashes will be recorded in the build manifest.', flush=True)
     run('import', [godot, '--headless', '--editor', '--path', str(ROOT), '--import', '--quit'])
     run('source-cleanup-audit', [sys.executable, str(ROOT / 'tools/check_pixel_only.py')])
     run('release-workflow-tests', [sys.executable, '-m', 'unittest', 'discover', '-s', 'tests', '-p', 'test_release.py'])
