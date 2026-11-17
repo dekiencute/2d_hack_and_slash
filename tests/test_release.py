@@ -55,21 +55,21 @@ class ReleaseWorkflowTests(unittest.TestCase):
 
     def test_windows_template_location_and_host_requirements(self):
         with patch.object(release.sys, 'platform', 'win32'), patch.dict(os.environ, {'APPDATA': 'C:/Users/Test User/AppData/Roaming'}):
-            self.assertEqual(release.find_templates().as_posix(), 'C:/Users/Test User/AppData/Roaming/Godot/export_templates/4.6.3.stable')
+            self.assertEqual(release.find_templates().as_posix(), 'C:/Users/Test User/AppData/Roaming/Godot/export_templates/4.7.2.stable')
         self.assertNotIn('linux_release.x86_64', release.required_template_names('win32'))
         self.assertIn('linux_release.x86_64', release.required_template_names('linux'))
 
     def test_custom_windows_template_paths_use_godot_slashes(self):
         config = (release.ROOT / 'export_presets.cfg').read_text(encoding='utf-8')
-        result = release.export_configuration(config, ['res://pixel_art/arena.tscn'], PureWindowsPath('C:/Godot Templates/4.6.3.stable'), True)
-        self.assertIn('custom_template/release="C:/Godot Templates/4.6.3.stable/windows_release_x86_64.exe"', result)
+        result = release.export_configuration(config, ['res://pixel_art/arena.tscn'], PureWindowsPath('C:/Godot Templates/4.7.2.stable'), True)
+        self.assertIn('custom_template/release="C:/Godot Templates/4.7.2.stable/windows_release_x86_64.exe"', result)
         self.assertEqual(result.count('export_files='), 2)
         self.assertEqual(result.count('custom_features="private_qa"'), 2)
 
     def test_explicit_and_portable_godot_detection_with_spaces(self):
         with tempfile.TemporaryDirectory(prefix='Godot install ') as directory:
             root = Path(directory)
-            exe = root / 'Godot_v4.6.3-stable_win64_console.exe'
+            exe = root / 'Godot_v4.7.2-stable_win64_console.exe'
             exe.touch()
             with patch.object(release.shutil, 'which', return_value=None):
                 self.assertEqual(release.find_godot('"' + str(exe) + '"'), str(exe.resolve()))
@@ -78,7 +78,7 @@ class ReleaseWorkflowTests(unittest.TestCase):
 
     def test_invalid_explicit_godot_does_not_fall_back_silently(self):
         with patch.object(release.shutil, 'which', return_value=None), self.assertRaisesRegex(RuntimeError, 'Godot executable not found'):
-            release.find_godot('missing-godot-4.6.3.exe')
+            release.find_godot('missing-godot-4.7.2.exe')
 
     def test_corrupt_windows_export_is_rejected(self):
         with tempfile.TemporaryDirectory() as directory:
