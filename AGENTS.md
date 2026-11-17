@@ -7,7 +7,7 @@
 - No agent may merge to `main`, publish a release, upload to itch.io, or change approved game art without explicit Game Director authorization.
 
 ## Project baseline
-- Preserve the existing Godot 4.7 project, `res://pixel_art/arena.tscn`, current pixel-art assets, and existing systems.
+- Preserve the existing Godot 4.7.2 project, `res://pixel_art/arena.tscn`, current pixel-art assets, and existing systems.
 - Audit before implementation; do not recreate mechanics already working.
 - Prioritize responsive movement, combos, dodge, launcher, aerial flow, and readable combat.
 - Respect scene references, resource UIDs, and current export configuration.
