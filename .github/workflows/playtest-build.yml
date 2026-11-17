@@ -1,0 +1,52 @@
+name: Stylebreaker Playtest Build
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: stylebreaker-playtest-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-and-package:
+    name: Godot checks and Windows QA ZIP
+    runs-on: windows-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout candidate
+        uses: actions/checkout@v4
+
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Godot and export templates
+        uses: chickensoft-games/setup-godot@v2
+        with:
+          version: '4.6.3'
+          use-dotnet: false
+          include-templates: true
+
+      - name: Verify Godot version
+        shell: pwsh
+        run: godot --version
+
+      - name: Generate validated Windows playtest package
+        shell: pwsh
+        run: python tools/release.py
+
+      - name: Upload Windows QA build and checksum
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stylebreaker-windows-playtest-${{ github.sha }}
+          path: |
+            dist/release-candidate/*.zip
+            dist/release-candidate/*.sha256
+          if-no-files-found: error
+          retention-days: 14
